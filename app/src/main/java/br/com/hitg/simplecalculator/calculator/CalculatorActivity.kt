@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import br.com.hitg.simplecalculator.R
+import br.com.hitg.simplecalculator.calculator.CalculatorContract.*
 import kotlinx.android.synthetic.main.activity_calculator.*
 
 class CalculatorActivity : AppCompatActivity(), CalculatorContract.View {
@@ -24,32 +25,36 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View {
 
     fun onClickButton(v: View?) {
         when (v?.id) {
-            R.id.btnZero -> presenter.typeKey(CalculatorKeys.ZERO)
-            R.id.btnOne -> presenter.typeKey(CalculatorKeys.ONE)
-            R.id.btnTwo -> presenter.typeKey(CalculatorKeys.TWO)
-            R.id.btnThree -> presenter.typeKey(CalculatorKeys.THREE)
-            R.id.btnFour -> presenter.typeKey(CalculatorKeys.FOUR)
-            R.id.btnFive -> presenter.typeKey(CalculatorKeys.FIVE)
-            R.id.btnSix -> presenter.typeKey(CalculatorKeys.SIX)
-            R.id.btnSeven -> presenter.typeKey(CalculatorKeys.SEVEN)
-            R.id.btnEight -> presenter.typeKey(CalculatorKeys.EIGHT)
-            R.id.btnNine -> presenter.typeKey(CalculatorKeys.NINE)
-            R.id.btnDot -> presenter.typeKey(CalculatorKeys.DOT)
-            R.id.btnCE -> presenter.typeKey(CalculatorKeys.CE)
-            R.id.btnOff -> presenter.typeKey(CalculatorKeys.OFF)
-            R.id.btnBack -> presenter.typeKey(CalculatorKeys.BACKSPACE)
-            R.id.btnEquals -> presenter.typeKey(CalculatorKeys.EQUALS)
-            R.id.btnPlus -> presenter.typeKey(CalculatorKeys.PLUS)
-            R.id.btnMinus -> presenter.typeKey(CalculatorKeys.MINUS)
-            R.id.btnDivide -> presenter.typeKey(CalculatorKeys.DIVISION)
-            R.id.btnMultiply -> presenter.typeKey(CalculatorKeys.MULTIPLICATION)
-            R.id.btnPercent -> presenter.typeKey(CalculatorKeys.PERCENT)
-            R.id.btnSquareRoot -> presenter.typeKey(CalculatorKeys.SQUARE_ROOT)
-            R.id.btnMRC -> presenter.typeKey(CalculatorKeys.MRC)
-            R.id.btnMMinus -> presenter.typeKey(CalculatorKeys.MMINUS)
-            R.id.btnMPlus -> presenter.typeKey(CalculatorKeys.MPLUS)
+            R.id.btnZero -> presenter.typeNumber(CalculatorNumbers.ZERO)
+            R.id.btnOne -> presenter.typeNumber(CalculatorNumbers.ONE)
+            R.id.btnTwo -> presenter.typeNumber(CalculatorNumbers.TWO)
+            R.id.btnThree -> presenter.typeNumber(CalculatorNumbers.THREE)
+            R.id.btnFour -> presenter.typeNumber(CalculatorNumbers.FOUR)
+            R.id.btnFive -> presenter.typeNumber(CalculatorNumbers.FIVE)
+            R.id.btnSix -> presenter.typeNumber(CalculatorNumbers.SIX)
+            R.id.btnSeven -> presenter.typeNumber(CalculatorNumbers.SEVEN)
+            R.id.btnEight -> presenter.typeNumber(CalculatorNumbers.EIGHT)
+            R.id.btnNine -> presenter.typeNumber(CalculatorNumbers.NINE)
+            R.id.btnDot -> presenter.typeDot()
+            R.id.btnCE -> presenter.resetCalculator()
+            R.id.btnOff -> presenter.exit()
+            R.id.btnBack -> presenter.backspace()
+            R.id.btnEquals -> presenter.typeEquals()
+            R.id.btnPlus -> presenter.add()
+            R.id.btnMinus -> presenter.minus()
+            R.id.btnDivide -> presenter.divide()
+            R.id.btnMultiply -> presenter.multiply()
+            R.id.btnPercent -> presenter.percent()
+            R.id.btnSquareRoot -> presenter.squareRoot()
+            R.id.btnMRC -> presenter.memoryResultAndClean()
+            R.id.btnMMinus -> presenter.memorySubtract()
+            R.id.btnMPlus -> presenter.memoryAdd()
             else -> return
         }
+    }
+
+    override fun finish() {
+        super.finish()
     }
 
     override fun updateDisplay(value: String) {
