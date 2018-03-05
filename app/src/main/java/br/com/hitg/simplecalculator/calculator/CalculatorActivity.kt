@@ -8,6 +8,7 @@ import br.com.hitg.simplecalculator.calculator.CalculatorContract.CalculatorNumb
 import kotlinx.android.synthetic.main.activity_calculator.*
 
 class CalculatorActivity : AppCompatActivity(), CalculatorContract.View {
+
     override lateinit var presenter: CalculatorContract.Presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -62,5 +63,16 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View {
 
     override fun updateDisplay(value: String) {
         txtDisplay.text = value
+    }
+
+    override fun updateOperation(operation: Operations) {
+        when (operation) {
+            Operations.NONE -> txtSignals.text = ""
+            Operations.ADDITION -> txtSignals.setText(R.string.plus_sign)
+            Operations.SUBTRACTION -> txtSignals.setText(R.string.minus_sign)
+            Operations.MULTIPLICATION -> txtSignals.setText(R.string.multiplication_sign)
+            Operations.DIVISION -> txtSignals.setText(R.string.division_sign)
+        }
+
     }
 }

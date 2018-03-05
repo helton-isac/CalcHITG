@@ -68,6 +68,8 @@ interface CalculatorContract {
          */
         fun updateDisplay(value: String)
 
+        fun updateOperation(operation: Operations)
+
         fun finish()
     }
 

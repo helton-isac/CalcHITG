@@ -28,7 +28,8 @@ class Calculator(val digits: Int) {
     /**
      * Current Operation.
      */
-    private var currentOperation: Operations? = null
+    var currentOperation: Operations = Operations.NONE
+        private set
 
     /**
      * User Memory.
@@ -58,7 +59,7 @@ class Calculator(val digits: Int) {
     fun initializeCalculator() {
         displayNumber = "0"
         currentOperation = Operations.NONE
-        cleanDisplayOnNextInteraction = false;
+        cleanDisplayOnNextInteraction = false
         currentTotal = 0.0
     }
 
@@ -125,6 +126,8 @@ class Calculator(val digits: Int) {
         this.updateTempMemory()
         displayNumber = currentTotal.toString()
         currentTotal = 0.0
+        currentOperation = Operations.NONE
+        cleanDisplayOnNextInteraction = true
     }
 
     fun typeDot() {

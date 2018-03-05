@@ -11,6 +11,7 @@ class CalculatorPresenter(val calculatorView: CalculatorContract.View) :
     init {
         calculatorView.presenter = this
         calculator = Calculator(8)
+        updateView()
     }
 
     override fun start() {
@@ -19,11 +20,12 @@ class CalculatorPresenter(val calculatorView: CalculatorContract.View) :
 
     private fun executeOperationAndUpdateDisplay(operationMethod: () -> Unit) {
         operationMethod()
-        updateDisplay()
+        updateView()
     }
 
-    private fun updateDisplay() {
+    private fun updateView() {
         calculatorView.updateDisplay(calculator.displayNumber)
+        calculatorView.updateOperation(calculator.currentOperation)
     }
 
     override fun add() {
@@ -96,7 +98,7 @@ class CalculatorPresenter(val calculatorView: CalculatorContract.View) :
             CalculatorNumbers.EIGHT -> calculator.typeNumber(8)
             CalculatorNumbers.NINE -> calculator.typeNumber(9)
         }
-        updateDisplay()
+        updateView()
     }
 
     var calcMemory: Int = 0
