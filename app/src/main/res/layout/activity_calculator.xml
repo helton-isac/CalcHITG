@@ -12,7 +12,10 @@
         android:id="@+id/txtDisplay"
         android:layout_width="0dp"
         android:layout_height="80dp"
-        android:layout_margin="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="8dp"
         android:background="@android:color/background_light"
         android:fontFamily="monospace"
         android:gravity="center_vertical|end"
@@ -20,8 +23,25 @@
         android:padding="4dp"
         android:text="@string/digit_0"
         android:textSize="50sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/txtSignals"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtSignals"
+        android:layout_width="30dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/background_light"
+        android:fontFamily="monospace"
+        android:gravity="center_vertical|center_horizontal"
+        android:maxLines="1"
+        android:padding="0dp"
+        android:text="@string/plus_sign"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtDisplay"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button

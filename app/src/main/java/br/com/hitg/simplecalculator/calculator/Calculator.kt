@@ -1,129 +1,145 @@
 package br.com.hitg.simplecalculator.calculator
 
-import br.com.hitg.simplecalculator.R
-
 /**
  * Created by Helton on 20/02/2018.
  *
- * Calculator Machine
+ * Class responsible by managing the memory and calculations.
  */
 class Calculator(val digits: Int) {
+
+    /**
+     * Display Number.
+     *
+     * The typed number and results must be saved in this variable.
+     */
     lateinit var displayNumber: String
-    private var isOperatorSignalDisplayed: Boolean = false
-    var tempMemory: Double = 0.0
-    var currentOperation: Operations? = null
+        private set
 
-    val userMemory: CalculatorUserMemory = CalculatorUserMemory()
+    /**
+     * When an operation is initialized, must clean the current display number.
+     */
+    private var cleanDisplayOnNextInteraction: Boolean = false
 
-    val MAX_DIGITS_ALLOWED: Int = 16
+    /**
+     * Current Total of the current calculus.
+     */
+    private var currentTotal: Double = 0.0
 
-    val ERROR_MAX_DIGITS_EXCEEDED: String = "ERROR_MAX_DIGITS_EXCEEDED"
+    /**
+     * Current Operation.
+     */
+    private var currentOperation: Operations? = null
+
+    /**
+     * User Memory.
+     *
+     * Used by the user to manage a calc memory.
+     */
+    private val userMemory: CalculatorUserMemory = CalculatorUserMemory()
+
+    /**
+     * Max digits allowed.
+     */
+    private val MAX_DIGITS_ALLOWED: Int = 16
+
+    /**
+     * Max digits Exceeded message.
+     */
+    private val ERROR_MAX_DIGITS_EXCEEDED: String = "ERROR_MAX_DIGITS_EXCEEDED"
 
     init {
         if (digits > MAX_DIGITS_ALLOWED) {
             throw Exception(ERROR_MAX_DIGITS_EXCEEDED)
         }
         initializeCalculator()
-        initializeUserMemory()
-    }
-
-    private fun initializeUserMemory() {
         userMemory.mrc()
     }
 
     fun initializeCalculator() {
         displayNumber = "0"
-        isOperatorSignalDisplayed = false;
-        tempMemory = 0.0
+        currentOperation = Operations.NONE
+        cleanDisplayOnNextInteraction = false;
+        currentTotal = 0.0
     }
 
     fun typeNumber(number: Int) {
-        if (displayNumber == "0" || isOperatorSignalDisplayed) {
+        if (displayNumber == "0" || cleanDisplayOnNextInteraction) {
             displayNumber = number.toString()
         } else {
             displayNumber += number.toString()
         }
-        isOperatorSignalDisplayed = false
+        cleanDisplayOnNextInteraction = false
     }
 
     fun add() {
-        performOperationClick(Operations.ADDITION, "+")
+        performOperation(Operations.ADDITION)
     }
 
     fun subtract() {
-        performOperationClick(Operations.SUBTRACTION, "-")
+        performOperation(Operations.SUBTRACTION)
     }
 
     fun divide() {
-        performOperationClick(Operations.DIVISION, "/")
+        performOperation(Operations.DIVISION)
     }
 
     fun multiply() {
-        performOperationClick(Operations.MULTIPLICATION, "*")
+        performOperation(Operations.MULTIPLICATION)
     }
 
-    fun performOperationClick(operation: Operations, operatorSignal: String) {
-        if (!isOperatorSignalDisplayed) {
-            this.updateTempMemory()
-        } else {
-            backspace()
-        }
+    fun performOperation(operation: Operations) {
+        this.updateTempMemory()
         currentOperation = operation
-        displayNumber = tempMemory.toString() + operatorSignal
-        isOperatorSignalDisplayed = true;
-    }
-
-    fun backspace() {
-        if (displayNumber.length > 0) displayNumber = displayNumber.substring(0, displayNumber.length - 1)
-        if (displayNumber == "") displayNumber = "0"
-
+        displayNumber = currentTotal.toString()
+        cleanDisplayOnNextInteraction = true
     }
 
     private fun updateTempMemory() {
-        when (currentOperation) {
-            Operations.ADDITION ->
-                tempMemory += displayNumber.toDouble()
-            Operations.SUBTRACTION ->
-                tempMemory -= displayNumber.toDouble()
-            Operations.DIVISION ->
-                tempMemory /= displayNumber.toDouble()
-            Operations.MULTIPLICATION ->
-                tempMemory *= displayNumber.toDouble()
-            else -> tempMemory = displayNumber.toDouble()
+        if (!cleanDisplayOnNextInteraction) {
+            when (currentOperation) {
+                Operations.ADDITION ->
+                    currentTotal += displayNumber.toDouble()
+                Operations.SUBTRACTION ->
+                    currentTotal -= displayNumber.toDouble()
+                Operations.DIVISION ->
+                    currentTotal /= displayNumber.toDouble()
+                Operations.MULTIPLICATION ->
+                    currentTotal *= displayNumber.toDouble()
+                Operations.NONE ->
+                    currentTotal = displayNumber.toDouble()
+            }
+        }
+    }
+
+    fun backspace() {
+        if (displayNumber.length > 0) {
+            displayNumber = displayNumber.substring(0, displayNumber.length - 1)
+        }
+        if (displayNumber == "") {
+            displayNumber = "0"
         }
     }
 
 
     fun equals() {
         this.updateTempMemory()
-        displayNumber = tempMemory.toString()
+        displayNumber = currentTotal.toString()
+        currentTotal = 0.0
     }
 
-    fun dot() {
-        if (!isOperatorSignalDisplayed) {
-            this.updateTempMemory()
-        } else {
-            backspace()
-        }
-        displayNumber = tempMemory.toString() + "."
+    fun typeDot() {
+        this.updateTempMemory()
+        displayNumber = currentTotal.toString() + "."
     }
 
     fun isDotVisible(): Boolean = displayNumber.contains(".")
 
     fun memoryAdd() {
-        if (isOperatorSignalDisplayed) {
-            this.userMemory.mPlus(displayNumber.substring(0, displayNumber.length - 1).toDouble())
-        } else {
-            this.userMemory.mPlus(displayNumber.toDouble())
-        }
+        this.userMemory.mPlus(displayNumber.toDouble())
     }
 
     fun memorySubtract() {
-        if (isOperatorSignalDisplayed) {
-            this.userMemory.mSubtract(displayNumber.substring(0, displayNumber.length - 1).toDouble())
-        } else {
-            this.userMemory.mSubtract(displayNumber.toDouble())
-        }
+        this.userMemory.mSubtract(displayNumber.toDouble())
     }
 
     fun memoryResultAndClean() {
@@ -131,23 +147,14 @@ class Calculator(val digits: Int) {
     }
 
     fun squareRoot() {
-        if (isOperatorSignalDisplayed) {
-            backspace()
-            isOperatorSignalDisplayed = false;
-        }
         displayNumber = Math.sqrt(displayNumber.toDouble()).toString()
-
     }
 
     fun percent() {
-        if (isOperatorSignalDisplayed) {
-            backspace()
-            isOperatorSignalDisplayed = false;
-        }
-        displayNumber = (displayNumber.toDouble() * tempMemory / 100).toString()
+        displayNumber = (displayNumber.toDouble() * currentTotal / 100).toString()
     }
 
     fun ce() {
-        displayNumber = "0"
+        initializeCalculator()
     }
 }

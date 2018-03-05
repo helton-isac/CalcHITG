@@ -11,48 +11,48 @@ import br.com.hitg.simplecalculator.BaseView
 interface CalculatorContract {
 
     /**
-     * Available Keys in the Simple Calculator
+     * Available Numbers in the Simple Calculator
      */
     enum class CalculatorNumbers {
 
         /**
-         * Key 1
+         * Number 1
          */
         ONE,
         /**
-         * Key 2
+         * Number 2
          */
         TWO,
         /**
-         * Key 3
+         * Number 3
          */
         THREE,
         /**
-         * Key 4
+         * Number 4
          */
         FOUR,
         /**
-         * Key 5
+         * Number 5
          */
         FIVE,
         /**
-         * Key 6
+         * Number 6
          */
         SIX,
         /**
-         * Key 7
+         * Number 7
          */
         SEVEN,
         /**
-         * Key 8
+         * Number 8
          */
         EIGHT,
         /**
-         * Key 9
+         * Number 9
          */
         NINE,
         /**
-         * Key 0
+         * Number 0
          */
         ZERO,
     }
@@ -132,12 +132,13 @@ interface CalculatorContract {
 
         /**
          * Calculate the square root of the number displayed
+         * and update the display with the result.
          */
         fun squareRoot()
 
         /**
          * Multiply the number in display for the last number in the calculator memory,
-         * divide it by 100 and finalize the calculation.
+         * divide it by 100 and shows the new number in the display.
          */
         fun percent()
 
@@ -154,7 +155,7 @@ interface CalculatorContract {
         /**
          * Clean the temp memory and the display
          */
-        fun resetCalculator()
+        fun ce()
     }
 
 }

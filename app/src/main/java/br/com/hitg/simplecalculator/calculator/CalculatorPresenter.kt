@@ -3,74 +3,8 @@ package br.com.hitg.simplecalculator.calculator
 import br.com.hitg.simplecalculator.calculator.CalculatorContract.CalculatorNumbers
 
 
-class CalculatorPresenter(val calculatorView: CalculatorContract.View) : CalculatorContract.Presenter {
-
-    override fun add() {
-        calculator.add()
-        calculatorView.updateDisplay(calculator.displayNumber)
-    }
-
-    override fun minus() {
-        calculator.subtract()
-        calculatorView.updateDisplay(calculator.displayNumber)
-    }
-
-    override fun divide() {
-        calculator.divide()
-        calculatorView.updateDisplay(calculator.displayNumber)
-    }
-
-    override fun multiply() {
-        calculator.multiply()
-        calculatorView.updateDisplay(calculator.displayNumber)
-    }
-
-    override fun typeDot() {
-        calculator.dot()
-        calculatorView.updateDisplay(calculator.displayNumber)
-    }
-
-    override fun typeEquals() {
-        calculator.equals()
-        calculatorView.updateDisplay(calculator.displayNumber)
-    }
-
-    override fun memoryAdd() {
-        calculator.memoryAdd()
-    }
-
-    override fun memorySubtract() {
-        calculator.memorySubtract()
-    }
-
-    override fun memoryResultAndClean() {
-        calculator.memoryResultAndClean()
-        calculatorView.updateDisplay(calculator.displayNumber)
-    }
-
-    override fun squareRoot() {
-        calculator.squareRoot()
-        calculatorView.updateDisplay(calculator.displayNumber)
-    }
-
-    override fun percent() {
-        calculator.percent()
-        calculatorView.updateDisplay(calculator.displayNumber)
-    }
-
-    override fun backspace() {
-        calculator.backspace()
-        calculatorView.updateDisplay(calculator.displayNumber)
-    }
-
-    override fun exit() {
-        calculatorView.finish()
-    }
-
-    override fun resetCalculator() {
-        calculator.ce()
-        calculatorView.updateDisplay(calculator.displayNumber)
-    }
+class CalculatorPresenter(val calculatorView: CalculatorContract.View) :
+        CalculatorContract.Presenter {
 
     private val calculator: Calculator
 
@@ -81,6 +15,71 @@ class CalculatorPresenter(val calculatorView: CalculatorContract.View) : Calcula
 
     override fun start() {
 
+    }
+
+    private fun executeOperationAndUpdateDisplay(operationMethod: () -> Unit) {
+        operationMethod()
+        updateDisplay()
+    }
+
+    private fun updateDisplay() {
+        calculatorView.updateDisplay(calculator.displayNumber)
+    }
+
+    override fun add() {
+        executeOperationAndUpdateDisplay { calculator.add() }
+    }
+
+    override fun minus() {
+        executeOperationAndUpdateDisplay { calculator.subtract() }
+    }
+
+    override fun divide() {
+        executeOperationAndUpdateDisplay { calculator.divide() }
+    }
+
+    override fun multiply() {
+        executeOperationAndUpdateDisplay { calculator.multiply() }
+    }
+
+    override fun typeDot() {
+        executeOperationAndUpdateDisplay { calculator.typeDot() }
+    }
+
+    override fun typeEquals() {
+        executeOperationAndUpdateDisplay { calculator.equals() }
+    }
+
+    override fun memoryAdd() {
+        executeOperationAndUpdateDisplay { calculator.memoryAdd() }
+    }
+
+    override fun memorySubtract() {
+        executeOperationAndUpdateDisplay { calculator.memorySubtract() }
+    }
+
+    override fun memoryResultAndClean() {
+        executeOperationAndUpdateDisplay { calculator.memoryResultAndClean() }
+    }
+
+    override fun squareRoot() {
+        executeOperationAndUpdateDisplay { calculator.squareRoot() }
+    }
+
+    override fun percent() {
+        executeOperationAndUpdateDisplay { calculator.percent() }
+    }
+
+    override fun backspace() {
+        executeOperationAndUpdateDisplay { calculator.backspace() }
+    }
+
+    override fun ce() {
+        executeOperationAndUpdateDisplay { calculator.ce() }
+    }
+
+    override fun exit() {
+        calculatorView.finish()
     }
 
 
@@ -97,7 +96,7 @@ class CalculatorPresenter(val calculatorView: CalculatorContract.View) : Calcula
             CalculatorNumbers.EIGHT -> calculator.typeNumber(8)
             CalculatorNumbers.NINE -> calculator.typeNumber(9)
         }
-        calculatorView.updateDisplay(calculator.displayNumber)
+        updateDisplay()
     }
 
     var calcMemory: Int = 0

@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import br.com.hitg.simplecalculator.R
-import br.com.hitg.simplecalculator.calculator.CalculatorContract.*
+import br.com.hitg.simplecalculator.calculator.CalculatorContract.CalculatorNumbers
 import kotlinx.android.synthetic.main.activity_calculator.*
 
 class CalculatorActivity : AppCompatActivity(), CalculatorContract.View {
@@ -13,6 +13,9 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calculator)
+
+        // TODO: Iniciar o Model/Presenter com o basico para o estado da calculadora:
+        // Display Number - User Memoria - Última Operação
 
         // Create the presenter
         presenter = CalculatorPresenter(this)
@@ -36,7 +39,7 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View {
             R.id.btnEight -> presenter.typeNumber(CalculatorNumbers.EIGHT)
             R.id.btnNine -> presenter.typeNumber(CalculatorNumbers.NINE)
             R.id.btnDot -> presenter.typeDot()
-            R.id.btnCE -> presenter.resetCalculator()
+            R.id.btnCE -> presenter.ce()
             R.id.btnOff -> presenter.exit()
             R.id.btnBack -> presenter.backspace()
             R.id.btnEquals -> presenter.typeEquals()

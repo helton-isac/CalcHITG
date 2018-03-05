@@ -21,5 +21,10 @@ enum class Operations {
     /**
      * Operation Times (×)
      */
-    MULTIPLICATION
+    MULTIPLICATION,
+
+    /**
+     * No Operations
+     */
+    NONE
 }
