@@ -75,4 +75,8 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View {
         }
 
     }
+
+    override fun showHideMemory(memoryInUse: Boolean) {
+        txtMemory.visibility = if (memoryInUse) View.VISIBLE else View.GONE
+    }
 }

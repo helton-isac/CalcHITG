@@ -303,5 +303,18 @@
         app:layout_constraintStart_toEndOf="@id/btnEquals"
         app:layout_constraintTop_toBottomOf="@+id/btnMinus" />
 
+    <TextView
+        android:id="@+id/txtMemory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="M"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:layout_constraintEnd_toEndOf="@+id/txtSignals"
+        app:layout_constraintStart_toEndOf="@+id/txtDisplay"
+        app:layout_constraintTop_toTopOf="@+id/txtSignals" />
+
 
 </android.support.constraint.ConstraintLayout>

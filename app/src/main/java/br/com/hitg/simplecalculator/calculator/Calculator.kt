@@ -1,5 +1,7 @@
 package br.com.hitg.simplecalculator.calculator
 
+import java.math.BigDecimal
+
 /**
  * Created by Helton on 20/02/2018.
  *
@@ -23,7 +25,7 @@ class Calculator(val digits: Int) {
     /**
      * Current Total of the current calculus.
      */
-    private var currentTotal: Double = 0.0
+    private var currentTotal: BigDecimal = BigDecimal(0)
 
     /**
      * Current Operation.
@@ -57,10 +59,18 @@ class Calculator(val digits: Int) {
     }
 
     fun initializeCalculator() {
-        displayNumber = "0"
+        applyResult(0.0)
         currentOperation = Operations.NONE
         cleanDisplayOnNextInteraction = false
-        currentTotal = 0.0
+        currentTotal = BigDecimal(0)
+    }
+
+    fun applyResult(value: Double) {
+        displayNumber = if (value % 1 == 0.0) {
+            value.toInt().toString()
+        } else {
+            value.toString()
+        }
     }
 
     fun typeNumber(number: Int) {
@@ -91,23 +101,23 @@ class Calculator(val digits: Int) {
     fun performOperation(operation: Operations) {
         this.updateTempMemory()
         currentOperation = operation
-        displayNumber = currentTotal.toString()
+        applyResult(currentTotal.toDouble())
         cleanDisplayOnNextInteraction = true
     }
 
     private fun updateTempMemory() {
-        if (!cleanDisplayOnNextInteraction) {
-            when (currentOperation) {
+        if (!cleanDisplayOnNextInteraction || currentOperation == Operations.NONE) {
+            currentTotal = when (currentOperation) {
                 Operations.ADDITION ->
-                    currentTotal += displayNumber.toDouble()
+                    currentTotal.add(BigDecimal.valueOf(displayNumber.toDouble()))
                 Operations.SUBTRACTION ->
-                    currentTotal -= displayNumber.toDouble()
+                    currentTotal.subtract(BigDecimal.valueOf(displayNumber.toDouble()))
                 Operations.DIVISION ->
-                    currentTotal /= displayNumber.toDouble()
+                    currentTotal.divide(BigDecimal.valueOf(displayNumber.toDouble()))
                 Operations.MULTIPLICATION ->
-                    currentTotal *= displayNumber.toDouble()
+                    currentTotal.multiply(BigDecimal.valueOf(displayNumber.toDouble()))
                 Operations.NONE ->
-                    currentTotal = displayNumber.toDouble()
+                    BigDecimal.valueOf(displayNumber.toDouble())
             }
         }
     }
@@ -124,15 +134,19 @@ class Calculator(val digits: Int) {
 
     fun equals() {
         this.updateTempMemory()
-        displayNumber = currentTotal.toString()
-        currentTotal = 0.0
+        applyResult(currentTotal.toDouble())
+        currentTotal = BigDecimal(0)
         currentOperation = Operations.NONE
         cleanDisplayOnNextInteraction = true
     }
 
     fun typeDot() {
-        this.updateTempMemory()
-        displayNumber = currentTotal.toString() + "."
+        if (!isDotVisible()) {
+            displayNumber = displayNumber + "."
+        } else if (cleanDisplayOnNextInteraction) {
+            displayNumber = "0."
+            cleanDisplayOnNextInteraction = false;
+        }
     }
 
     fun isDotVisible(): Boolean = displayNumber.contains(".")
@@ -146,18 +160,27 @@ class Calculator(val digits: Int) {
     }
 
     fun memoryResultAndClean() {
-        displayNumber = this.userMemory.mrc().toString()
+        applyResult(this.userMemory.mrc().toDouble())
     }
 
     fun squareRoot() {
-        displayNumber = Math.sqrt(displayNumber.toDouble()).toString()
+        applyResult(Math.sqrt(displayNumber.toDouble()))
     }
 
     fun percent() {
-        displayNumber = (displayNumber.toDouble() * currentTotal / 100).toString()
+        applyResult(
+                currentTotal.multiply(
+                        BigDecimal.valueOf(
+                                displayNumber.toDouble()))
+                        .divide(
+                                BigDecimal.valueOf(100)).toDouble())
     }
 
     fun ce() {
         initializeCalculator()
+    }
+
+    fun isMemoryInUse(): Boolean {
+        return userMemory.isMemoryInUse
     }
 }

@@ -1,23 +1,25 @@
 package br.com.hitg.simplecalculator.calculator
 
+import java.math.BigDecimal
+
 /**
  * Created by Helton on 24/02/2018.
  */
 class CalculatorUserMemory {
 
-    private var memory: Double = 0.0
+    private var memory: BigDecimal = BigDecimal(0)
 
     var isMemoryInUse: Boolean = false
 
     /**
      * Returns the current memory and reset
      */
-    fun mrc(): Double {
+    fun mrc(): BigDecimal {
         try {
             return memory
         } finally {
             isMemoryInUse = false
-            memory = 0.0
+            memory = BigDecimal(0)
         }
     }
 
@@ -26,7 +28,7 @@ class CalculatorUserMemory {
      */
     fun mPlus(value: Double) {
         isMemoryInUse = true
-        memory += value
+        memory = memory.add(BigDecimal.valueOf(value))
     }
 
     /**
@@ -34,6 +36,6 @@ class CalculatorUserMemory {
      */
     fun mSubtract(value: Double) {
         isMemoryInUse = true
-        memory -= value
+        memory = memory.subtract(BigDecimal.valueOf(value))
     }
 }

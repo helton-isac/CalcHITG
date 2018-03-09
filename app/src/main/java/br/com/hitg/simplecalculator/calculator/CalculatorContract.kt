@@ -71,6 +71,8 @@ interface CalculatorContract {
         fun updateOperation(operation: Operations)
 
         fun finish()
+
+        fun showHideMemory(memoryInUse: Boolean)
     }
 
     /**
