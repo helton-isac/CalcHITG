@@ -160,7 +160,9 @@ class Calculator(val digits: Int) {
     }
 
     fun memoryResultAndClean() {
-        applyResult(this.userMemory.mrc().toDouble())
+        if (this.userMemory.isMemoryInUse) {
+            applyResult(this.userMemory.mrc().toDouble())
+        }
     }
 
     fun squareRoot() {

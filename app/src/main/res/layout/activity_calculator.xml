@@ -308,7 +308,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
-        android:text="M"
+        android:text="@string/memory_symbol"
         android:textSize="14sp"
         android:textStyle="bold"
         android:typeface="normal"
