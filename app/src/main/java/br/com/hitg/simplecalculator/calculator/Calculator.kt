@@ -181,10 +181,12 @@ class Calculator(val digits: Int) {
     fun isDotVisible(): Boolean = displayNumber.contains(".")
 
     fun memoryAdd() {
+        equals()
         userMemory.mPlus(BigDecimal(displayNumber))
     }
 
     fun memorySubtract() {
+        equals()
         userMemory.mSubtract(BigDecimal(displayNumber))
     }
 

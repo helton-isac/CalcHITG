@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Simple Calculator</string>
+    <string name="app_name">Calculator</string>
     <string name="digit_0">0</string>
     <string name="digit_1">1</string>
     <string name="digit_2">2</string>
@@ -26,4 +26,5 @@
     <string name="off">OFF</string>
     <string name="error_max_digits_allowed">Error: The maximum number of digits allowed is </string>
     <string name="memory_symbol">M</string>
+    <string name="error">Error</string>
 </resources>

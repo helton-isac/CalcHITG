@@ -33,11 +33,69 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="CalculatorPresenter.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorPresenter.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="56" column="43" lean-forward="false" selection-start-line="56" selection-start-column="43" selection-end-line="56" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CalculatorActivity.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorActivity.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="46" column="53" lean-forward="false" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
+              <folding>
+                <element signature="e#2760#2774#1" expanded="true" />
+                <marker date="1520652815880" expanded="false" signature="3129:3147" ph="&quot;+&quot;" />
+                <marker date="1520652815880" expanded="false" signature="3206:3225" ph="&quot;-&quot;" />
+                <marker date="1520652815880" expanded="true" signature="3287:3315" ph="&quot;×&quot;" />
+                <marker date="1520652815880" expanded="false" signature="3371:3393" ph="&quot;÷&quot;" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="4" column="37" lean-forward="false" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TextView.class" pinned="false" current-in-tab="false">
+        <entry file="jar://G:/Users/Helton/AppData/Local/Android/sdk/platforms/android-26/android.jar!/android/widget/TextView.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="27">
+              <caret line="674" column="70" lean-forward="false" selection-start-line="674" selection-start-column="70" selection-end-line="674" selection-end-column="70" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Calculator.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/Calculator.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="188" column="16" lean-forward="false" selection-start-line="188" selection-start-column="16" selection-end-line="188" selection-end-column="16" />
+              <folding>
+                <element signature="e#49#194#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="CalculatorContract.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorContract.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="74" column="26" lean-forward="false" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="26" />
+            <state relative-caret-position="192">
+              <caret line="124" column="12" lean-forward="false" selection-start-line="124" selection-start-column="12" selection-end-line="124" selection-end-column="12" />
               <folding>
                 <element signature="e#374#962#0" expanded="false" />
               </folding>
@@ -45,87 +103,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_calculator.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_calculator.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1800">
-              <caret line="171" column="21" lean-forward="false" selection-start-line="171" selection-start-column="21" selection-end-line="171" selection-end-column="21" />
-              <folding>
-                <element signature="e#1011#1028#0" expanded="true" />
-                <element signature="e#1672#1691#0" expanded="true" />
-                <marker date="1520555049770" expanded="false" signature="2036:2058" ph="&quot;%&quot;" />
-                <marker date="1520555049770" expanded="false" signature="2506:2532" ph="&quot;√&quot;" />
-                <marker date="1520555049770" expanded="false" signature="3268:3281" ph="&quot;OFF&quot;" />
-                <marker date="1520555049770" expanded="false" signature="3990:4009" ph="&quot;⌫&quot;" />
-                <marker date="1520555049770" expanded="false" signature="4473:4486" ph="&quot;MRC&quot;" />
-                <marker date="1520555049770" expanded="false" signature="4872:4889" ph="&quot;M-&quot;" />
-                <marker date="1520555049770" expanded="false" signature="5278:5294" ph="&quot;M+&quot;" />
-                <marker date="1520555049770" expanded="false" signature="5672:5684" ph="&quot;CE&quot;" />
-                <marker date="1520555049770" expanded="false" signature="6061:6078" ph="&quot;7&quot;" />
-                <marker date="1520555049770" expanded="false" signature="6457:6474" ph="&quot;8&quot;" />
-                <marker date="1520555049770" expanded="false" signature="6858:6875" ph="&quot;9&quot;" />
-                <marker date="1520555049770" expanded="false" signature="7261:7284" ph="&quot;÷&quot;" />
-                <marker date="1520555049770" expanded="false" signature="7659:7676" ph="&quot;4&quot;" />
-                <marker date="1520555049770" expanded="false" signature="8054:8071" ph="&quot;5&quot;" />
-                <marker date="1520555049770" expanded="false" signature="8450:8467" ph="&quot;6&quot;" />
-                <marker date="1520555049770" expanded="false" signature="8857:8886" ph="&quot;×&quot;" />
-                <marker date="1520555049770" expanded="false" signature="9260:9277" ph="&quot;1&quot;" />
-                <marker date="1520555049770" expanded="false" signature="9653:9670" ph="&quot;2&quot;" />
-                <marker date="1520555049770" expanded="false" signature="10051:10068" ph="&quot;3&quot;" />
-                <marker date="1520555049770" expanded="false" signature="10451:10471" ph="&quot;-&quot;" />
-                <marker date="1520555049770" expanded="false" signature="10849:10866" ph="&quot;0&quot;" />
-                <marker date="1520555049770" expanded="false" signature="11239:11257" ph="&quot;.&quot;" />
-                <marker date="1520555049770" expanded="false" signature="11639:11660" ph="&quot;=&quot;" />
-                <marker date="1520555049770" expanded="false" signature="12040:12059" ph="&quot;+&quot;" />
-              </folding>
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Calculator.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/Calculator.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="177" column="0" lean-forward="false" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CalculatorPresenter.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorPresenter.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="28" column="31" lean-forward="false" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CalculatorUserMemory.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorUserMemory.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="28" column="8" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+            <state relative-caret-position="243">
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CalculatorActivity.kt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorActivity.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="79" column="75" lean-forward="false" selection-start-line="79" selection-start-column="75" selection-end-line="79" selection-end-column="75" />
-              <folding>
-                <marker date="1520555109408" expanded="false" signature="2865:2883" ph="&quot;+&quot;" />
-                <marker date="1520555109408" expanded="false" signature="2942:2961" ph="&quot;-&quot;" />
-                <marker date="1520555109408" expanded="false" signature="3023:3051" ph="&quot;×&quot;" />
-                <marker date="1520555109408" expanded="false" signature="3107:3129" ph="&quot;÷&quot;" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -166,6 +149,9 @@
       <find>equ</find>
       <find>displayNumber =</find>
       <find>dot</find>
+      <find>valu</find>
+      <find>lastOperation</find>
+      <find>Mem</find>
     </findStrings>
     <replaceStrings>
       <replace>0dp</replace>
@@ -2005,15 +1991,15 @@
         <option value="$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/view/CalculatorActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorBLL.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorKeys.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/Operations.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorUserMemory.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/Calculator.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorPresenter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorContract.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_calculator.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorUserMemory.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/Calculator.kt" />
       </list>
     </option>
   </component>
@@ -2038,6 +2024,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -2162,7 +2149,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="AndroidView">
@@ -2189,6 +2175,24 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimpleCalculator" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mipmap" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2292,7 +2296,8 @@
     <property name="DEBUGGABLE_DEVICE" value="lge-nexus_5x-01b99be75ccc25eb" />
     <property name="DEBUGGABLE_PROCESS" value="br.com.hitg.simplecalculator" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
-    <property name="DEBUGGER_ID" value="Auto" />
+    <property name="DEBUGGER_ID" value="Java" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://H:/version-control/SimpleCalculator/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorActivity.kt&#10;memoryAdd&#9;null&#9;null&#10;&quot;ERRO&quot;&#9;null&#9;null&#10;&quot;Erro&quot;&#9;null&#9;null&#10;ic_lau&#9;PSI&#9;JAVA://br.com.hitg.simplecalculator.R.mipmap#ic_launcher" />
   </component>
   <component name="RecentsManager">
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
@@ -2387,7 +2392,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520555249342" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520654421043" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2435,7 +2440,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520555249343" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520654421043" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2597,7 +2602,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520555249344" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520654421044" />
       </method>
     </configuration>
     <list size="1">
@@ -2639,40 +2644,41 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739422" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45879734" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4365256" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22014925" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22014925" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4365256" sideWeight="0.4978678" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26280624" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2713,117 +2719,19 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/Calculator.kt</url>
+          <line>117</line>
+          <properties />
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorKeys.kt" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorPresenter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="21" column="51" lean-forward="false" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="891">
-          <caret line="37" column="42" lean-forward="false" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
-          <folding>
-            <marker date="1520555109408" expanded="false" signature="2865:2883" ph="&quot;+&quot;" />
-            <marker date="1520555109408" expanded="false" signature="2942:2961" ph="&quot;-&quot;" />
-            <marker date="1520555109408" expanded="false" signature="3023:3051" ph="&quot;×&quot;" />
-            <marker date="1520555109408" expanded="false" signature="3107:3129" ph="&quot;÷&quot;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/Calculator.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="16" column="8" lean-forward="false" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorContract.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="e#374#962#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorKeys.kt" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorPresenter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="21" column="51" lean-forward="false" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="891">
-          <caret line="37" column="42" lean-forward="false" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
-          <folding>
-            <marker date="1520555109408" expanded="false" signature="2865:2883" ph="&quot;+&quot;" />
-            <marker date="1520555109408" expanded="false" signature="2942:2961" ph="&quot;-&quot;" />
-            <marker date="1520555109408" expanded="false" signature="3023:3051" ph="&quot;×&quot;" />
-            <marker date="1520555109408" expanded="false" signature="3107:3129" ph="&quot;÷&quot;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/Calculator.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="16" column="8" lean-forward="false" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_calculator.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4212">
-          <caret line="156" column="34" lean-forward="false" selection-start-line="156" selection-start-column="34" selection-end-line="156" selection-end-column="34" />
-          <folding>
-            <element signature="e#1011#1028#0" expanded="true" />
-            <element signature="e#1672#1691#0" expanded="true" />
-            <marker date="1520555049770" expanded="false" signature="2036:2058" ph="&quot;%&quot;" />
-            <marker date="1520555049770" expanded="false" signature="2506:2532" ph="&quot;√&quot;" />
-            <marker date="1520555049770" expanded="false" signature="3268:3281" ph="&quot;OFF&quot;" />
-            <marker date="1520555049770" expanded="false" signature="3990:4009" ph="&quot;⌫&quot;" />
-            <marker date="1520555049770" expanded="false" signature="4473:4486" ph="&quot;MRC&quot;" />
-            <marker date="1520555049770" expanded="false" signature="4872:4889" ph="&quot;M-&quot;" />
-            <marker date="1520555049770" expanded="false" signature="5278:5294" ph="&quot;M+&quot;" />
-            <marker date="1520555049770" expanded="false" signature="5672:5684" ph="&quot;CE&quot;" />
-            <marker date="1520555049770" expanded="false" signature="6061:6078" ph="&quot;7&quot;" />
-            <marker date="1520555049770" expanded="false" signature="6457:6474" ph="&quot;8&quot;" />
-            <marker date="1520555049770" expanded="false" signature="6858:6875" ph="&quot;9&quot;" />
-            <marker date="1520555049770" expanded="false" signature="7261:7284" ph="&quot;÷&quot;" />
-            <marker date="1520555049770" expanded="false" signature="7659:7676" ph="&quot;4&quot;" />
-            <marker date="1520555049770" expanded="false" signature="8054:8071" ph="&quot;5&quot;" />
-            <marker date="1520555049770" expanded="false" signature="8450:8467" ph="&quot;6&quot;" />
-            <marker date="1520555049770" expanded="false" signature="8857:8886" ph="&quot;×&quot;" />
-            <marker date="1520555049770" expanded="false" signature="9260:9277" ph="&quot;1&quot;" />
-            <marker date="1520555049770" expanded="false" signature="9653:9670" ph="&quot;2&quot;" />
-            <marker date="1520555049770" expanded="false" signature="10051:10068" ph="&quot;3&quot;" />
-            <marker date="1520555049770" expanded="false" signature="10451:10471" ph="&quot;-&quot;" />
-            <marker date="1520555049770" expanded="false" signature="10849:10866" ph="&quot;0&quot;" />
-            <marker date="1520555049770" expanded="false" signature="11239:11257" ph="&quot;.&quot;" />
-            <marker date="1520555049770" expanded="false" signature="11639:11660" ph="&quot;=&quot;" />
-            <marker date="1520555049770" expanded="false" signature="12040:12059" ph="&quot;+&quot;" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
@@ -2844,10 +2752,11 @@
         <state relative-caret-position="972">
           <caret line="36" column="38" lean-forward="false" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
           <folding>
-            <marker date="1520555109408" expanded="false" signature="2865:2883" ph="&quot;+&quot;" />
-            <marker date="1520555109408" expanded="false" signature="2942:2961" ph="&quot;-&quot;" />
-            <marker date="1520555109408" expanded="false" signature="3023:3051" ph="&quot;×&quot;" />
-            <marker date="1520555109408" expanded="false" signature="3107:3129" ph="&quot;÷&quot;" />
+            <element signature="e#2760#2774#1" expanded="true" />
+            <marker date="1520652815880" expanded="false" signature="3129:3147" ph="&quot;+&quot;" />
+            <marker date="1520652815880" expanded="false" signature="3206:3225" ph="&quot;-&quot;" />
+            <marker date="1520652815880" expanded="true" signature="3287:3315" ph="&quot;×&quot;" />
+            <marker date="1520652815880" expanded="false" signature="3371:3393" ph="&quot;÷&quot;" />
           </folding>
         </state>
       </provider>
@@ -2861,41 +2770,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorAux.kt" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_calculator.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
           <folding>
             <element signature="e#1011#1028#0" expanded="true" />
             <element signature="e#1672#1691#0" expanded="true" />
-            <marker date="1520555049770" expanded="false" signature="2036:2058" ph="&quot;%&quot;" />
-            <marker date="1520555049770" expanded="false" signature="2506:2532" ph="&quot;√&quot;" />
-            <marker date="1520555049770" expanded="false" signature="3268:3281" ph="&quot;OFF&quot;" />
-            <marker date="1520555049770" expanded="false" signature="3990:4009" ph="&quot;⌫&quot;" />
-            <marker date="1520555049770" expanded="false" signature="4473:4486" ph="&quot;MRC&quot;" />
-            <marker date="1520555049770" expanded="false" signature="4872:4889" ph="&quot;M-&quot;" />
-            <marker date="1520555049770" expanded="false" signature="5278:5294" ph="&quot;M+&quot;" />
-            <marker date="1520555049770" expanded="false" signature="5672:5684" ph="&quot;CE&quot;" />
-            <marker date="1520555049770" expanded="false" signature="6061:6078" ph="&quot;7&quot;" />
-            <marker date="1520555049770" expanded="false" signature="6457:6474" ph="&quot;8&quot;" />
-            <marker date="1520555049770" expanded="false" signature="6858:6875" ph="&quot;9&quot;" />
-            <marker date="1520555049770" expanded="false" signature="7261:7284" ph="&quot;÷&quot;" />
-            <marker date="1520555049770" expanded="false" signature="7659:7676" ph="&quot;4&quot;" />
-            <marker date="1520555049770" expanded="false" signature="8054:8071" ph="&quot;5&quot;" />
-            <marker date="1520555049770" expanded="false" signature="8450:8467" ph="&quot;6&quot;" />
-            <marker date="1520555049770" expanded="false" signature="8857:8886" ph="&quot;×&quot;" />
-            <marker date="1520555049770" expanded="false" signature="9260:9277" ph="&quot;1&quot;" />
-            <marker date="1520555049770" expanded="false" signature="9653:9670" ph="&quot;2&quot;" />
-            <marker date="1520555049770" expanded="false" signature="10051:10068" ph="&quot;3&quot;" />
-            <marker date="1520555049770" expanded="false" signature="10451:10471" ph="&quot;-&quot;" />
-            <marker date="1520555049770" expanded="false" signature="10849:10866" ph="&quot;0&quot;" />
-            <marker date="1520555049770" expanded="false" signature="11239:11257" ph="&quot;.&quot;" />
-            <marker date="1520555049770" expanded="false" signature="11639:11660" ph="&quot;=&quot;" />
-            <marker date="1520555049770" expanded="false" signature="12040:12059" ph="&quot;+&quot;" />
+            <element signature="e#12489#12512#0" expanded="true" />
+            <marker date="1520556415077" expanded="false" signature="2036:2058" ph="&quot;%&quot;" />
+            <marker date="1520556415077" expanded="false" signature="2506:2532" ph="&quot;√&quot;" />
+            <marker date="1520556415077" expanded="false" signature="3268:3281" ph="&quot;OFF&quot;" />
+            <marker date="1520556415077" expanded="false" signature="3990:4009" ph="&quot;⌫&quot;" />
+            <marker date="1520556415077" expanded="false" signature="4473:4486" ph="&quot;MRC&quot;" />
+            <marker date="1520556415077" expanded="false" signature="4872:4889" ph="&quot;M-&quot;" />
+            <marker date="1520556415077" expanded="false" signature="5278:5294" ph="&quot;M+&quot;" />
+            <marker date="1520556415077" expanded="false" signature="5672:5684" ph="&quot;CE&quot;" />
+            <marker date="1520556415077" expanded="false" signature="6061:6078" ph="&quot;7&quot;" />
+            <marker date="1520556415077" expanded="false" signature="6457:6474" ph="&quot;8&quot;" />
+            <marker date="1520556415077" expanded="false" signature="6858:6875" ph="&quot;9&quot;" />
+            <marker date="1520556415077" expanded="false" signature="7261:7284" ph="&quot;÷&quot;" />
+            <marker date="1520556415077" expanded="false" signature="7659:7676" ph="&quot;4&quot;" />
+            <marker date="1520556415077" expanded="false" signature="8054:8071" ph="&quot;5&quot;" />
+            <marker date="1520556415077" expanded="false" signature="8450:8467" ph="&quot;6&quot;" />
+            <marker date="1520556415077" expanded="false" signature="8857:8886" ph="&quot;×&quot;" />
+            <marker date="1520556415077" expanded="false" signature="9260:9277" ph="&quot;1&quot;" />
+            <marker date="1520556415077" expanded="false" signature="9653:9670" ph="&quot;2&quot;" />
+            <marker date="1520556415077" expanded="false" signature="10051:10068" ph="&quot;3&quot;" />
+            <marker date="1520556415077" expanded="false" signature="10451:10471" ph="&quot;-&quot;" />
+            <marker date="1520556415077" expanded="false" signature="10849:10866" ph="&quot;0&quot;" />
+            <marker date="1520556415077" expanded="false" signature="11239:11257" ph="&quot;.&quot;" />
+            <marker date="1520556415077" expanded="false" signature="11639:11660" ph="&quot;=&quot;" />
+            <marker date="1520556415077" expanded="false" signature="12040:12059" ph="&quot;+&quot;" />
           </folding>
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorActivity.kt">
@@ -2903,10 +2813,11 @@
         <state relative-caret-position="1620">
           <caret line="64" column="29" lean-forward="false" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="29" />
           <folding>
-            <marker date="1520555109408" expanded="false" signature="2865:2883" ph="&quot;+&quot;" />
-            <marker date="1520555109408" expanded="false" signature="2942:2961" ph="&quot;-&quot;" />
-            <marker date="1520555109408" expanded="false" signature="3023:3051" ph="&quot;×&quot;" />
-            <marker date="1520555109408" expanded="false" signature="3107:3129" ph="&quot;÷&quot;" />
+            <element signature="e#2760#2774#1" expanded="true" />
+            <marker date="1520652815880" expanded="false" signature="3129:3147" ph="&quot;+&quot;" />
+            <marker date="1520652815880" expanded="false" signature="3206:3225" ph="&quot;-&quot;" />
+            <marker date="1520652815880" expanded="true" signature="3287:3315" ph="&quot;×&quot;" />
+            <marker date="1520652815880" expanded="false" signature="3371:3393" ph="&quot;÷&quot;" />
           </folding>
         </state>
       </provider>
@@ -2920,41 +2831,42 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_calculator.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
           <folding>
             <element signature="e#1011#1028#0" expanded="true" />
             <element signature="e#1672#1691#0" expanded="true" />
-            <marker date="1520555049770" expanded="false" signature="2036:2058" ph="&quot;%&quot;" />
-            <marker date="1520555049770" expanded="false" signature="2506:2532" ph="&quot;√&quot;" />
-            <marker date="1520555049770" expanded="false" signature="3268:3281" ph="&quot;OFF&quot;" />
-            <marker date="1520555049770" expanded="false" signature="3990:4009" ph="&quot;⌫&quot;" />
-            <marker date="1520555049770" expanded="false" signature="4473:4486" ph="&quot;MRC&quot;" />
-            <marker date="1520555049770" expanded="false" signature="4872:4889" ph="&quot;M-&quot;" />
-            <marker date="1520555049770" expanded="false" signature="5278:5294" ph="&quot;M+&quot;" />
-            <marker date="1520555049770" expanded="false" signature="5672:5684" ph="&quot;CE&quot;" />
-            <marker date="1520555049770" expanded="false" signature="6061:6078" ph="&quot;7&quot;" />
-            <marker date="1520555049770" expanded="false" signature="6457:6474" ph="&quot;8&quot;" />
-            <marker date="1520555049770" expanded="false" signature="6858:6875" ph="&quot;9&quot;" />
-            <marker date="1520555049770" expanded="false" signature="7261:7284" ph="&quot;÷&quot;" />
-            <marker date="1520555049770" expanded="false" signature="7659:7676" ph="&quot;4&quot;" />
-            <marker date="1520555049770" expanded="false" signature="8054:8071" ph="&quot;5&quot;" />
-            <marker date="1520555049770" expanded="false" signature="8450:8467" ph="&quot;6&quot;" />
-            <marker date="1520555049770" expanded="false" signature="8857:8886" ph="&quot;×&quot;" />
-            <marker date="1520555049770" expanded="false" signature="9260:9277" ph="&quot;1&quot;" />
-            <marker date="1520555049770" expanded="false" signature="9653:9670" ph="&quot;2&quot;" />
-            <marker date="1520555049770" expanded="false" signature="10051:10068" ph="&quot;3&quot;" />
-            <marker date="1520555049770" expanded="false" signature="10451:10471" ph="&quot;-&quot;" />
-            <marker date="1520555049770" expanded="false" signature="10849:10866" ph="&quot;0&quot;" />
-            <marker date="1520555049770" expanded="false" signature="11239:11257" ph="&quot;.&quot;" />
-            <marker date="1520555049770" expanded="false" signature="11639:11660" ph="&quot;=&quot;" />
-            <marker date="1520555049770" expanded="false" signature="12040:12059" ph="&quot;+&quot;" />
+            <element signature="e#12489#12512#0" expanded="true" />
+            <marker date="1520556415077" expanded="false" signature="2036:2058" ph="&quot;%&quot;" />
+            <marker date="1520556415077" expanded="false" signature="2506:2532" ph="&quot;√&quot;" />
+            <marker date="1520556415077" expanded="false" signature="3268:3281" ph="&quot;OFF&quot;" />
+            <marker date="1520556415077" expanded="false" signature="3990:4009" ph="&quot;⌫&quot;" />
+            <marker date="1520556415077" expanded="false" signature="4473:4486" ph="&quot;MRC&quot;" />
+            <marker date="1520556415077" expanded="false" signature="4872:4889" ph="&quot;M-&quot;" />
+            <marker date="1520556415077" expanded="false" signature="5278:5294" ph="&quot;M+&quot;" />
+            <marker date="1520556415077" expanded="false" signature="5672:5684" ph="&quot;CE&quot;" />
+            <marker date="1520556415077" expanded="false" signature="6061:6078" ph="&quot;7&quot;" />
+            <marker date="1520556415077" expanded="false" signature="6457:6474" ph="&quot;8&quot;" />
+            <marker date="1520556415077" expanded="false" signature="6858:6875" ph="&quot;9&quot;" />
+            <marker date="1520556415077" expanded="false" signature="7261:7284" ph="&quot;÷&quot;" />
+            <marker date="1520556415077" expanded="false" signature="7659:7676" ph="&quot;4&quot;" />
+            <marker date="1520556415077" expanded="false" signature="8054:8071" ph="&quot;5&quot;" />
+            <marker date="1520556415077" expanded="false" signature="8450:8467" ph="&quot;6&quot;" />
+            <marker date="1520556415077" expanded="false" signature="8857:8886" ph="&quot;×&quot;" />
+            <marker date="1520556415077" expanded="false" signature="9260:9277" ph="&quot;1&quot;" />
+            <marker date="1520556415077" expanded="false" signature="9653:9670" ph="&quot;2&quot;" />
+            <marker date="1520556415077" expanded="false" signature="10051:10068" ph="&quot;3&quot;" />
+            <marker date="1520556415077" expanded="false" signature="10451:10471" ph="&quot;-&quot;" />
+            <marker date="1520556415077" expanded="false" signature="10849:10866" ph="&quot;0&quot;" />
+            <marker date="1520556415077" expanded="false" signature="11239:11257" ph="&quot;.&quot;" />
+            <marker date="1520556415077" expanded="false" signature="11639:11660" ph="&quot;=&quot;" />
+            <marker date="1520556415077" expanded="false" signature="12040:12059" ph="&quot;+&quot;" />
           </folding>
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorAux.kt" />
@@ -2970,50 +2882,52 @@
         <state relative-caret-position="702">
           <caret line="26" column="79" lean-forward="false" selection-start-line="26" selection-start-column="79" selection-end-line="26" selection-end-column="79" />
           <folding>
-            <marker date="1520555109408" expanded="false" signature="2865:2883" ph="&quot;+&quot;" />
-            <marker date="1520555109408" expanded="false" signature="2942:2961" ph="&quot;-&quot;" />
-            <marker date="1520555109408" expanded="false" signature="3023:3051" ph="&quot;×&quot;" />
-            <marker date="1520555109408" expanded="false" signature="3107:3129" ph="&quot;÷&quot;" />
+            <element signature="e#2760#2774#1" expanded="true" />
+            <marker date="1520652815880" expanded="false" signature="3129:3147" ph="&quot;+&quot;" />
+            <marker date="1520652815880" expanded="false" signature="3206:3225" ph="&quot;-&quot;" />
+            <marker date="1520652815880" expanded="true" signature="3287:3315" ph="&quot;×&quot;" />
+            <marker date="1520652815880" expanded="false" signature="3371:3393" ph="&quot;÷&quot;" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_calculator.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6885">
           <caret line="255" column="23" lean-forward="false" selection-start-line="255" selection-start-column="23" selection-end-line="255" selection-end-column="23" />
           <folding>
             <element signature="e#1011#1028#0" expanded="true" />
             <element signature="e#1672#1691#0" expanded="true" />
-            <marker date="1520555049770" expanded="false" signature="2036:2058" ph="&quot;%&quot;" />
-            <marker date="1520555049770" expanded="false" signature="2506:2532" ph="&quot;√&quot;" />
-            <marker date="1520555049770" expanded="false" signature="3268:3281" ph="&quot;OFF&quot;" />
-            <marker date="1520555049770" expanded="false" signature="3990:4009" ph="&quot;⌫&quot;" />
-            <marker date="1520555049770" expanded="false" signature="4473:4486" ph="&quot;MRC&quot;" />
-            <marker date="1520555049770" expanded="false" signature="4872:4889" ph="&quot;M-&quot;" />
-            <marker date="1520555049770" expanded="false" signature="5278:5294" ph="&quot;M+&quot;" />
-            <marker date="1520555049770" expanded="false" signature="5672:5684" ph="&quot;CE&quot;" />
-            <marker date="1520555049770" expanded="false" signature="6061:6078" ph="&quot;7&quot;" />
-            <marker date="1520555049770" expanded="false" signature="6457:6474" ph="&quot;8&quot;" />
-            <marker date="1520555049770" expanded="false" signature="6858:6875" ph="&quot;9&quot;" />
-            <marker date="1520555049770" expanded="false" signature="7261:7284" ph="&quot;÷&quot;" />
-            <marker date="1520555049770" expanded="false" signature="7659:7676" ph="&quot;4&quot;" />
-            <marker date="1520555049770" expanded="false" signature="8054:8071" ph="&quot;5&quot;" />
-            <marker date="1520555049770" expanded="false" signature="8450:8467" ph="&quot;6&quot;" />
-            <marker date="1520555049770" expanded="false" signature="8857:8886" ph="&quot;×&quot;" />
-            <marker date="1520555049770" expanded="false" signature="9260:9277" ph="&quot;1&quot;" />
-            <marker date="1520555049770" expanded="false" signature="9653:9670" ph="&quot;2&quot;" />
-            <marker date="1520555049770" expanded="false" signature="10051:10068" ph="&quot;3&quot;" />
-            <marker date="1520555049770" expanded="false" signature="10451:10471" ph="&quot;-&quot;" />
-            <marker date="1520555049770" expanded="false" signature="10849:10866" ph="&quot;0&quot;" />
-            <marker date="1520555049770" expanded="false" signature="11239:11257" ph="&quot;.&quot;" />
-            <marker date="1520555049770" expanded="false" signature="11639:11660" ph="&quot;=&quot;" />
-            <marker date="1520555049770" expanded="false" signature="12040:12059" ph="&quot;+&quot;" />
+            <element signature="e#12489#12512#0" expanded="true" />
+            <marker date="1520556415077" expanded="false" signature="2036:2058" ph="&quot;%&quot;" />
+            <marker date="1520556415077" expanded="false" signature="2506:2532" ph="&quot;√&quot;" />
+            <marker date="1520556415077" expanded="false" signature="3268:3281" ph="&quot;OFF&quot;" />
+            <marker date="1520556415077" expanded="false" signature="3990:4009" ph="&quot;⌫&quot;" />
+            <marker date="1520556415077" expanded="false" signature="4473:4486" ph="&quot;MRC&quot;" />
+            <marker date="1520556415077" expanded="false" signature="4872:4889" ph="&quot;M-&quot;" />
+            <marker date="1520556415077" expanded="false" signature="5278:5294" ph="&quot;M+&quot;" />
+            <marker date="1520556415077" expanded="false" signature="5672:5684" ph="&quot;CE&quot;" />
+            <marker date="1520556415077" expanded="false" signature="6061:6078" ph="&quot;7&quot;" />
+            <marker date="1520556415077" expanded="false" signature="6457:6474" ph="&quot;8&quot;" />
+            <marker date="1520556415077" expanded="false" signature="6858:6875" ph="&quot;9&quot;" />
+            <marker date="1520556415077" expanded="false" signature="7261:7284" ph="&quot;÷&quot;" />
+            <marker date="1520556415077" expanded="false" signature="7659:7676" ph="&quot;4&quot;" />
+            <marker date="1520556415077" expanded="false" signature="8054:8071" ph="&quot;5&quot;" />
+            <marker date="1520556415077" expanded="false" signature="8450:8467" ph="&quot;6&quot;" />
+            <marker date="1520556415077" expanded="false" signature="8857:8886" ph="&quot;×&quot;" />
+            <marker date="1520556415077" expanded="false" signature="9260:9277" ph="&quot;1&quot;" />
+            <marker date="1520556415077" expanded="false" signature="9653:9670" ph="&quot;2&quot;" />
+            <marker date="1520556415077" expanded="false" signature="10051:10068" ph="&quot;3&quot;" />
+            <marker date="1520556415077" expanded="false" signature="10451:10471" ph="&quot;-&quot;" />
+            <marker date="1520556415077" expanded="false" signature="10849:10866" ph="&quot;0&quot;" />
+            <marker date="1520556415077" expanded="false" signature="11239:11257" ph="&quot;.&quot;" />
+            <marker date="1520556415077" expanded="false" signature="11639:11660" ph="&quot;=&quot;" />
+            <marker date="1520556415077" expanded="false" signature="12040:12059" ph="&quot;+&quot;" />
           </folding>
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorActivity.kt">
@@ -3021,10 +2935,11 @@
         <state relative-caret-position="729">
           <caret line="27" column="27" lean-forward="true" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
           <folding>
-            <marker date="1520555109408" expanded="false" signature="2865:2883" ph="&quot;+&quot;" />
-            <marker date="1520555109408" expanded="false" signature="2942:2961" ph="&quot;-&quot;" />
-            <marker date="1520555109408" expanded="false" signature="3023:3051" ph="&quot;×&quot;" />
-            <marker date="1520555109408" expanded="false" signature="3107:3129" ph="&quot;÷&quot;" />
+            <element signature="e#2760#2774#1" expanded="true" />
+            <marker date="1520652815880" expanded="false" signature="3129:3147" ph="&quot;+&quot;" />
+            <marker date="1520652815880" expanded="false" signature="3206:3225" ph="&quot;-&quot;" />
+            <marker date="1520652815880" expanded="true" signature="3287:3315" ph="&quot;×&quot;" />
+            <marker date="1520652815880" expanded="false" signature="3371:3393" ph="&quot;÷&quot;" />
           </folding>
         </state>
       </provider>
@@ -3038,41 +2953,42 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_calculator.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#1011#1028#0" expanded="true" />
             <element signature="e#1672#1691#0" expanded="true" />
-            <marker date="1520555049770" expanded="false" signature="2036:2058" ph="&quot;%&quot;" />
-            <marker date="1520555049770" expanded="false" signature="2506:2532" ph="&quot;√&quot;" />
-            <marker date="1520555049770" expanded="false" signature="3268:3281" ph="&quot;OFF&quot;" />
-            <marker date="1520555049770" expanded="false" signature="3990:4009" ph="&quot;⌫&quot;" />
-            <marker date="1520555049770" expanded="false" signature="4473:4486" ph="&quot;MRC&quot;" />
-            <marker date="1520555049770" expanded="false" signature="4872:4889" ph="&quot;M-&quot;" />
-            <marker date="1520555049770" expanded="false" signature="5278:5294" ph="&quot;M+&quot;" />
-            <marker date="1520555049770" expanded="false" signature="5672:5684" ph="&quot;CE&quot;" />
-            <marker date="1520555049770" expanded="false" signature="6061:6078" ph="&quot;7&quot;" />
-            <marker date="1520555049770" expanded="false" signature="6457:6474" ph="&quot;8&quot;" />
-            <marker date="1520555049770" expanded="false" signature="6858:6875" ph="&quot;9&quot;" />
-            <marker date="1520555049770" expanded="false" signature="7261:7284" ph="&quot;÷&quot;" />
-            <marker date="1520555049770" expanded="false" signature="7659:7676" ph="&quot;4&quot;" />
-            <marker date="1520555049770" expanded="false" signature="8054:8071" ph="&quot;5&quot;" />
-            <marker date="1520555049770" expanded="false" signature="8450:8467" ph="&quot;6&quot;" />
-            <marker date="1520555049770" expanded="false" signature="8857:8886" ph="&quot;×&quot;" />
-            <marker date="1520555049770" expanded="false" signature="9260:9277" ph="&quot;1&quot;" />
-            <marker date="1520555049770" expanded="false" signature="9653:9670" ph="&quot;2&quot;" />
-            <marker date="1520555049770" expanded="false" signature="10051:10068" ph="&quot;3&quot;" />
-            <marker date="1520555049770" expanded="false" signature="10451:10471" ph="&quot;-&quot;" />
-            <marker date="1520555049770" expanded="false" signature="10849:10866" ph="&quot;0&quot;" />
-            <marker date="1520555049770" expanded="false" signature="11239:11257" ph="&quot;.&quot;" />
-            <marker date="1520555049770" expanded="false" signature="11639:11660" ph="&quot;=&quot;" />
-            <marker date="1520555049770" expanded="false" signature="12040:12059" ph="&quot;+&quot;" />
+            <element signature="e#12489#12512#0" expanded="true" />
+            <marker date="1520556415077" expanded="false" signature="2036:2058" ph="&quot;%&quot;" />
+            <marker date="1520556415077" expanded="false" signature="2506:2532" ph="&quot;√&quot;" />
+            <marker date="1520556415077" expanded="false" signature="3268:3281" ph="&quot;OFF&quot;" />
+            <marker date="1520556415077" expanded="false" signature="3990:4009" ph="&quot;⌫&quot;" />
+            <marker date="1520556415077" expanded="false" signature="4473:4486" ph="&quot;MRC&quot;" />
+            <marker date="1520556415077" expanded="false" signature="4872:4889" ph="&quot;M-&quot;" />
+            <marker date="1520556415077" expanded="false" signature="5278:5294" ph="&quot;M+&quot;" />
+            <marker date="1520556415077" expanded="false" signature="5672:5684" ph="&quot;CE&quot;" />
+            <marker date="1520556415077" expanded="false" signature="6061:6078" ph="&quot;7&quot;" />
+            <marker date="1520556415077" expanded="false" signature="6457:6474" ph="&quot;8&quot;" />
+            <marker date="1520556415077" expanded="false" signature="6858:6875" ph="&quot;9&quot;" />
+            <marker date="1520556415077" expanded="false" signature="7261:7284" ph="&quot;÷&quot;" />
+            <marker date="1520556415077" expanded="false" signature="7659:7676" ph="&quot;4&quot;" />
+            <marker date="1520556415077" expanded="false" signature="8054:8071" ph="&quot;5&quot;" />
+            <marker date="1520556415077" expanded="false" signature="8450:8467" ph="&quot;6&quot;" />
+            <marker date="1520556415077" expanded="false" signature="8857:8886" ph="&quot;×&quot;" />
+            <marker date="1520556415077" expanded="false" signature="9260:9277" ph="&quot;1&quot;" />
+            <marker date="1520556415077" expanded="false" signature="9653:9670" ph="&quot;2&quot;" />
+            <marker date="1520556415077" expanded="false" signature="10051:10068" ph="&quot;3&quot;" />
+            <marker date="1520556415077" expanded="false" signature="10451:10471" ph="&quot;-&quot;" />
+            <marker date="1520556415077" expanded="false" signature="10849:10866" ph="&quot;0&quot;" />
+            <marker date="1520556415077" expanded="false" signature="11239:11257" ph="&quot;.&quot;" />
+            <marker date="1520556415077" expanded="false" signature="11639:11660" ph="&quot;=&quot;" />
+            <marker date="1520556415077" expanded="false" signature="12040:12059" ph="&quot;+&quot;" />
           </folding>
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorActivity.kt">
@@ -3080,10 +2996,11 @@
         <state relative-caret-position="405">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
-            <marker date="1520555109408" expanded="false" signature="2865:2883" ph="&quot;+&quot;" />
-            <marker date="1520555109408" expanded="false" signature="2942:2961" ph="&quot;-&quot;" />
-            <marker date="1520555109408" expanded="false" signature="3023:3051" ph="&quot;×&quot;" />
-            <marker date="1520555109408" expanded="false" signature="3107:3129" ph="&quot;÷&quot;" />
+            <element signature="e#2760#2774#1" expanded="true" />
+            <marker date="1520652815880" expanded="false" signature="3129:3147" ph="&quot;+&quot;" />
+            <marker date="1520652815880" expanded="false" signature="3206:3225" ph="&quot;-&quot;" />
+            <marker date="1520652815880" expanded="true" signature="3287:3315" ph="&quot;×&quot;" />
+            <marker date="1520652815880" expanded="false" signature="3371:3393" ph="&quot;÷&quot;" />
           </folding>
         </state>
       </provider>
@@ -3097,41 +3014,42 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_calculator.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#1011#1028#0" expanded="true" />
             <element signature="e#1672#1691#0" expanded="true" />
-            <marker date="1520555049770" expanded="false" signature="2036:2058" ph="&quot;%&quot;" />
-            <marker date="1520555049770" expanded="false" signature="2506:2532" ph="&quot;√&quot;" />
-            <marker date="1520555049770" expanded="false" signature="3268:3281" ph="&quot;OFF&quot;" />
-            <marker date="1520555049770" expanded="false" signature="3990:4009" ph="&quot;⌫&quot;" />
-            <marker date="1520555049770" expanded="false" signature="4473:4486" ph="&quot;MRC&quot;" />
-            <marker date="1520555049770" expanded="false" signature="4872:4889" ph="&quot;M-&quot;" />
-            <marker date="1520555049770" expanded="false" signature="5278:5294" ph="&quot;M+&quot;" />
-            <marker date="1520555049770" expanded="false" signature="5672:5684" ph="&quot;CE&quot;" />
-            <marker date="1520555049770" expanded="false" signature="6061:6078" ph="&quot;7&quot;" />
-            <marker date="1520555049770" expanded="false" signature="6457:6474" ph="&quot;8&quot;" />
-            <marker date="1520555049770" expanded="false" signature="6858:6875" ph="&quot;9&quot;" />
-            <marker date="1520555049770" expanded="false" signature="7261:7284" ph="&quot;÷&quot;" />
-            <marker date="1520555049770" expanded="false" signature="7659:7676" ph="&quot;4&quot;" />
-            <marker date="1520555049770" expanded="false" signature="8054:8071" ph="&quot;5&quot;" />
-            <marker date="1520555049770" expanded="false" signature="8450:8467" ph="&quot;6&quot;" />
-            <marker date="1520555049770" expanded="false" signature="8857:8886" ph="&quot;×&quot;" />
-            <marker date="1520555049770" expanded="false" signature="9260:9277" ph="&quot;1&quot;" />
-            <marker date="1520555049770" expanded="false" signature="9653:9670" ph="&quot;2&quot;" />
-            <marker date="1520555049770" expanded="false" signature="10051:10068" ph="&quot;3&quot;" />
-            <marker date="1520555049770" expanded="false" signature="10451:10471" ph="&quot;-&quot;" />
-            <marker date="1520555049770" expanded="false" signature="10849:10866" ph="&quot;0&quot;" />
-            <marker date="1520555049770" expanded="false" signature="11239:11257" ph="&quot;.&quot;" />
-            <marker date="1520555049770" expanded="false" signature="11639:11660" ph="&quot;=&quot;" />
-            <marker date="1520555049770" expanded="false" signature="12040:12059" ph="&quot;+&quot;" />
+            <element signature="e#12489#12512#0" expanded="true" />
+            <marker date="1520556415077" expanded="false" signature="2036:2058" ph="&quot;%&quot;" />
+            <marker date="1520556415077" expanded="false" signature="2506:2532" ph="&quot;√&quot;" />
+            <marker date="1520556415077" expanded="false" signature="3268:3281" ph="&quot;OFF&quot;" />
+            <marker date="1520556415077" expanded="false" signature="3990:4009" ph="&quot;⌫&quot;" />
+            <marker date="1520556415077" expanded="false" signature="4473:4486" ph="&quot;MRC&quot;" />
+            <marker date="1520556415077" expanded="false" signature="4872:4889" ph="&quot;M-&quot;" />
+            <marker date="1520556415077" expanded="false" signature="5278:5294" ph="&quot;M+&quot;" />
+            <marker date="1520556415077" expanded="false" signature="5672:5684" ph="&quot;CE&quot;" />
+            <marker date="1520556415077" expanded="false" signature="6061:6078" ph="&quot;7&quot;" />
+            <marker date="1520556415077" expanded="false" signature="6457:6474" ph="&quot;8&quot;" />
+            <marker date="1520556415077" expanded="false" signature="6858:6875" ph="&quot;9&quot;" />
+            <marker date="1520556415077" expanded="false" signature="7261:7284" ph="&quot;÷&quot;" />
+            <marker date="1520556415077" expanded="false" signature="7659:7676" ph="&quot;4&quot;" />
+            <marker date="1520556415077" expanded="false" signature="8054:8071" ph="&quot;5&quot;" />
+            <marker date="1520556415077" expanded="false" signature="8450:8467" ph="&quot;6&quot;" />
+            <marker date="1520556415077" expanded="false" signature="8857:8886" ph="&quot;×&quot;" />
+            <marker date="1520556415077" expanded="false" signature="9260:9277" ph="&quot;1&quot;" />
+            <marker date="1520556415077" expanded="false" signature="9653:9670" ph="&quot;2&quot;" />
+            <marker date="1520556415077" expanded="false" signature="10051:10068" ph="&quot;3&quot;" />
+            <marker date="1520556415077" expanded="false" signature="10451:10471" ph="&quot;-&quot;" />
+            <marker date="1520556415077" expanded="false" signature="10849:10866" ph="&quot;0&quot;" />
+            <marker date="1520556415077" expanded="false" signature="11239:11257" ph="&quot;.&quot;" />
+            <marker date="1520556415077" expanded="false" signature="11639:11660" ph="&quot;=&quot;" />
+            <marker date="1520556415077" expanded="false" signature="12040:12059" ph="&quot;+&quot;" />
           </folding>
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorActivity.kt">
@@ -3139,18 +3057,19 @@
         <state relative-caret-position="324">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
-            <marker date="1520555109408" expanded="false" signature="2865:2883" ph="&quot;+&quot;" />
-            <marker date="1520555109408" expanded="false" signature="2942:2961" ph="&quot;-&quot;" />
-            <marker date="1520555109408" expanded="false" signature="3023:3051" ph="&quot;×&quot;" />
-            <marker date="1520555109408" expanded="false" signature="3107:3129" ph="&quot;÷&quot;" />
+            <element signature="e#2760#2774#1" expanded="true" />
+            <marker date="1520652815880" expanded="false" signature="3129:3147" ph="&quot;+&quot;" />
+            <marker date="1520652815880" expanded="false" signature="3206:3225" ph="&quot;-&quot;" />
+            <marker date="1520652815880" expanded="true" signature="3287:3315" ph="&quot;×&quot;" />
+            <marker date="1520652815880" expanded="false" signature="3371:3393" ph="&quot;÷&quot;" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="9" lean-forward="false" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+        <state relative-caret-position="84">
+          <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -3180,30 +3099,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="15" column="40" lean-forward="false" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="15" column="5" lean-forward="false" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/Operations.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3215,87 +3114,159 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_calculator.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+          <folding>
+            <element signature="e#1011#1028#0" expanded="true" />
+            <element signature="e#1672#1691#0" expanded="true" />
+            <element signature="e#12489#12512#0" expanded="true" />
+            <marker date="1520556415077" expanded="false" signature="2036:2058" ph="&quot;%&quot;" />
+            <marker date="1520556415077" expanded="false" signature="2506:2532" ph="&quot;√&quot;" />
+            <marker date="1520556415077" expanded="false" signature="3268:3281" ph="&quot;OFF&quot;" />
+            <marker date="1520556415077" expanded="false" signature="3990:4009" ph="&quot;⌫&quot;" />
+            <marker date="1520556415077" expanded="false" signature="4473:4486" ph="&quot;MRC&quot;" />
+            <marker date="1520556415077" expanded="false" signature="4872:4889" ph="&quot;M-&quot;" />
+            <marker date="1520556415077" expanded="false" signature="5278:5294" ph="&quot;M+&quot;" />
+            <marker date="1520556415077" expanded="false" signature="5672:5684" ph="&quot;CE&quot;" />
+            <marker date="1520556415077" expanded="false" signature="6061:6078" ph="&quot;7&quot;" />
+            <marker date="1520556415077" expanded="false" signature="6457:6474" ph="&quot;8&quot;" />
+            <marker date="1520556415077" expanded="false" signature="6858:6875" ph="&quot;9&quot;" />
+            <marker date="1520556415077" expanded="false" signature="7261:7284" ph="&quot;÷&quot;" />
+            <marker date="1520556415077" expanded="false" signature="7659:7676" ph="&quot;4&quot;" />
+            <marker date="1520556415077" expanded="false" signature="8054:8071" ph="&quot;5&quot;" />
+            <marker date="1520556415077" expanded="false" signature="8450:8467" ph="&quot;6&quot;" />
+            <marker date="1520556415077" expanded="false" signature="8857:8886" ph="&quot;×&quot;" />
+            <marker date="1520556415077" expanded="false" signature="9260:9277" ph="&quot;1&quot;" />
+            <marker date="1520556415077" expanded="false" signature="9653:9670" ph="&quot;2&quot;" />
+            <marker date="1520556415077" expanded="false" signature="10051:10068" ph="&quot;3&quot;" />
+            <marker date="1520556415077" expanded="false" signature="10451:10471" ph="&quot;-&quot;" />
+            <marker date="1520556415077" expanded="false" signature="10849:10866" ph="&quot;0&quot;" />
+            <marker date="1520556415077" expanded="false" signature="11239:11257" ph="&quot;.&quot;" />
+            <marker date="1520556415077" expanded="false" signature="11639:11660" ph="&quot;=&quot;" />
+            <marker date="1520556415077" expanded="false" signature="12040:12059" ph="&quot;+&quot;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://G:/Users/Helton/AppData/Local/Android/sdk/platforms/android-26/android.jar!/java/math/BigDecimal.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="202" column="15" lean-forward="false" selection-start-line="202" selection-start-column="15" selection-end-line="202" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_calculator.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_calculator.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_calculator.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_calculator.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_calculator.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="34" lean-forward="true" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/generated/source/r/debug/br/com/hitg/simplecalculator/R.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="2912" column="39" lean-forward="false" selection-start-line="2912" selection-start-column="28" selection-end-line="2912" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="46" column="53" lean-forward="false" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
+          <folding>
+            <element signature="e#2760#2774#1" expanded="true" />
+            <marker date="1520652815880" expanded="false" signature="3129:3147" ph="&quot;+&quot;" />
+            <marker date="1520652815880" expanded="false" signature="3206:3225" ph="&quot;-&quot;" />
+            <marker date="1520652815880" expanded="true" signature="3287:3315" ph="&quot;×&quot;" />
+            <marker date="1520652815880" expanded="false" signature="3371:3393" ph="&quot;÷&quot;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="37" lean-forward="false" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://G:/Users/Helton/AppData/Local/Android/sdk/platforms/android-26/android.jar!/android/widget/TextView.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="674" column="70" lean-forward="false" selection-start-line="674" selection-start-column="70" selection-end-line="674" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorContract.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="74" column="26" lean-forward="false" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="26" />
+        <state relative-caret-position="192">
+          <caret line="124" column="12" lean-forward="false" selection-start-line="124" selection-start-column="12" selection-end-line="124" selection-end-column="12" />
           <folding>
             <element signature="e#374#962#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorUserMemory.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="28" column="8" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorPresenter.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="28" column="31" lean-forward="false" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+        <state relative-caret-position="136">
+          <caret line="56" column="43" lean-forward="false" selection-start-line="56" selection-start-column="43" selection-end-line="56" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_calculator.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorUserMemory.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1800">
-          <caret line="171" column="21" lean-forward="false" selection-start-line="171" selection-start-column="21" selection-end-line="171" selection-end-column="21" />
-          <folding>
-            <element signature="e#1011#1028#0" expanded="true" />
-            <element signature="e#1672#1691#0" expanded="true" />
-            <marker date="1520555049770" expanded="false" signature="2036:2058" ph="&quot;%&quot;" />
-            <marker date="1520555049770" expanded="false" signature="2506:2532" ph="&quot;√&quot;" />
-            <marker date="1520555049770" expanded="false" signature="3268:3281" ph="&quot;OFF&quot;" />
-            <marker date="1520555049770" expanded="false" signature="3990:4009" ph="&quot;⌫&quot;" />
-            <marker date="1520555049770" expanded="false" signature="4473:4486" ph="&quot;MRC&quot;" />
-            <marker date="1520555049770" expanded="false" signature="4872:4889" ph="&quot;M-&quot;" />
-            <marker date="1520555049770" expanded="false" signature="5278:5294" ph="&quot;M+&quot;" />
-            <marker date="1520555049770" expanded="false" signature="5672:5684" ph="&quot;CE&quot;" />
-            <marker date="1520555049770" expanded="false" signature="6061:6078" ph="&quot;7&quot;" />
-            <marker date="1520555049770" expanded="false" signature="6457:6474" ph="&quot;8&quot;" />
-            <marker date="1520555049770" expanded="false" signature="6858:6875" ph="&quot;9&quot;" />
-            <marker date="1520555049770" expanded="false" signature="7261:7284" ph="&quot;÷&quot;" />
-            <marker date="1520555049770" expanded="false" signature="7659:7676" ph="&quot;4&quot;" />
-            <marker date="1520555049770" expanded="false" signature="8054:8071" ph="&quot;5&quot;" />
-            <marker date="1520555049770" expanded="false" signature="8450:8467" ph="&quot;6&quot;" />
-            <marker date="1520555049770" expanded="false" signature="8857:8886" ph="&quot;×&quot;" />
-            <marker date="1520555049770" expanded="false" signature="9260:9277" ph="&quot;1&quot;" />
-            <marker date="1520555049770" expanded="false" signature="9653:9670" ph="&quot;2&quot;" />
-            <marker date="1520555049770" expanded="false" signature="10051:10068" ph="&quot;3&quot;" />
-            <marker date="1520555049770" expanded="false" signature="10451:10471" ph="&quot;-&quot;" />
-            <marker date="1520555049770" expanded="false" signature="10849:10866" ph="&quot;0&quot;" />
-            <marker date="1520555049770" expanded="false" signature="11239:11257" ph="&quot;.&quot;" />
-            <marker date="1520555049770" expanded="false" signature="11639:11660" ph="&quot;=&quot;" />
-            <marker date="1520555049770" expanded="false" signature="12040:12059" ph="&quot;+&quot;" />
-          </folding>
+        <state relative-caret-position="243">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/Calculator.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="177" column="0" lean-forward="false" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/hitg/simplecalculator/calculator/CalculatorActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="79" column="75" lean-forward="false" selection-start-line="79" selection-start-column="75" selection-end-line="79" selection-end-column="75" />
+        <state relative-caret-position="310">
+          <caret line="188" column="16" lean-forward="false" selection-start-line="188" selection-start-column="16" selection-end-line="188" selection-end-column="16" />
           <folding>
-            <marker date="1520555109408" expanded="false" signature="2865:2883" ph="&quot;+&quot;" />
-            <marker date="1520555109408" expanded="false" signature="2942:2961" ph="&quot;-&quot;" />
-            <marker date="1520555109408" expanded="false" signature="3023:3051" ph="&quot;×&quot;" />
-            <marker date="1520555109408" expanded="false" signature="3107:3129" ph="&quot;÷&quot;" />
+            <element signature="e#49#194#0" expanded="true" />
           </folding>
         </state>
       </provider>
