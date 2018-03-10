@@ -24,18 +24,25 @@ class CalculatorUserMemory {
     }
 
     /**
+     * Returns the current memory
+     */
+    fun mr(): BigDecimal {
+        return memory
+    }
+
+    /**
      * Increase a value in the internal memory.
      */
-    fun mPlus(value: Double) {
+    fun mPlus(value: BigDecimal) {
         isMemoryInUse = true
-        memory = memory.add(BigDecimal.valueOf(value))
+        memory = memory.add(value)
     }
 
     /**
      * Decrease a value from the internal memory.
      */
-    fun mSubtract(value: Double) {
+    fun mSubtract(value: BigDecimal) {
         isMemoryInUse = true
-        memory = memory.subtract(BigDecimal.valueOf(value))
+        memory = memory.subtract(value)
     }
 }

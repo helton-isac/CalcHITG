@@ -119,7 +119,9 @@ class Calculator(val digits: Int) {
     }
 
     private fun updateTempMemory() {
-        if (!cleanDisplayOnNextInteraction || currentOperation == Operations.NONE) {
+        if (!cleanDisplayOnNextInteraction ||
+                currentOperation == Operations.NONE ||
+                currentOperation == lastOperation) {
             currentTotal = calculate(currentOperation, currentTotal, BigDecimal(displayNumber))
         }
     }
@@ -174,16 +176,21 @@ class Calculator(val digits: Int) {
     fun isDotVisible(): Boolean = displayNumber.contains(".")
 
     fun memoryAdd() {
-        this.userMemory.mPlus(displayNumber.toDouble())
+        userMemory.mPlus(BigDecimal(displayNumber))
     }
 
     fun memorySubtract() {
-        this.userMemory.mSubtract(displayNumber.toDouble())
+        userMemory.mSubtract(BigDecimal(displayNumber))
     }
 
     fun memoryResultAndClean() {
-        if (this.userMemory.isMemoryInUse) {
-            applyResult(this.userMemory.mrc())
+        if (userMemory.isMemoryInUse) {
+            if (currentOperation != Operations.NONE) {
+                applyResult(this.userMemory.mr())
+            } else {
+                applyResult(this.userMemory.mrc())
+            }
+
         }
     }
 
