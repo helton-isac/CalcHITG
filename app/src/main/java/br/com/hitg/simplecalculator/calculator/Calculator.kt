@@ -1,6 +1,10 @@
 package br.com.hitg.simplecalculator.calculator
 
 import java.math.BigDecimal
+import java.math.RoundingMode
+import java.text.DecimalFormat
+import java.text.DecimalFormatSymbols
+import java.util.*
 
 /**
  * Created by Helton on 20/02/2018.
@@ -50,6 +54,9 @@ class Calculator(val digits: Int) {
      */
     private val ERROR_MAX_DIGITS_EXCEEDED: String = "ERROR_MAX_DIGITS_EXCEEDED"
 
+    private var lastOperation: Operations = Operations.NONE
+    private var lastInput: BigDecimal = BigDecimal("0")
+
     init {
         if (digits > MAX_DIGITS_ALLOWED) {
             throw Exception(ERROR_MAX_DIGITS_EXCEEDED)
@@ -59,18 +66,24 @@ class Calculator(val digits: Int) {
     }
 
     fun initializeCalculator() {
-        applyResult(0.0)
+        currentTotal = BigDecimal(0)
+        applyResult(currentTotal)
         currentOperation = Operations.NONE
         cleanDisplayOnNextInteraction = false
-        currentTotal = BigDecimal(0)
     }
 
-    fun applyResult(value: Double) {
-        displayNumber = if (value % 1 == 0.0) {
-            value.toInt().toString()
+    fun applyResult(value: BigDecimal) {
+        val df = DecimalFormat("0", DecimalFormatSymbols.getInstance(Locale.ENGLISH))
+        df.maximumFractionDigits = 340
+        displayNumber = if (isIntegerValue(value)) {
+            df.format(value)
         } else {
-            value.toString()
+            df.format(value)
         }
+    }
+
+    private fun isIntegerValue(bd: BigDecimal): Boolean {
+        return bd.signum() == 0 || bd.scale() <= 0 || bd.stripTrailingZeros().scale() <= 0
     }
 
     fun typeNumber(number: Int) {
@@ -101,24 +114,23 @@ class Calculator(val digits: Int) {
     fun performOperation(operation: Operations) {
         this.updateTempMemory()
         currentOperation = operation
-        applyResult(currentTotal.toDouble())
+        applyResult(currentTotal)
         cleanDisplayOnNextInteraction = true
     }
 
     private fun updateTempMemory() {
         if (!cleanDisplayOnNextInteraction || currentOperation == Operations.NONE) {
-            currentTotal = when (currentOperation) {
-                Operations.ADDITION ->
-                    currentTotal.add(BigDecimal.valueOf(displayNumber.toDouble()))
-                Operations.SUBTRACTION ->
-                    currentTotal.subtract(BigDecimal.valueOf(displayNumber.toDouble()))
-                Operations.DIVISION ->
-                    currentTotal.divide(BigDecimal.valueOf(displayNumber.toDouble()))
-                Operations.MULTIPLICATION ->
-                    currentTotal.multiply(BigDecimal.valueOf(displayNumber.toDouble()))
-                Operations.NONE ->
-                    BigDecimal.valueOf(displayNumber.toDouble())
-            }
+            currentTotal = calculate(currentOperation, currentTotal, BigDecimal(displayNumber))
+        }
+    }
+
+    private fun calculate(operation: Operations, value1: BigDecimal, value2: BigDecimal): BigDecimal {
+        return when (operation) {
+            Operations.ADDITION -> value1.add(value2)
+            Operations.SUBTRACTION -> value1.subtract(value2)
+            Operations.DIVISION -> value1.divide(value2, 8, RoundingMode.HALF_UP)
+            Operations.MULTIPLICATION -> value1.multiply(value2)
+            Operations.NONE -> value2
         }
     }
 
@@ -133,8 +145,18 @@ class Calculator(val digits: Int) {
 
 
     fun equals() {
-        this.updateTempMemory()
-        applyResult(currentTotal.toDouble())
+        if (currentOperation != Operations.NONE) {
+            lastOperation = currentOperation
+            if (lastOperation == Operations.DIVISION) {
+                lastInput = currentTotal
+            } else {
+                lastInput = BigDecimal(displayNumber)
+            }
+            this.updateTempMemory()
+        } else {
+            currentTotal = calculate(lastOperation, BigDecimal(displayNumber), lastInput)
+        }
+        applyResult(currentTotal)
         currentTotal = BigDecimal(0)
         currentOperation = Operations.NONE
         cleanDisplayOnNextInteraction = true
@@ -161,21 +183,16 @@ class Calculator(val digits: Int) {
 
     fun memoryResultAndClean() {
         if (this.userMemory.isMemoryInUse) {
-            applyResult(this.userMemory.mrc().toDouble())
+            applyResult(this.userMemory.mrc())
         }
     }
 
     fun squareRoot() {
-        applyResult(Math.sqrt(displayNumber.toDouble()))
+        applyResult(BigDecimal(Math.sqrt(displayNumber.toDouble()).toString()))
     }
 
     fun percent() {
-        applyResult(
-                currentTotal.multiply(
-                        BigDecimal.valueOf(
-                                displayNumber.toDouble()))
-                        .divide(
-                                BigDecimal.valueOf(100)).toDouble())
+        applyResult(currentTotal.multiply(BigDecimal(displayNumber)).divide(BigDecimal("100")))
     }
 
     fun ce() {
