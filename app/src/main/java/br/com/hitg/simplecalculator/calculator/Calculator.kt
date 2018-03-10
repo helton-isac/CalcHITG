@@ -75,11 +75,7 @@ class Calculator(val digits: Int) {
     fun applyResult(value: BigDecimal) {
         val df = DecimalFormat("0", DecimalFormatSymbols.getInstance(Locale.ENGLISH))
         df.maximumFractionDigits = 340
-        displayNumber = if (isIntegerValue(value)) {
-            df.format(value)
-        } else {
-            df.format(value)
-        }
+        displayNumber = df.format(value)
     }
 
     private fun isIntegerValue(bd: BigDecimal): Boolean {
@@ -137,12 +133,17 @@ class Calculator(val digits: Int) {
     }
 
     fun backspace() {
-        if (displayNumber.length > 0) {
+        if (displayNumber.length > 0 && !displayNumber.equals("0")) {
             displayNumber = displayNumber.substring(0, displayNumber.length - 1)
-        }
-        if (displayNumber == "") {
+            if (displayNumber == "") {
+                displayNumber = "0"
+            }
+        } else {
             displayNumber = "0"
+            currentOperation = Operations.NONE
+            lastOperation = Operations.NONE
         }
+
     }
 
 
@@ -156,7 +157,11 @@ class Calculator(val digits: Int) {
             }
             this.updateTempMemory()
         } else {
-            currentTotal = calculate(lastOperation, BigDecimal(displayNumber), lastInput)
+            if (lastOperation != Operations.NONE) {
+                currentTotal = calculate(lastOperation, BigDecimal(displayNumber), lastInput)
+            } else {
+                currentTotal = BigDecimal(displayNumber)
+            }
         }
         applyResult(currentTotal)
         currentTotal = BigDecimal(0)
