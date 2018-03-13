@@ -150,11 +150,7 @@ class Calculator(val digits: Int) {
     fun equals() {
         if (currentOperation != Operations.NONE) {
             lastOperation = currentOperation
-            if (lastOperation == Operations.DIVISION) {
-                lastInput = currentTotal
-            } else {
-                lastInput = BigDecimal(displayNumber)
-            }
+            lastInput = BigDecimal(displayNumber)
             this.updateTempMemory()
         } else {
             if (lastOperation != Operations.NONE) {
