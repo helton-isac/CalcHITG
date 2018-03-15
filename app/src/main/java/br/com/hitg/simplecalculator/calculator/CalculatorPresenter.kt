@@ -10,7 +10,7 @@ class CalculatorPresenter(val calculatorView: CalculatorContract.View) :
 
     init {
         calculatorView.presenter = this
-        calculator = Calculator(8)
+        calculator = Calculator()
         updateView()
     }
 

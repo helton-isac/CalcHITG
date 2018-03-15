@@ -1,7 +1,6 @@
 package br.com.hitg.simplecalculator.calculator
 
 import java.math.BigDecimal
-import java.math.RoundingMode
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
 import java.util.*
@@ -11,7 +10,7 @@ import java.util.*
  *
  * Class responsible by managing the memory and calculations.
  */
-class Calculator(val digits: Int) {
+class Calculator() {
 
     /**
      * Display Number.
@@ -44,23 +43,10 @@ class Calculator(val digits: Int) {
      */
     private val userMemory: CalculatorUserMemory = CalculatorUserMemory()
 
-    /**
-     * Max digits allowed.
-     */
-    private val MAX_DIGITS_ALLOWED: Int = 16
-
-    /**
-     * Max digits Exceeded message.
-     */
-    private val ERROR_MAX_DIGITS_EXCEEDED: String = "ERROR_MAX_DIGITS_EXCEEDED"
-
     private var lastOperation: Operations = Operations.NONE
     private var lastInput: BigDecimal = BigDecimal("0")
 
     init {
-        if (digits > MAX_DIGITS_ALLOWED) {
-            throw Exception(ERROR_MAX_DIGITS_EXCEEDED)
-        }
         initializeCalculator()
         userMemory.mrc()
     }
@@ -122,13 +108,15 @@ class Calculator(val digits: Int) {
         }
     }
 
-    private fun calculate(operation: Operations, value1: BigDecimal, value2: BigDecimal): BigDecimal {
+    private fun calculate(operation: Operations,
+                          value1: BigDecimal,
+                          value2: BigDecimal): BigDecimal {
         return when (operation) {
-            Operations.ADDITION -> value1.add(value2)
-            Operations.SUBTRACTION -> value1.subtract(value2)
-            Operations.DIVISION -> value1.divide(value2, 8, RoundingMode.HALF_UP)
-            Operations.MULTIPLICATION -> value1.multiply(value2)
-            Operations.NONE -> value2
+            Operations.ADDITION       -> MathEngine.add(value1, value2)
+            Operations.SUBTRACTION    -> MathEngine.subtract(value1, value2)
+            Operations.DIVISION       -> MathEngine.divide(value1, value2)
+            Operations.MULTIPLICATION -> MathEngine.multiply(value1, value2)
+            Operations.NONE           -> value2
         }
     }
 
