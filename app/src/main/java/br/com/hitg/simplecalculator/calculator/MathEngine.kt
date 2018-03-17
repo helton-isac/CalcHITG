@@ -52,7 +52,7 @@ class MathEngine {
          * @return Returns a BigDecimal whose value is (v1 × v2).
          */
         fun multiply(v1: BigDecimal, v2: BigDecimal): BigDecimal =
-                v1.multiply(v2)
+                v1.multiply(v2).setScale(defaultScale, defaultRoundingMode)
 
 
         /**
