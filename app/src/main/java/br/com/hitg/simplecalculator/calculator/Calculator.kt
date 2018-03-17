@@ -28,7 +28,7 @@ class Calculator() {
     /**
      * Current Total of the current calculus.
      */
-    private var currentTotal: BigDecimal = BigDecimal(0)
+    private var currentTotal: BigDecimal = BigDecimal("0")
 
     /**
      * Current Operation.
@@ -43,19 +43,22 @@ class Calculator() {
      */
     private val userMemory: CalculatorUserMemory = CalculatorUserMemory()
 
+    /**
+     * Save the last Operation to be used in Equals Repeated Operations.
+     */
     private var lastOperation: Operations = Operations.NONE
+
+    /**
+     * Save the last Input to be used in Equals Repeated Operations.
+     */
     private var lastInput: BigDecimal = BigDecimal("0")
 
+    /**
+     * Initialize Class
+     */
     init {
-        initializeCalculator()
+        ce()
         userMemory.mrc()
-    }
-
-    fun initializeCalculator() {
-        currentTotal = BigDecimal(0)
-        applyResult(currentTotal)
-        currentOperation = Operations.NONE
-        cleanDisplayOnNextInteraction = false
     }
 
     fun applyResult(value: BigDecimal) {
@@ -194,7 +197,10 @@ class Calculator() {
     }
 
     fun ce() {
-        initializeCalculator()
+        currentTotal = BigDecimal(0)
+        applyResult(currentTotal)
+        currentOperation = Operations.NONE
+        cleanDisplayOnNextInteraction = false
     }
 
     fun isMemoryInUse(): Boolean {

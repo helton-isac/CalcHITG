@@ -3,13 +3,20 @@ package br.com.hitg.simplecalculator.calculator
 import java.math.BigDecimal
 
 /**
- * Created by Helton on 24/02/2018.
+ * User Memory
  */
 class CalculatorUserMemory {
 
-    private var memory: BigDecimal = BigDecimal(0)
+    /**
+     * Internal user memory.
+     */
+    private var memory: BigDecimal = BigDecimal("0")
 
+    /**
+     * True if user is using the memory
+     */
     var isMemoryInUse: Boolean = false
+        private set
 
     /**
      * Returns the current memory and reset
@@ -19,7 +26,7 @@ class CalculatorUserMemory {
             return memory
         } finally {
             isMemoryInUse = false
-            memory = BigDecimal(0)
+            memory = BigDecimal("0")
         }
     }
 
