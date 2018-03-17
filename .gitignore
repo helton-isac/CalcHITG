@@ -34,3 +34,4 @@ output.json
 #NDK
 obj/
 .externalNativeBuild
+.idea/workspace.xml
