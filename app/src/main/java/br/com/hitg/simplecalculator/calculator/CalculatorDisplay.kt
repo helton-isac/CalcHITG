@@ -17,7 +17,6 @@ class CalculatorDisplay() {
      */
     private var internalDisplayText: StringBuilder = StringBuilder("0")
 
-
     /**
      * Boolean value to indicate if the DecimalSymbol is in use or not.
      */
@@ -28,6 +27,11 @@ class CalculatorDisplay() {
      * -1 means no limit
      */
     private var maxLength: Int = -1
+
+    /**
+     * Whether is a valid number or not
+     */
+    private var isValidNumber: Boolean = true
 
     /**
      * Constructor to allow set the max length of the Display
@@ -68,8 +72,8 @@ class CalculatorDisplay() {
      *      new display value = "123"+'4' = "1234"
      * @param charNumber Char input to be appended in the last position of the display
      */
-    fun appendNumber(charNumber: Char) {
-        appendNumber(charNumber, false)
+    fun appendNumber(charNumber: Char): Boolean {
+        return appendNumber(charNumber, false)
     }
 
     /**
@@ -86,7 +90,16 @@ class CalculatorDisplay() {
         if (!Character.isDigit(charNumber)) {
             throw IllegalArgumentException("Invalid value, must be a number")
         }
-        if (replaceCurrentDisplay || internalDisplayText.toString().equals("0")) {
+
+        var isZero: Boolean = internalDisplayText.length == 1
+                && internalDisplayText.toString().equals("0")
+
+
+        if (charNumber == '0' && isZero) {
+            return false
+        } else if (!isValidNumber || replaceCurrentDisplay || isZero) {
+            isValidNumber = true
+            usingDecimalSymbol = false
             internalDisplayText.setLength(0)
         }
         if (canAppendChar()) {
@@ -100,7 +113,8 @@ class CalculatorDisplay() {
      * Check if can append char
      */
     private fun canAppendChar(): Boolean {
-        return maxLength == -1 || (maxLength > 0 && internalDisplayText.length < maxLength)
+        val realLength = internalDisplayText.length - if (usingDecimalSymbol) 1 else 0
+        return maxLength == -1 || (maxLength > 0 && realLength < maxLength)
     }
 
     /**
@@ -113,21 +127,34 @@ class CalculatorDisplay() {
     /**
      * Returns the current Display as a BigDecimal Object or null if it is not possible to parse.
      */
-    fun toBigDecimal(): BigDecimal? {
-        try {
-            return BigDecimal(toString())
-        } catch (e: NumberFormatException) {
-            return null
-        }
+    fun toBigDecimal(): BigDecimal {
+        return BigDecimal(toString())
     }
 
     /**
      * Appends a decimal separator. (Ignores MAX_LENGTH)
      *
      * It is only possible to append one separator
+     *
+     * @return Returns True if the Decimal Separator was appended
      */
     fun appendDecimalSeparator(): Boolean {
-        if (!usingDecimalSymbol) {
+        return appendDecimalSeparator(false)
+    }
+
+    /**
+     * Appends a decimal separator. (Ignores MAX_LENGTH)
+     *
+     * It is only possible to append one separator
+     *
+     * @param replaceCurrentDisplay Boolean value, if true, the input will be the new Display
+     * @return Returns True if the Decimal Separator was appended
+     */
+    fun appendDecimalSeparator(replaceCurrentDisplay: Boolean): Boolean {
+        if (replaceCurrentDisplay) {
+            setValue("0")
+        }
+        if (!usingDecimalSymbol && isValidNumber) {
             internalDisplayText.append(DECIMAL_SEPARATOR)
             usingDecimalSymbol = true
             return true
@@ -147,10 +174,44 @@ class CalculatorDisplay() {
         } else {
             internalDisplayText.append(value)
         }
+
+        isValidNumber = isNumber(value)
+        if (isValidNumber) {
+            usingDecimalSymbol = internalDisplayText.contains(DECIMAL_SEPARATOR)
+        }
     }
 
-    fun removeLast() {
+    /**
+     * Check if the string is a valid BigDecimal.
+     * @param str String to test.
+     * @return Whether the String is a validBigDecimal or not.
+     */
+    fun isNumber(str: String): Boolean {
+        try {
+            BigDecimal(str)
+        } catch (e: NumberFormatException) {
+            return false
+        }
+        return true
+    }
+
+    /**
+     * Remove the last digit.
+     *
+     * @return Returns true if a digit was removed.
+     */
+    fun removeLast(): Boolean {
+        if (internalDisplayText.length == 1 && internalDisplayText.toString()[0] == '0') {
+            return false
+        }
+        if (!isValidNumber) {
+            internalDisplayText.setLength(0)
+            isValidNumber = true
+        }
         if (internalDisplayText.length > 0) {
+            if (internalDisplayText.toString()[internalDisplayText.length - 1] == DECIMAL_SEPARATOR) {
+                usingDecimalSymbol = false
+            }
             internalDisplayText.setLength(internalDisplayText.length - 1);
             if (internalDisplayText.length == 1 &&
                     !Character.isDigit(internalDisplayText.toString()[0])) {
@@ -160,5 +221,6 @@ class CalculatorDisplay() {
         if (internalDisplayText.length == 0) {
             internalDisplayText.append("0")
         }
+        return true
     }
 }

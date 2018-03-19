@@ -17,8 +17,7 @@ class Calculator() {
      *
      * The typed number and results must be saved in this variable.
      */
-    lateinit var displayNumber: String
-        private set
+    var displayNumber: CalculatorDisplay = CalculatorDisplay()
 
     /**
      * When an operation is initialized, must clean the current display number.
@@ -64,20 +63,18 @@ class Calculator() {
     fun applyResult(value: BigDecimal) {
         val df = DecimalFormat("0", DecimalFormatSymbols.getInstance(Locale.ENGLISH))
         df.maximumFractionDigits = 340
-        displayNumber = df.format(value)
+        displayNumber.setValue(df.format(value))
+        cleanDisplayOnNextInteraction = true
     }
 
     private fun isIntegerValue(bd: BigDecimal): Boolean {
         return bd.signum() == 0 || bd.scale() <= 0 || bd.stripTrailingZeros().scale() <= 0
     }
 
-    fun typeNumber(number: Int) {
-        if (displayNumber == "0" || cleanDisplayOnNextInteraction) {
-            displayNumber = number.toString()
-        } else {
-            displayNumber += number.toString()
+    fun typeNumber(number: Char) {
+        if (displayNumber.appendNumber(number, cleanDisplayOnNextInteraction)) {
+            cleanDisplayOnNextInteraction = false
         }
-        cleanDisplayOnNextInteraction = false
     }
 
     fun add() {
@@ -107,7 +104,7 @@ class Calculator() {
         if (!cleanDisplayOnNextInteraction ||
                 currentOperation == Operations.NONE ||
                 currentOperation == lastOperation) {
-            currentTotal = calculate(currentOperation, currentTotal, BigDecimal(displayNumber))
+            currentTotal = calculate(currentOperation, currentTotal, displayNumber.toBigDecimal())
         }
     }
 
@@ -124,30 +121,23 @@ class Calculator() {
     }
 
     fun backspace() {
-        if (displayNumber.length > 0 && !displayNumber.equals("0")) {
-            displayNumber = displayNumber.substring(0, displayNumber.length - 1)
-            if (displayNumber == "") {
-                displayNumber = "0"
-            }
-        } else {
-            displayNumber = "0"
+        if (!displayNumber.removeLast()) {
             currentOperation = Operations.NONE
             lastOperation = Operations.NONE
         }
-
     }
 
 
     fun equals() {
         if (currentOperation != Operations.NONE) {
             lastOperation = currentOperation
-            lastInput = BigDecimal(displayNumber)
+            lastInput = displayNumber.toBigDecimal()
             this.updateTempMemory()
         } else {
             if (lastOperation != Operations.NONE) {
-                currentTotal = calculate(lastOperation, BigDecimal(displayNumber), lastInput)
+                currentTotal = calculate(lastOperation, displayNumber.toBigDecimal(), lastInput)
             } else {
-                currentTotal = BigDecimal(displayNumber)
+                currentTotal = displayNumber.toBigDecimal()
             }
         }
         applyResult(currentTotal)
@@ -157,24 +147,20 @@ class Calculator() {
     }
 
     fun typeDot() {
-        if (!isDotVisible()) {
-            displayNumber = displayNumber + "."
-        } else if (cleanDisplayOnNextInteraction) {
-            displayNumber = "0."
+        if (displayNumber.appendDecimalSeparator(cleanDisplayOnNextInteraction)) {
             cleanDisplayOnNextInteraction = false
         }
-    }
 
-    fun isDotVisible(): Boolean = displayNumber.contains(".")
+    }
 
     fun memoryAdd() {
         equals()
-        userMemory.mPlus(BigDecimal(displayNumber))
+        userMemory.mPlus(displayNumber.toBigDecimal())
     }
 
     fun memorySubtract() {
         equals()
-        userMemory.mSubtract(BigDecimal(displayNumber))
+        userMemory.mSubtract(displayNumber.toBigDecimal())
     }
 
     fun memoryResultAndClean() {
@@ -189,11 +175,12 @@ class Calculator() {
     }
 
     fun squareRoot() {
-        applyResult(BigDecimal(Math.sqrt(displayNumber.toDouble()).toString()))
+        displayNumber.setValue(Math.sqrt(displayNumber.toBigDecimal().toDouble()).toString())
+        applyResult(displayNumber.toBigDecimal())
     }
 
     fun percent() {
-        applyResult(currentTotal.multiply(BigDecimal(displayNumber)).divide(BigDecimal("100")))
+        applyResult(currentTotal.multiply(displayNumber.toBigDecimal()).divide(BigDecimal("100")))
     }
 
     fun ce() {

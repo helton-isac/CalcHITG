@@ -79,12 +79,23 @@ class CalculatorDisplayTest {
     }
 
     @Test
-    fun checkMustReturnNullWhenDisplayIsNotANumber() {
+    fun checkMustResetDisplayWithDecimalSeparatorWhenReplaceCurrentDisplayParamIsTrue() {
+        var display: CalculatorDisplay = CalculatorDisplay("1.2")
+        assertTrue(display.appendDecimalSeparator(true))
+        assertEquals("0.", display.toString())
+    }
+
+    @Test
+    fun checkMustThrowExceptionWhenDisplayIsNotANumber() {
         var display: CalculatorDisplay = CalculatorDisplay()
         display.setValue("ERROR")
-        assertNull(display.toBigDecimal())
+        try {
+            display.toBigDecimal()
+        } catch (e: Exception) {
+            assertTrue(e is NumberFormatException)
+        }
         display.setValue("0")
-        assertNotNull(display.toBigDecimal())
+        assertEquals(BigDecimal("0"), display.toBigDecimal())
     }
 
     @Test
@@ -154,33 +165,150 @@ class CalculatorDisplayTest {
     }
 
     @Test
-    fun checkRemoveLast() {
+    fun checkRemoveLastMustReturnTrueWhenSuccess() {
         var display: CalculatorDisplay = CalculatorDisplay("12345678")
-        display.removeLast()
+        assertTrue(display.removeLast())
         assertEquals("1234567", display.toString())
-        display.removeLast()
+        assertTrue(display.removeLast())
         assertEquals("123456", display.toString())
         display.setValue("10")
-        display.removeLast()
+        assertTrue(display.removeLast())
         assertEquals("1", display.toString())
-        display.removeLast()
+        assertTrue(display.removeLast())
         assertEquals("0", display.toString())
-        display.removeLast()
+        display.setValue("-0.001")
+        assertTrue(display.removeLast())
+        assertTrue(display.removeLast())
+        assertTrue(display.removeLast())
+        assertTrue(display.removeLast())
+        assertEquals("-0", display.toString())
+        assertTrue(display.removeLast())
         assertEquals("0", display.toString())
-        display.setValue("123.123")
-        display.removeLast()
-        assertEquals("123.12", display.toString())
-        display.removeLast()
-        assertEquals("123.1", display.toString())
-        display.removeLast()
-        assertEquals("123.", display.toString())
-        display.removeLast()
+    }
+
+    @Test
+    fun checkRemoveLastMustReturnFalseWhenNothingIsRemoved() {
+        var display: CalculatorDisplay = CalculatorDisplay("0.0")
+        assertTrue(display.removeLast())
+        assertEquals("0.", display.toString())
+        assertTrue(display.removeLast())
+        assertEquals("0", display.toString())
+        assertFalse(display.removeLast())
+        assertEquals("0", display.toString())
+        display.setValue("-1.1")
+        assertTrue(display.removeLast())
+        assertEquals("-1.", display.toString())
+        assertTrue(display.removeLast())
+        assertEquals("-1", display.toString())
+        assertTrue(display.removeLast())
+        assertEquals("0", display.toString())
+        assertFalse(display.removeLast())
+        assertEquals("0", display.toString())
+    }
+
+    @Test
+    fun checkAppendNumberMustReturnTrueWhenAppends() {
+        var display: CalculatorDisplay = CalculatorDisplay()
+        assertTrue(display.appendNumber('1'))
+        assertTrue(display.appendNumber('2'))
+        assertTrue(display.appendNumber('3'))
         assertEquals("123", display.toString())
-        display.removeLast()
-        assertEquals("12", display.toString())
-        display.removeLast()
-        assertEquals("1", display.toString())
-        display.removeLast()
+    }
+
+    @Test
+    fun checkAppendNumberMustReturnFalseWhenDoNotAppend() {
+        var display: CalculatorDisplay = CalculatorDisplay()
+        assertFalse(display.appendNumber('0'))
+        assertTrue(display.appendNumber('1'))
+        assertTrue(display.appendDecimalSeparator())
+        assertFalse(display.appendDecimalSeparator())
+        assertTrue(display.appendNumber('1'))
+        assertTrue(display.appendNumber('1'))
+        assertFalse(display.appendDecimalSeparator())
+        assertEquals("1.11", display.toString())
+        display = CalculatorDisplay(2)
+        assertTrue(display.appendNumber('1'))
+        assertTrue(display.appendNumber('1'))
+        assertFalse(display.appendNumber('2'))
+        assertFalse(display.appendNumber('2'))
+        assertEquals("11", display.toString())
+    }
+
+    @Test
+    fun checkMaxLengthMustNotCountForDecimalSeparator() {
+        var display: CalculatorDisplay = CalculatorDisplay(2)
+        assertTrue(display.appendNumber('1'))
+        assertTrue(display.appendDecimalSeparator())
+        assertTrue(display.appendNumber('2'))
+        assertFalse(display.appendNumber('3'))
+        assertEquals("1.2", display.toString())
+    }
+
+    @Test
+    fun checkRemoveLastMustEnableUseDecimalSeparatorWhenRemoveADecimalSeparator() {
+        var display: CalculatorDisplay = CalculatorDisplay()
+        assertTrue(display.appendDecimalSeparator())
+        assertEquals("0.", display.toString())
+        assertFalse(display.appendDecimalSeparator())
+        assertTrue(display.appendNumber('1'))
+        assertFalse(display.appendDecimalSeparator())
+        assertEquals("0.1", display.toString())
+        assertTrue(display.removeLast())
+        assertFalse(display.appendDecimalSeparator())
+        assertTrue(display.removeLast())
+        assertTrue(display.appendDecimalSeparator())
+        assertEquals("0.", display.toString())
+
+        display = CalculatorDisplay("123.123")
+        assertFalse(display.appendDecimalSeparator())
+        assertTrue(display.removeLast())
+        assertFalse(display.appendDecimalSeparator())
+        assertTrue(display.removeLast())
+        assertFalse(display.appendDecimalSeparator())
+        assertTrue(display.removeLast())
+        assertTrue(display.removeLast())
+        assertTrue(display.removeLast())
+        assertTrue(display.appendDecimalSeparator())
+        assertTrue(display.appendNumber('9'))
+        assertFalse(display.appendDecimalSeparator())
+        assertEquals("12.9", display.toString())
+    }
+
+    @Test
+    fun checkValidNumber() {
+        var display: CalculatorDisplay = CalculatorDisplay("1.1.2.3")
+        try {
+            display.toBigDecimal()
+        } catch (e: Exception) {
+            assertTrue(e is NumberFormatException)
+        }
+        assertEquals("1.1.2.3", display.toString())
+        assertFalse(display.appendDecimalSeparator())
+        assertEquals("1.1.2.3", display.toString())
+        assertTrue(display.appendNumber('2'))
+        assertEquals("2", display.toString())
+        assertTrue(display.appendDecimalSeparator())
+        assertTrue(display.appendNumber('3'))
+        assertEquals("2.3", display.toString())
+        display.setValue("ERROR")
+        try {
+            display.toBigDecimal()
+        } catch (e: Exception) {
+            assertTrue(e is NumberFormatException)
+        }
+        assertEquals("ERROR", display.toString())
+        assertTrue(display.removeLast())
+        assertEquals("0", display.toString())
+        assertFalse(display.removeLast())
+        assertEquals("0", display.toString())
+        display.setValue("-")
+        try {
+            display.toBigDecimal()
+        } catch (e: Exception) {
+            assertTrue(e is NumberFormatException)
+        }
+        assertEquals("-", display.toString())
+        assertTrue(display.removeLast())
         assertEquals("0", display.toString())
     }
 }

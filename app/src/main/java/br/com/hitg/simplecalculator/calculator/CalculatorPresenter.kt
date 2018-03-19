@@ -24,7 +24,7 @@ class CalculatorPresenter(val calculatorView: CalculatorContract.View) :
     }
 
     private fun updateView() {
-        calculatorView.updateDisplay(calculator.displayNumber)
+        calculatorView.updateDisplay(calculator.displayNumber.toString())
         calculatorView.updateOperation(calculator.currentOperation)
         calculatorView.showHideMemory(calculator.isMemoryInUse())
     }
@@ -88,27 +88,17 @@ class CalculatorPresenter(val calculatorView: CalculatorContract.View) :
 
     override fun typeNumber(key: CalculatorNumbers) {
         when (key) {
-            CalculatorNumbers.ZERO -> calculator.typeNumber(0)
-            CalculatorNumbers.ONE -> calculator.typeNumber(1)
-            CalculatorNumbers.TWO -> calculator.typeNumber(2)
-            CalculatorNumbers.THREE -> calculator.typeNumber(3)
-            CalculatorNumbers.FOUR -> calculator.typeNumber(4)
-            CalculatorNumbers.FIVE -> calculator.typeNumber(5)
-            CalculatorNumbers.SIX -> calculator.typeNumber(6)
-            CalculatorNumbers.SEVEN -> calculator.typeNumber(7)
-            CalculatorNumbers.EIGHT -> calculator.typeNumber(8)
-            CalculatorNumbers.NINE -> calculator.typeNumber(9)
+            CalculatorNumbers.ZERO  -> calculator.typeNumber('0')
+            CalculatorNumbers.ONE   -> calculator.typeNumber('1')
+            CalculatorNumbers.TWO   -> calculator.typeNumber('2')
+            CalculatorNumbers.THREE -> calculator.typeNumber('3')
+            CalculatorNumbers.FOUR  -> calculator.typeNumber('4')
+            CalculatorNumbers.FIVE  -> calculator.typeNumber('5')
+            CalculatorNumbers.SIX   -> calculator.typeNumber('6')
+            CalculatorNumbers.SEVEN -> calculator.typeNumber('7')
+            CalculatorNumbers.EIGHT -> calculator.typeNumber('8')
+            CalculatorNumbers.NINE  -> calculator.typeNumber('9')
         }
         updateView()
     }
-
-    var calcMemory: Int = 0
-
-    var displayNumber: String = "0"
-
-    var hasDecimals: Boolean = false
-
-    var cleanDisplay: Boolean = false
-
-
 }
