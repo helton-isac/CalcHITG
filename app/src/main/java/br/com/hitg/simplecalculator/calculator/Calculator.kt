@@ -161,7 +161,7 @@ class Calculator() {
             displayNumber = displayNumber + "."
         } else if (cleanDisplayOnNextInteraction) {
             displayNumber = "0."
-            cleanDisplayOnNextInteraction = false;
+            cleanDisplayOnNextInteraction = false
         }
     }
 
