@@ -22,8 +22,8 @@ class CalculatorUserMemory {
      * Returns the current memory and reset
      */
     fun mrc(): BigDecimal {
-        try {
-            return memory
+        return try {
+            memory
         } finally {
             isMemoryInUse = false
             memory = BigDecimal("0")

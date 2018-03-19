@@ -7,10 +7,12 @@ import java.math.BigDecimal
  */
 class CalculatorDisplay() {
 
-    /**
-     * Decimal Symbol.
-     */
-    private val DECIMAL_SEPARATOR: Char = '.'
+    companion object {
+        /**
+         * Decimal Symbol.
+         */
+        val DECIMAL_SEPARATOR: Char = '.'
+    }
 
     /**
      * Internal control of the text to be displayed.
@@ -91,8 +93,8 @@ class CalculatorDisplay() {
             throw IllegalArgumentException("Invalid value, must be a number")
         }
 
-        var isZero: Boolean = internalDisplayText.length == 1
-                && internalDisplayText.toString().equals("0")
+        val isZero: Boolean = internalDisplayText.length == 1
+                && internalDisplayText.toString() == "0"
 
 
         if (charNumber == '0' && isZero) {
@@ -186,7 +188,7 @@ class CalculatorDisplay() {
      * @param str String to test.
      * @return Whether the String is a validBigDecimal or not.
      */
-    fun isNumber(str: String): Boolean {
+    private fun isNumber(str: String): Boolean {
         try {
             BigDecimal(str)
         } catch (e: NumberFormatException) {
@@ -208,17 +210,17 @@ class CalculatorDisplay() {
             internalDisplayText.setLength(0)
             isValidNumber = true
         }
-        if (internalDisplayText.length > 0) {
+        if (internalDisplayText.isNotEmpty()) {
             if (internalDisplayText.toString()[internalDisplayText.length - 1] == DECIMAL_SEPARATOR) {
                 usingDecimalSymbol = false
             }
-            internalDisplayText.setLength(internalDisplayText.length - 1);
+            internalDisplayText.setLength(internalDisplayText.length - 1)
             if (internalDisplayText.length == 1 &&
                     !Character.isDigit(internalDisplayText.toString()[0])) {
                 internalDisplayText.setLength(0)
             }
         }
-        if (internalDisplayText.length == 0) {
+        if (internalDisplayText.isEmpty()) {
             internalDisplayText.append("0")
         }
         return true

@@ -10,7 +10,7 @@ import java.util.*
  *
  * Class responsible by managing the memory and calculations.
  */
-class Calculator() {
+class Calculator {
 
     /**
      * Display Number.
@@ -60,15 +60,11 @@ class Calculator() {
         userMemory.mrc()
     }
 
-    fun applyResult(value: BigDecimal) {
+    private fun applyResult(value: BigDecimal) {
         val df = DecimalFormat("0", DecimalFormatSymbols.getInstance(Locale.ENGLISH))
         df.maximumFractionDigits = 340
         displayNumber.setValue(df.format(value))
         cleanDisplayOnNextInteraction = true
-    }
-
-    private fun isIntegerValue(bd: BigDecimal): Boolean {
-        return bd.signum() == 0 || bd.scale() <= 0 || bd.stripTrailingZeros().scale() <= 0
     }
 
     fun typeNumber(number: Char) {
@@ -93,7 +89,7 @@ class Calculator() {
         performOperation(Operations.MULTIPLICATION)
     }
 
-    fun performOperation(operation: Operations) {
+    private fun performOperation(operation: Operations) {
         this.updateTempMemory()
         currentOperation = operation
         applyResult(currentTotal)
@@ -134,10 +130,10 @@ class Calculator() {
             lastInput = displayNumber.toBigDecimal()
             this.updateTempMemory()
         } else {
-            if (lastOperation != Operations.NONE) {
-                currentTotal = calculate(lastOperation, displayNumber.toBigDecimal(), lastInput)
+            currentTotal = if (lastOperation != Operations.NONE) {
+                calculate(lastOperation, displayNumber.toBigDecimal(), lastInput)
             } else {
-                currentTotal = displayNumber.toBigDecimal()
+                displayNumber.toBigDecimal()
             }
         }
         applyResult(currentTotal)

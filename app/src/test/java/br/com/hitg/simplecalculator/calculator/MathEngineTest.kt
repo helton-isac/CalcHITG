@@ -145,7 +145,7 @@ class MathEngineTest {
                 BigDecimal(expected), MathEngine.add(BigDecimal(v1), BigDecimal(v2)))
     }
 
-    fun assertSubtract(message: String, expected: String, v1: String, v2: String) {
+    private fun assertSubtract(message: String, expected: String, v1: String, v2: String) {
         assertEquals(message,
                 BigDecimal(expected), MathEngine.subtract(BigDecimal(v1), BigDecimal(v2)))
     }

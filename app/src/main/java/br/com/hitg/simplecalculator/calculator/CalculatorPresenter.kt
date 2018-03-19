@@ -3,7 +3,7 @@ package br.com.hitg.simplecalculator.calculator
 import br.com.hitg.simplecalculator.calculator.CalculatorContract.CalculatorNumbers
 
 
-class CalculatorPresenter(val calculatorView: CalculatorContract.View) :
+class CalculatorPresenter(private val calculatorView: CalculatorContract.View) :
         CalculatorContract.Presenter {
 
     private val calculator: Calculator

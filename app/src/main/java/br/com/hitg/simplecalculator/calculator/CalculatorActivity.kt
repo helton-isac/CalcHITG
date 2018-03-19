@@ -22,11 +22,6 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View {
         presenter = CalculatorPresenter(this)
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        //TODO: IMPLEMENT IT
-        super.onSaveInstanceState(outState)
-    }
-
     fun onClickButton(v: View?) {
         try {
 
@@ -61,10 +56,6 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View {
             presenter = CalculatorPresenter(this)
             txtSignals.setText(R.string.error)
         }
-    }
-
-    override fun finish() {
-        super.finish()
     }
 
     override fun updateDisplay(value: String) {

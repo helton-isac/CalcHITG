@@ -7,12 +7,9 @@ import org.junit.Test
 import java.math.BigDecimal
 
 
-/**
- * Created by Helton on 17/03/2018.
- */
 class CalculatorUserMemoryTest {
 
-    lateinit var userMemory: CalculatorUserMemory
+    private lateinit var userMemory: CalculatorUserMemory
 
     @Before
     fun setUp() {

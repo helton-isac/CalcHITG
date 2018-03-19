@@ -8,13 +8,13 @@ class CalculatorDisplayTest {
 
     @Test
     fun checkToString() {
-        var display: CalculatorDisplay = CalculatorDisplay()
+        val display = CalculatorDisplay()
         assertEquals("0", display.toString())
     }
 
     @Test
     fun checkAppendNumber() {
-        var display: CalculatorDisplay = CalculatorDisplay()
+        val display = CalculatorDisplay()
         display.appendNumber('1')
         display.appendNumber('2')
         display.appendNumber('3')
@@ -23,7 +23,7 @@ class CalculatorDisplayTest {
 
     @Test
     fun checkDecimalSeparator() {
-        var display: CalculatorDisplay = CalculatorDisplay()
+        val display = CalculatorDisplay()
         display.appendDecimalSeparator()
         assertEquals("0.", display.toString())
         display.appendNumber('1')
@@ -36,7 +36,7 @@ class CalculatorDisplayTest {
 
     @Test
     fun checkToBigDecimalMustParseDisplayToBigDecimal() {
-        var display: CalculatorDisplay = CalculatorDisplay()
+        val display = CalculatorDisplay()
         assertEquals(BigDecimal("0"), display.toBigDecimal())
         display.appendDecimalSeparator()
         assertEquals(BigDecimal("0."), display.toBigDecimal())
@@ -48,7 +48,7 @@ class CalculatorDisplayTest {
 
     @Test
     fun checkMustSetValue() {
-        var display: CalculatorDisplay = CalculatorDisplay()
+        val display = CalculatorDisplay()
         display.setValue("123456789.123456789")
         assertEquals("123456789.123456789", display.toString())
         display.setValue("987654321.987654321")
@@ -61,7 +61,7 @@ class CalculatorDisplayTest {
 
     @Test
     fun checkMustResetDisplayWhenReplaceCurrentDisplayParamIsTrue() {
-        var display: CalculatorDisplay = CalculatorDisplay()
+        val display = CalculatorDisplay()
         display.appendDecimalSeparator()
         display.appendNumber('1')
         display.appendNumber('2')
@@ -80,14 +80,14 @@ class CalculatorDisplayTest {
 
     @Test
     fun checkMustResetDisplayWithDecimalSeparatorWhenReplaceCurrentDisplayParamIsTrue() {
-        var display: CalculatorDisplay = CalculatorDisplay("1.2")
+        val display = CalculatorDisplay("1.2")
         assertTrue(display.appendDecimalSeparator(true))
         assertEquals("0.", display.toString())
     }
 
     @Test
     fun checkMustThrowExceptionWhenDisplayIsNotANumber() {
-        var display: CalculatorDisplay = CalculatorDisplay()
+        val display = CalculatorDisplay()
         display.setValue("ERROR")
         try {
             display.toBigDecimal()
@@ -100,7 +100,7 @@ class CalculatorDisplayTest {
 
     @Test
     fun checkInvalidInputMustThrowError() {
-        var display: CalculatorDisplay = CalculatorDisplay()
+        val display = CalculatorDisplay()
         try {
             display.appendNumber('E')
             fail("Must throws an IllegalArgumentException")
@@ -111,7 +111,7 @@ class CalculatorDisplayTest {
 
     @Test
     fun checkInitialValueConstructor() {
-        var display: CalculatorDisplay = CalculatorDisplay("123")
+        var display = CalculatorDisplay("123")
         assertEquals("123", display.toString())
         display = CalculatorDisplay("TEST")
         assertEquals("TEST", display.toString())
@@ -123,7 +123,7 @@ class CalculatorDisplayTest {
 
     @Test
     fun checkMaxValueConstructor() {
-        var display: CalculatorDisplay = CalculatorDisplay(8)
+        val display = CalculatorDisplay(8)
         display.setValue("1234567")
         assertEquals("1234567", display.toString())
         display.appendNumber('8')
@@ -142,7 +142,7 @@ class CalculatorDisplayTest {
 
     @Test
     fun checkMaxValueInfinity() {
-        var display: CalculatorDisplay = CalculatorDisplay(-1)
+        val display = CalculatorDisplay(-1)
         display.setValue("1")
         assertEquals("1", display.toString())
         display.appendNumber('8')
@@ -157,7 +157,7 @@ class CalculatorDisplayTest {
 
     @Test
     fun checkMaxValueZero() {
-        var display: CalculatorDisplay = CalculatorDisplay(0)
+        val display = CalculatorDisplay(0)
         display.setValue("1")
         assertEquals("", display.toString())
         display.appendNumber('8')
@@ -166,7 +166,7 @@ class CalculatorDisplayTest {
 
     @Test
     fun checkRemoveLastMustReturnTrueWhenSuccess() {
-        var display: CalculatorDisplay = CalculatorDisplay("12345678")
+        val display = CalculatorDisplay("12345678")
         assertTrue(display.removeLast())
         assertEquals("1234567", display.toString())
         assertTrue(display.removeLast())
@@ -188,7 +188,7 @@ class CalculatorDisplayTest {
 
     @Test
     fun checkRemoveLastMustReturnFalseWhenNothingIsRemoved() {
-        var display: CalculatorDisplay = CalculatorDisplay("0.0")
+        val display = CalculatorDisplay("0.0")
         assertTrue(display.removeLast())
         assertEquals("0.", display.toString())
         assertTrue(display.removeLast())
@@ -208,7 +208,7 @@ class CalculatorDisplayTest {
 
     @Test
     fun checkAppendNumberMustReturnTrueWhenAppends() {
-        var display: CalculatorDisplay = CalculatorDisplay()
+        val display = CalculatorDisplay()
         assertTrue(display.appendNumber('1'))
         assertTrue(display.appendNumber('2'))
         assertTrue(display.appendNumber('3'))
@@ -217,7 +217,7 @@ class CalculatorDisplayTest {
 
     @Test
     fun checkAppendNumberMustReturnFalseWhenDoNotAppend() {
-        var display: CalculatorDisplay = CalculatorDisplay()
+        var display = CalculatorDisplay()
         assertFalse(display.appendNumber('0'))
         assertTrue(display.appendNumber('1'))
         assertTrue(display.appendDecimalSeparator())
@@ -236,7 +236,7 @@ class CalculatorDisplayTest {
 
     @Test
     fun checkMaxLengthMustNotCountForDecimalSeparator() {
-        var display: CalculatorDisplay = CalculatorDisplay(2)
+        val display = CalculatorDisplay(2)
         assertTrue(display.appendNumber('1'))
         assertTrue(display.appendDecimalSeparator())
         assertTrue(display.appendNumber('2'))
@@ -246,7 +246,7 @@ class CalculatorDisplayTest {
 
     @Test
     fun checkRemoveLastMustEnableUseDecimalSeparatorWhenRemoveADecimalSeparator() {
-        var display: CalculatorDisplay = CalculatorDisplay()
+        var display = CalculatorDisplay()
         assertTrue(display.appendDecimalSeparator())
         assertEquals("0.", display.toString())
         assertFalse(display.appendDecimalSeparator())
@@ -276,7 +276,7 @@ class CalculatorDisplayTest {
 
     @Test
     fun checkValidNumber() {
-        var display: CalculatorDisplay = CalculatorDisplay("1.1.2.3")
+        val display = CalculatorDisplay("1.1.2.3")
         try {
             display.toBigDecimal()
         } catch (e: Exception) {
