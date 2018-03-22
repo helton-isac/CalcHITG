@@ -132,12 +132,23 @@ class CalculatorDisplayTest {
         assertEquals("12345678", display.toString())
         display.appendNumber('0')
         assertEquals("12345678", display.toString())
-        display.setValue("987654321")
-        assertEquals("98765432", display.toString())
-        display.setValue("1234567890")
-        assertEquals("12345678", display.toString())
         display.appendNumber('0', true)
         assertEquals("0", display.toString())
+    }
+
+    @Test
+    fun checkMustThrowExceptionWhenSetValueGreaterThanMaxValue() {
+        val display = CalculatorDisplay(8)
+        try {
+            display.setValue("987654321")
+        } catch (e: Exception) {
+            assertTrue(e is ArithmeticException)
+        }
+        try {
+            display.setValue("1234567890")
+        } catch (e: Exception) {
+            assertTrue(e is ArithmeticException)
+        }
     }
 
     @Test
@@ -156,12 +167,12 @@ class CalculatorDisplayTest {
     }
 
     @Test
-    fun checkMaxValueZero() {
-        val display = CalculatorDisplay(0)
-        display.setValue("1")
-        assertEquals("", display.toString())
-        display.appendNumber('8')
-        assertEquals("", display.toString())
+    fun checkMustThrowExceptionMaxValueZero() {
+        try {
+            CalculatorDisplay(0)
+        } catch (e: Exception) {
+            assertTrue(e is IllegalArgumentException)
+        }
     }
 
     @Test

@@ -17,7 +17,7 @@ class Calculator {
      *
      * The typed number and results must be saved in this variable.
      */
-    var displayNumber: CalculatorDisplay = CalculatorDisplay()
+    var displayNumber: CalculatorDisplay = CalculatorDisplay(8)
 
     /**
      * When an operation is initialized, must clean the current display number.
@@ -166,7 +166,6 @@ class Calculator {
             } else {
                 applyResult(this.userMemory.mrc())
             }
-
         }
     }
 

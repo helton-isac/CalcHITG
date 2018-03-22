@@ -58,8 +58,8 @@ class CalculatorDisplay() {
      * @param initialValue An initialValue to display
      */
     constructor(maxLength: Int, initialValue: String) : this() {
-        if (maxLength < -1) {
-            throw IllegalArgumentException("The argument must be any number between -1 and MAX_INTEGER")
+        if (maxLength < -1 || maxLength == 0) {
+            throw IllegalArgumentException("The argument must be any number greater than zero or -1")
         }
         this.maxLength = maxLength
 
@@ -171,13 +171,24 @@ class CalculatorDisplay() {
      */
     fun setValue(value: String) {
         internalDisplayText.setLength(0)
-        if (this.maxLength > -1 && value.length > this.maxLength) {
-            internalDisplayText.append(value.substring(0, this.maxLength))
+
+        val indexOfDecimalSeparator = value.indexOf(DECIMAL_SEPARATOR)
+        val maxLengthConsideringDecimalSeparator =
+                this.maxLength + if (indexOfDecimalSeparator > -1) 1 else 0
+
+        isValidNumber = isNumber(value)
+        if (isValidNumber
+                && this.maxLength > -1
+                && value.length > maxLengthConsideringDecimalSeparator) {
+            if (indexOfDecimalSeparator == -1
+                    || indexOfDecimalSeparator > this.maxLength) {
+                throw ArithmeticException("The number has no precision enough")
+            }
+            internalDisplayText.append(value.substring(0, maxLengthConsideringDecimalSeparator))
         } else {
             internalDisplayText.append(value)
         }
 
-        isValidNumber = isNumber(value)
         if (isValidNumber) {
             usingDecimalSymbol = internalDisplayText.contains(DECIMAL_SEPARATOR)
         }

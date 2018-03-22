@@ -54,7 +54,7 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View {
             }
         } catch (ex: Exception) {
             presenter = CalculatorPresenter(this)
-            txtSignals.setText(R.string.error)
+            txtDisplay.setText(R.string.error)
         }
     }
 
