@@ -1,4 +1,4 @@
-package br.com.hitg.simplecalculator.calculator
+package br.com.hitg.calculator.calculator
 
 /**
  * Created by Helton on 20/02/2018.

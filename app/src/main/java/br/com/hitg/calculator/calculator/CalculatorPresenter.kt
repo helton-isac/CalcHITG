@@ -1,6 +1,6 @@
-package br.com.hitg.simplecalculator.calculator
+package br.com.hitg.calculator.calculator
 
-import br.com.hitg.simplecalculator.calculator.CalculatorContract.CalculatorNumbers
+import br.com.hitg.calculator.calculator.CalculatorContract.CalculatorNumbers
 
 
 class CalculatorPresenter(private val calculatorView: CalculatorContract.View) :

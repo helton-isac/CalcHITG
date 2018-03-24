@@ -1,12 +1,10 @@
-package br.com.hitg.simplecalculator
+package br.com.hitg.calculator
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
-
+import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
-
-import org.junit.Assert.*
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -19,6 +17,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("br.com.hitg.simplecalculator", appContext.packageName)
+        assertEquals("br.com.hitg.calculator", appContext.packageName)
     }
 }

@@ -1,7 +1,7 @@
-package br.com.hitg.simplecalculator.calculator
+package br.com.hitg.calculator.calculator
 
-import br.com.hitg.simplecalculator.BasePresenter
-import br.com.hitg.simplecalculator.BaseView
+import br.com.hitg.calculator.BasePresenter
+import br.com.hitg.calculator.BaseView
 
 /**
  * Created by Helton on 20/02/2018.
@@ -11,7 +11,7 @@ import br.com.hitg.simplecalculator.BaseView
 interface CalculatorContract {
 
     /**
-     * Available Numbers in the Simple Calculator
+     * Available Numbers in the Calculator
      */
     enum class CalculatorNumbers {
 

@@ -1,4 +1,4 @@
-package br.com.hitg.simplecalculator.calculator
+package br.com.hitg.calculator.calculator
 
 import org.junit.Assert.*
 import org.junit.Test

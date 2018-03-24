@@ -1,4 +1,4 @@
-package br.com.hitg.simplecalculator.calculator
+package br.com.hitg.calculator.calculator
 
 import java.math.BigDecimal
 import java.text.DecimalFormat

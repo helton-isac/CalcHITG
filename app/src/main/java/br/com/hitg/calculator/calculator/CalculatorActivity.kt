@@ -1,10 +1,10 @@
-package br.com.hitg.simplecalculator.calculator
+package br.com.hitg.calculator.calculator
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import br.com.hitg.simplecalculator.R
-import br.com.hitg.simplecalculator.calculator.CalculatorContract.CalculatorNumbers
+import br.com.hitg.calculator.R
+import br.com.hitg.calculator.calculator.CalculatorContract.CalculatorNumbers
 import kotlinx.android.synthetic.main.activity_calculator.*
 
 class CalculatorActivity : AppCompatActivity(), CalculatorContract.View {

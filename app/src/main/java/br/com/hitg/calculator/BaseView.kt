@@ -1,4 +1,4 @@
-package br.com.hitg.simplecalculator
+package br.com.hitg.calculator
 
 interface BaseView<T> {
     var presenter: T
