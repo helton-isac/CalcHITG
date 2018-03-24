@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import br.com.hitg.calculator.R
 import br.com.hitg.calculator.calculator.CalculatorContract.CalculatorNumbers
+import com.crashlytics.android.Crashlytics
 import kotlinx.android.synthetic.main.activity_calculator.*
 
 class CalculatorActivity : AppCompatActivity(), CalculatorContract.View {
@@ -55,6 +56,7 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View {
         } catch (ex: Exception) {
             presenter = CalculatorPresenter(this)
             txtDisplay.setText(R.string.error)
+            Crashlytics.logException(ex);
         }
     }
 
