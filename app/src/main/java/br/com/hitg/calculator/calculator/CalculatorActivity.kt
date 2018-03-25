@@ -8,7 +8,7 @@ import br.com.hitg.calculator.calculator.CalculatorContract.CalculatorNumbers
 import com.crashlytics.android.Crashlytics
 import kotlinx.android.synthetic.main.activity_calculator.*
 
-open class CalculatorActivity : AppCompatActivity(), CalculatorContract.View {
+class CalculatorActivity : AppCompatActivity(), CalculatorContract.View {
 
     override lateinit var presenter: CalculatorContract.Presenter
 
@@ -23,11 +23,10 @@ open class CalculatorActivity : AppCompatActivity(), CalculatorContract.View {
         presenter = CalculatorPresenter(this)
     }
 
-    open
-    fun onClickButton(view: View?) {
+    fun onClickButton(view: View) {
         try {
 
-            when (view?.id) {
+            when (view.id) {
                 R.id.btnZero -> presenter.typeNumber(CalculatorNumbers.ZERO)
                 R.id.btnOne -> presenter.typeNumber(CalculatorNumbers.ONE)
                 R.id.btnTwo -> presenter.typeNumber(CalculatorNumbers.TWO)
