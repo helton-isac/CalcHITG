@@ -13,14 +13,14 @@ jobs:
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
+          name: Chmod permissions  #if permission for Gradlew Dependencies fail, use this.
+          command: sudo chmod +x ./gradlew
+      - run:
           name: Get private keys etc
           command: ./misc/download_keystore.sh
       - run:
           name: Restoring Google Services Json
           command: echo $GSERVICES_KEY | base64 --decode > ~/CalcHITG/app/google-services.json
-      - run:
-          name: Chmod permissions  #if permission for Gradlew Dependencies fail, use this.
-          command: sudo chmod +x ./gradlew
       - run:
           name: Download Dependencies
           command: ./gradlew androidDependencies
