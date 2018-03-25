@@ -40,13 +40,13 @@ jobs:
       - run:
           name: Release
           command: ./gradlew assembleRelease
-      - run:
-          name: javadoc
-          command: ./gradlew javadoc
+#      - run:
+#          name: javadoc
+#          command: ./gradlew javadoc
 
 
       - store_artifacts:
-          path: SimpleCalculator\app\release
+          path: app/build/outputs/apk/release
           destination: apk
 #      - store_artifacts:
 #          path: androidplot-core/build/docs/javadoc
