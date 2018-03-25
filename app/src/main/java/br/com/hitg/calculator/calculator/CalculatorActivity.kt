@@ -23,10 +23,11 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View {
         presenter = CalculatorPresenter(this)
     }
 
-    fun onClickButton(view: View) {
+    open
+    fun onClickButton(view: View?) {
         try {
 
-            when (view.id) {
+            when (view?.id) {
                 R.id.btnZero -> presenter.typeNumber(CalculatorNumbers.ZERO)
                 R.id.btnOne -> presenter.typeNumber(CalculatorNumbers.ONE)
                 R.id.btnTwo -> presenter.typeNumber(CalculatorNumbers.TWO)
