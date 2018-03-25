@@ -8,7 +8,7 @@ import br.com.hitg.calculator.calculator.CalculatorContract.CalculatorNumbers
 import com.crashlytics.android.Crashlytics
 import kotlinx.android.synthetic.main.activity_calculator.*
 
-class CalculatorActivity : AppCompatActivity(), CalculatorContract.View {
+open class CalculatorActivity : AppCompatActivity(), CalculatorContract.View {
 
     override lateinit var presenter: CalculatorContract.Presenter
 
