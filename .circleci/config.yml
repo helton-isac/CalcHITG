@@ -7,10 +7,14 @@ jobs:
     environment:
       JVM_OPTS: -Xmx3200m
       CIRCLE_JDK_VERSION: oraclejdk8
+      KEYSTORE: ~/CalcHITG/KeyStore.jks
     steps:
       - checkout
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+      - run:
+          name: Get private keys etc
+          command: ./misc/download_keystore.sh
       - run:
           name: Restoring Google Services Json
           command: echo $GSERVICES_KEY | base64 --decode > ~/CalcHITG/app/google-services.json
@@ -25,10 +29,43 @@ jobs:
             - ~/.gradle
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
-          name: Run Tests
+          name: Run Lint Tests
           command: ./gradlew lint test
+      - run:
+          name: Run Unit Tests
+          command: ./gradlew test
+      - run:
+          name: Release
+          command: ./gradlew assembleRelease
+      - run:
+          name: javadoc
+          command: ./gradlew javadoc
+
+
+      - store_artifacts:
+          path: SimpleCalculator\app\release
+          destination: apk
+#      - store_artifacts:
+#          path: androidplot-core/build/docs/javadoc
+#          destination: javadoc
+
       - store_artifacts:
           path: app/build/reports
           destination: reports
       - store_test_results:
           path: app/build/test-results
+
+#      - deploy:
+#          name: "Deploy to Bintray"
+#          command: |
+#            if [ "${CIRCLE_BRANCH}" == "master" ];
+#              then ./gradlew bintrayUpload;
+#            fi
+#      - deploy:
+#          name: "Deploy to Google Play"
+#          command: |
+#            if [ "${CIRCLE_BRANCH}" == "master" ];
+#              then
+#                ./misc/download_google_publisher_json.sh;
+#                ./gradlew publishApkRelease
+#            fi
