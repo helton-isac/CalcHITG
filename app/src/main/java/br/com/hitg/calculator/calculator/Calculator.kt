@@ -150,12 +150,16 @@ class Calculator {
     }
 
     fun memoryAdd() {
-        equals()
+        if (currentOperation != Operations.NONE) {
+            equals()
+        }
         userMemory.mPlus(displayNumber.toBigDecimal())
     }
 
     fun memorySubtract() {
-        equals()
+        if (currentOperation != Operations.NONE) {
+            equals()
+        }
         userMemory.mSubtract(displayNumber.toBigDecimal())
     }
 
