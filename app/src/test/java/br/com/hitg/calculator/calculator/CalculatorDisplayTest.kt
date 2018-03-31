@@ -199,10 +199,7 @@ class CalculatorDisplayTest {
 
     @Test
     fun checkRemoveLastMustReturnFalseWhenNothingIsRemoved() {
-        val display = CalculatorDisplay("0.0")
-        assertTrue(display.removeLast())
-        assertEquals("0.", display.toString())
-        assertTrue(display.removeLast())
+        val display = CalculatorDisplay("0")
         assertEquals("0", display.toString())
         assertFalse(display.removeLast())
         assertEquals("0", display.toString())
@@ -320,6 +317,12 @@ class CalculatorDisplayTest {
         }
         assertEquals("-", display.toString())
         assertTrue(display.removeLast())
+        assertEquals("0", display.toString())
+    }
+
+    @Test
+    fun checkMustIgnoreZeroWithScaleOnConstructor() {
+        val display = CalculatorDisplay("0.00000")
         assertEquals("0", display.toString())
     }
 }

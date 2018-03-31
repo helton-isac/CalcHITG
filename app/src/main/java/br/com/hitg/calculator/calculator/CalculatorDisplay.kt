@@ -134,7 +134,7 @@ class CalculatorDisplay() {
     }
 
     /**
-     * Appends a decimal separator. (Ignores MAX_LENGTH)
+     * Appends a decimal separator.
      *
      * It is only possible to append one separator
      *
@@ -156,7 +156,8 @@ class CalculatorDisplay() {
         if (replaceCurrentDisplay) {
             setValue("0")
         }
-        if (!usingDecimalSymbol && isValidNumber && internalDisplayText.length < this.maxLength) {
+        if (!usingDecimalSymbol && isValidNumber &&
+                (this.maxLength == -1 || internalDisplayText.length < this.maxLength)) {
             internalDisplayText.append(DECIMAL_SEPARATOR)
             usingDecimalSymbol = true
             return true
