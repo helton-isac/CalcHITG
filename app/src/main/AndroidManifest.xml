@@ -11,10 +11,10 @@
         android:theme="@style/AppTheme">
         <activity
             android:name="br.com.hitg.calculator.calculator.CalculatorActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:launchMode="singleInstance">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

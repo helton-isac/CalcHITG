@@ -8,16 +8,28 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="DefaultButton" parent="Widget.AppCompat.Button">
-        <item name="android:layout_marginBottom">4dp</item>
-        <item name="android:layout_marginEnd">4dp</item>
-        <item name="android:layout_marginStart">4dp</item>
-        <item name="android:layout_marginTop">4dp</item>
+    <style name="BlackButtonStyle" parent="Widget.AppCompat.Button">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">0dp</item>
         <item name="android:textSize">24sp</item>
-        <item name="android:textColor">@android:color/background_light</item>
-        <item name="backgroundTint">#333333</item>
+        <item name="android:textColor">@color/colorWhiteText</item>
+    </style>
+
+    <style name="BlackButtonTheme" parent="Widget.AppCompat.Button">
+        <item name="colorButtonNormal">@color/colorBlackPrimary</item>
+        <item name="colorControlHighlight">@color/colorBlackLight</item>
+    </style>
+
+    <style name="RedButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/colorWhiteText</item>
+    </style>
+
+    <style name="RedButtonTheme" parent="Widget.AppCompat.Button">
+        <item name="colorButtonNormal">@color/colorRedPrimary</item>
+        <item name="colorControlHighlight">@color/colorRedLight</item>
     </style>
 
 

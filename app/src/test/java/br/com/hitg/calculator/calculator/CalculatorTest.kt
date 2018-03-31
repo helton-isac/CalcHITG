@@ -191,7 +191,6 @@ class CalculatorTest {
     }
 
     fun typeNumberKeyByKey(strNumber: String, calc: Calculator) {
-
         for (number in strNumber) {
             if (number == '.') {
                 calc.typeDot()
@@ -199,6 +198,29 @@ class CalculatorTest {
                 calc.typeNumber(number)
             }
         }
+    }
 
+    @Test
+    fun checkMustIgnoreDotAtLeftDuringCalculations() {
+        var calc = Calculator()
+        typeNumberKeyByKey("9999999.5", calc)
+        assertEquals("9999999.5", calc.displayNumber.toString())
+        calc.multiply()
+        typeNumberKeyByKey("2", calc)
+        calc.equals()
+        assertEquals("19999999", calc.displayNumber.toString())
+    }
+
+    @Test
+    fun checkMustIgnoreZeroWithScaleDuringCalculations() {
+        var calc = Calculator()
+        typeNumberKeyByKey("0.0000002", calc)
+        assertEquals("0.0000002", calc.displayNumber.toString())
+        calc.divide()
+        typeNumberKeyByKey("2", calc)
+        calc.equals()
+        assertEquals("0.0000001", calc.displayNumber.toString())
+        calc.equals()
+        assertEquals("0", calc.displayNumber.toString())
     }
 }

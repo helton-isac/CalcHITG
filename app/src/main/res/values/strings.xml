@@ -18,7 +18,7 @@
     <string name="percent_sign">%</string>
     <string name="square_root_sign">√</string>
     <string name="equals_sign">=</string>
-    <string name="backspace">⌫</string>
+    <string name="backspace">DEL</string>
     <string name="mrc">MRC</string>
     <string name="m_minus">M-</string>
     <string name="m_plus">M+</string>

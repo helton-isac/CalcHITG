@@ -134,7 +134,7 @@ class CalculatorDisplay() {
     }
 
     /**
-     * Appends a decimal separator. (Ignores MAX_LENGTH)
+     * Appends a decimal separator.
      *
      * It is only possible to append one separator
      *
@@ -145,7 +145,7 @@ class CalculatorDisplay() {
     }
 
     /**
-     * Appends a decimal separator. (Ignores MAX_LENGTH)
+     * Appends a decimal separator.
      *
      * It is only possible to append one separator
      *
@@ -156,7 +156,8 @@ class CalculatorDisplay() {
         if (replaceCurrentDisplay) {
             setValue("0")
         }
-        if (!usingDecimalSymbol && isValidNumber) {
+        if (!usingDecimalSymbol && isValidNumber &&
+                (this.maxLength == -1 || internalDisplayText.length < this.maxLength)) {
             internalDisplayText.append(DECIMAL_SEPARATOR)
             usingDecimalSymbol = true
             return true
@@ -173,7 +174,7 @@ class CalculatorDisplay() {
         internalDisplayText.setLength(0)
 
         val indexOfDecimalSeparator = value.indexOf(DECIMAL_SEPARATOR)
-        val maxLengthConsideringDecimalSeparator =
+        var maxLengthConsideringDecimalSeparator =
                 this.maxLength + if (indexOfDecimalSeparator > -1) 1 else 0
 
         isValidNumber = isNumber(value)
@@ -184,14 +185,36 @@ class CalculatorDisplay() {
                     || indexOfDecimalSeparator > this.maxLength) {
                 throw ArithmeticException("The number has no precision enough")
             }
+            if (indexOfDecimalSeparator == this.maxLength) {
+                maxLengthConsideringDecimalSeparator--
+            }
             internalDisplayText.append(value.substring(0, maxLengthConsideringDecimalSeparator))
         } else {
             internalDisplayText.append(value)
         }
-
+        if (isValidNumber && isZero(internalDisplayText.toString())) {
+            internalDisplayText.setLength(0)
+            internalDisplayText.append("0")
+        }
         if (isValidNumber) {
             usingDecimalSymbol = internalDisplayText.contains(DECIMAL_SEPARATOR)
         }
+    }
+
+    /**
+     * Check if a given string is zero
+     *
+     * @param value value to check whether it is zero or not
+     *
+     * @return True if it is zero.
+     */
+    private fun isZero(value: String): Boolean {
+        try {
+            return BigDecimal("0").compareTo(BigDecimal(value)) == 0
+        } catch (e: NumberFormatException) {
+            return false
+        }
+        return false
     }
 
     /**

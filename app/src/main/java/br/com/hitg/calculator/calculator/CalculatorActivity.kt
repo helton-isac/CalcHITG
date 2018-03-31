@@ -8,8 +8,7 @@ import br.com.hitg.calculator.calculator.CalculatorContract.CalculatorNumbers
 import com.crashlytics.android.Crashlytics
 import kotlinx.android.synthetic.main.activity_calculator.*
 
-class CalculatorActivity : AppCompatActivity(), CalculatorContract.View {
-
+class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.OnClickListener {
     override lateinit var presenter: CalculatorContract.Presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,11 +20,39 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View {
 
         // Create the presenter
         presenter = CalculatorPresenter(this)
+
+        setOnClickListeners()
     }
 
-    fun onClickButton(view: View) {
-        try {
+    private fun setOnClickListeners() {
+        btnZero.setOnClickListener(this)
+        btnOne.setOnClickListener(this)
+        btnTwo.setOnClickListener(this)
+        btnThree.setOnClickListener(this)
+        btnFour.setOnClickListener(this)
+        btnFive.setOnClickListener(this)
+        btnSix.setOnClickListener(this)
+        btnSeven.setOnClickListener(this)
+        btnEight.setOnClickListener(this)
+        btnNine.setOnClickListener(this)
+        btnDot.setOnClickListener(this)
+        btnCE.setOnClickListener(this)
+        btnOff.setOnClickListener(this)
+        btnBack.setOnClickListener(this)
+        btnEquals.setOnClickListener(this)
+        btnPlus.setOnClickListener(this)
+        btnMinus.setOnClickListener(this)
+        btnDivide.setOnClickListener(this)
+        btnMultiply.setOnClickListener(this)
+        btnPercent.setOnClickListener(this)
+        btnSquareRoot.setOnClickListener(this)
+        btnMRC.setOnClickListener(this)
+        btnMMinus.setOnClickListener(this)
+        btnMPlus.setOnClickListener(this)
+    }
 
+    override fun onClick(view: View) {
+        try {
             when (view.id) {
                 R.id.btnZero -> presenter.typeNumber(CalculatorNumbers.ZERO)
                 R.id.btnOne -> presenter.typeNumber(CalculatorNumbers.ONE)
@@ -72,7 +99,6 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View {
             Operations.MULTIPLICATION -> txtSignals.setText(R.string.multiplication_sign)
             Operations.DIVISION -> txtSignals.setText(R.string.division_sign)
         }
-
     }
 
     override fun showHideMemory(memoryInUse: Boolean) {
