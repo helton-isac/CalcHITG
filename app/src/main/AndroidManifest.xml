@@ -12,6 +12,7 @@
         <activity
             android:name="br.com.hitg.calculator.calculator.CalculatorActivity"
             android:screenOrientation="portrait"
+            android:resizeableActivity="false"
             android:launchMode="singleInstance">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
