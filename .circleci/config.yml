@@ -51,12 +51,16 @@ jobs:
 #      - store_artifacts:
 #          path: androidplot-core/build/docs/javadoc
 #          destination: javadoc
-
+      - store_artifacts:
+          path: app/build/outputs/mapping/release
+          destination: mapping
       - store_artifacts:
           path: app/build/reports
           destination: reports
       - store_test_results:
           path: app/build/test-results
+          destination: test-results
+
 
 #      - deploy:
 #          name: "Deploy to Bintray"
