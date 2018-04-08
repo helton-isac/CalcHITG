@@ -37,7 +37,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtDisplay"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/btnBack" />
+        app:layout_constraintBottom_toTopOf="@id/btnDell" />
 
     <TextView
         android:id="@+id/txtMemory"
@@ -78,15 +78,15 @@
         android:theme="@style/RedButtonTheme"
         android:text="@string/off"
         app:layout_constraintBottom_toTopOf="@id/btnMPlus"
-        app:layout_constraintEnd_toStartOf="@+id/btnBack"
+        app:layout_constraintEnd_toStartOf="@+id/btnDell"
         app:layout_constraintStart_toEndOf="@+id/btnSquareRoot"
         app:layout_constraintTop_toBottomOf="@+id/txtDisplay" />
 
     <android.support.v7.widget.AppCompatButton
-        android:id="@+id/btnBack"
+        android:id="@+id/btnDell"
         style="@style/RedButtonStyle"
         android:theme="@style/RedButtonTheme"
-        android:text="@string/backspace"
+        android:text="@string/del"
         app:layout_constraintBottom_toTopOf="@id/btnCE"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btnOff"
@@ -130,7 +130,7 @@
         app:layout_constraintBottom_toTopOf="@id/btnDivide"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btnMPlus"
-        app:layout_constraintTop_toBottomOf="@+id/btnBack" />
+        app:layout_constraintTop_toBottomOf="@+id/btnDell" />
 
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/btnSeven"
