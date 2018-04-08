@@ -13,6 +13,7 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_calculator)
 
         // TODO: Iniciar o Model/Presenter com o basico para o estado da calculadora:
@@ -91,8 +92,8 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
         txtDisplay.text = value
     }
 
-    override fun updateOperation(operation: Operations) {
-        when (operation) {
+    override fun updateOperation(currentOperation: Operations) {
+        when (currentOperation) {
             Operations.NONE -> txtSignals.text = ""
             Operations.ADDITION -> txtSignals.setText(R.string.plus_sign)
             Operations.SUBTRACTION -> txtSignals.setText(R.string.minus_sign)
@@ -101,7 +102,7 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
         }
     }
 
-    override fun showHideMemory(memoryInUse: Boolean) {
-        txtMemory.visibility = if (memoryInUse) View.VISIBLE else View.GONE
+    override fun showHideMemory(isMemoryInUse: Boolean) {
+        txtMemory.visibility = if (isMemoryInUse) View.VISIBLE else View.GONE
     }
 }

@@ -65,14 +65,29 @@ interface CalculatorContract {
     interface View : BaseView<Presenter> {
         /**
          * Update the display of the Calculator.
+         *
+         * @param value Value to show.
          */
         fun updateDisplay(value: String)
 
-        fun updateOperation(operation: Operations)
+        /**
+         * Show the current Operation.
+         *
+         * @currentOperation Current Operation.
+         */
+        fun updateOperation(currentOperation: Operations)
 
+        /**
+         * Shows whether the memory is in use or not.
+         *
+         * @param isMemoryInUse
+         */
+        fun showHideMemory(isMemoryInUse: Boolean)
+
+        /**
+         * Closes the application.
+         */
         fun finish()
-
-        fun showHideMemory(memoryInUse: Boolean)
     }
 
     /**
