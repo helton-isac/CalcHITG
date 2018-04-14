@@ -82,7 +82,7 @@ interface CalculatorContract {
          *
          * @param isMemoryInUse
          */
-        fun showHideMemory(isMemoryInUse: Boolean)
+        fun showMemoryIndicator(isMemoryInUse: Boolean)
 
         /**
          * Closes the application.
@@ -164,7 +164,7 @@ interface CalculatorContract {
         /**
          * Remove the last Typed Character or operation
          */
-        fun backspace()
+        fun removeLast()
 
         /**
          * Quit from the calculator.
@@ -175,6 +175,27 @@ interface CalculatorContract {
          * Clean the temp memory and the display
          */
         fun ce()
+
+
+        fun restoreCalculatorState(displayValue: String,
+                                   currentCalcTotal: String,
+                                   currentOperation: Operations,
+                                   currentNumberInMemory: String,
+                                   isMemoryInUse: Boolean,
+                                   mustcleanDisplayOnNextInteraction: Boolean)
+
+        val currentDisplayValue: String
+
+        val currentCalcTotal: String
+
+        val currentOperation: Operations
+
+        val currentNumberInMemory: String
+
+        val isMemoryInUse: Boolean
+
+        val mustcleanDisplayOnNextInteraction: Boolean
+
     }
 
 }

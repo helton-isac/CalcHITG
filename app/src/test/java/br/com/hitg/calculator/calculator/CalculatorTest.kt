@@ -223,4 +223,33 @@ class CalculatorTest {
         calc.equals()
         assertEquals("0", calc.displayNumber.toString())
     }
+
+    @Test
+    fun checkRetoringState() {
+        //Given the current Status:
+        val numberOnDisplay: String = "22.042"
+        val currentCalcTotal: String = "0"
+        val currentOperation: Operations = Operations.MULTIPLICATION
+        val currentNumberInMemory: String = "10.01"
+        val isMemoryInUse: Boolean = true
+        val mustCleanDisplayOnNextInteraction: Boolean = true
+
+        // When the Calculator is restored
+        var calc = Calculator()
+
+        // And the old values are passed again to restore the state
+        calc.restoreStatus(numberOnDisplay,
+                currentCalcTotal,
+                currentOperation,
+                currentNumberInMemory,
+                isMemoryInUse,
+                mustCleanDisplayOnNextInteraction)
+
+        // The calculator is in the same state as before
+        assertEquals(numberOnDisplay, calc.displayNumber.toString())
+        assertEquals(currentOperation, calc.currentOperation)
+        assertEquals(currentNumberInMemory, calc.getCurrentNumberInMemory().toString())
+        assertEquals(isMemoryInUse, calc.isMemoryInUse())
+        assertEquals(mustCleanDisplayOnNextInteraction, calc.mustcleanDisplayOnNextInteraction())
+    }
 }

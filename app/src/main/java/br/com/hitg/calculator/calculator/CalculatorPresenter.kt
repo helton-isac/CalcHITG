@@ -11,11 +11,10 @@ class CalculatorPresenter(private val calculatorView: CalculatorContract.View) :
     init {
         calculatorView.presenter = this
         calculator = Calculator()
-        updateView()
     }
 
     override fun start() {
-
+        updateView()
     }
 
     private fun executeOperationAndUpdateDisplay(operationMethod: () -> Unit) {
@@ -26,7 +25,7 @@ class CalculatorPresenter(private val calculatorView: CalculatorContract.View) :
     private fun updateView() {
         calculatorView.updateDisplay(calculator.displayNumber.toString())
         calculatorView.updateOperation(calculator.currentOperation)
-        calculatorView.showHideMemory(calculator.isMemoryInUse())
+        calculatorView.showMemoryIndicator(calculator.isMemoryInUse())
     }
 
     override fun add() {
@@ -73,8 +72,8 @@ class CalculatorPresenter(private val calculatorView: CalculatorContract.View) :
         executeOperationAndUpdateDisplay { calculator.percent() }
     }
 
-    override fun backspace() {
-        executeOperationAndUpdateDisplay { calculator.backspace() }
+    override fun removeLast() {
+        executeOperationAndUpdateDisplay { calculator.removeLast() }
     }
 
     override fun ce() {
@@ -101,4 +100,33 @@ class CalculatorPresenter(private val calculatorView: CalculatorContract.View) :
         }
         updateView()
     }
+
+    override fun restoreCalculatorState(displayValue: String,
+                                        currentCalcTotal: String,
+                                        currentOperation: Operations,
+                                        currentNumberInMemory: String,
+                                        isMemoryInUse: Boolean,
+                                        mustcleanDisplayOnNextInteraction: Boolean) {
+        calculator.restoreStatus(displayValue,
+                currentCalcTotal,
+                currentOperation,
+                currentNumberInMemory,
+                isMemoryInUse,
+                mustcleanDisplayOnNextInteraction)
+        updateView()
+
+    }
+
+    override val currentOperation: Operations
+        get() = calculator.currentOperation
+    override val currentCalcTotal: String
+        get() = calculator.getCurrentTotal().toString()
+    override val currentDisplayValue: String
+        get() = calculator.displayNumber.toString()
+    override val currentNumberInMemory: String
+        get() = calculator.getCurrentNumberInMemory().toString()
+    override val isMemoryInUse: Boolean
+        get() = calculator.isMemoryInUse()
+    override val mustcleanDisplayOnNextInteraction: Boolean
+        get() = calculator.mustcleanDisplayOnNextInteraction()
 }
