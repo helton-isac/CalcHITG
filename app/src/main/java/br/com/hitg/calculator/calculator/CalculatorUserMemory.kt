@@ -25,15 +25,22 @@ class CalculatorUserMemory {
         return try {
             memory
         } finally {
-            isMemoryInUse = false
-            memory = BigDecimal("0")
+            resetMemory()
         }
+    }
+
+    /**
+     * Clean the current memory.
+     */
+    private fun resetMemory() {
+        isMemoryInUse = false
+        memory = BigDecimal("0")
     }
 
     /**
      * Returns the current memory
      */
-    fun mr(): BigDecimal {
+    fun currentMemoryValue(): BigDecimal {
         return memory
     }
 
@@ -51,5 +58,21 @@ class CalculatorUserMemory {
     fun mSubtract(value: BigDecimal) {
         isMemoryInUse = true
         memory = memory.subtract(value)
+    }
+
+    /**
+     * Restore the memory status
+     * @param currentNumberInMemory number to save in memory
+     * @param isMemoryInUse in case the memory value is 0
+     */
+    fun restoreMemoryStatus(currentNumberInMemory: String, isMemoryInUse: Boolean) {
+        if (isMemoryInUse) {
+            try {
+                memory = BigDecimal(currentNumberInMemory)
+                this.isMemoryInUse = isMemoryInUse;
+            } catch (ignored: Exception) {
+                resetMemory()
+            }
+        }
     }
 }

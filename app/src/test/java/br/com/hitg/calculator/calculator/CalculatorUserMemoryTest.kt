@@ -63,25 +63,33 @@ class CalculatorUserMemoryTest {
     }
 
     @Test
-    fun mr() {
+    fun currentMemoryValue() {
         assertFalse("The isMemoryInUse must be false", userMemory.isMemoryInUse)
         userMemory.mPlus(BigDecimal("42"))
         assertTrue("The isMemoryInUse must be true", userMemory.isMemoryInUse)
         userMemory.mSubtract(BigDecimal("2"))
         assertTrue("The isMemoryInUse must be true", userMemory.isMemoryInUse)
-        assertEquals("The user memory must be 40", BigDecimal("40"), userMemory.mr())
+        assertEquals("The user memory must be 40",
+                BigDecimal("40"),
+                userMemory.currentMemoryValue())
         assertTrue("The isMemoryInUse must be true", userMemory.isMemoryInUse)
         userMemory.mSubtract(BigDecimal("2"))
-        assertEquals("The user memory must be 38", BigDecimal("38"), userMemory.mr())
+        assertEquals("The user memory must be 38",
+                BigDecimal("38"),
+                userMemory.currentMemoryValue())
     }
 
     @Test
     fun mPlus() {
         assertFalse("The isMemoryInUse must be false", userMemory.isMemoryInUse)
         userMemory.mPlus(BigDecimal("42"))
-        assertEquals("The user memory must be 42", BigDecimal("42"), userMemory.mr())
+        assertEquals("The user memory must be 42",
+                BigDecimal("42"),
+                userMemory.currentMemoryValue())
         userMemory.mPlus(BigDecimal("0.00001"))
-        assertEquals("The user memory must be 42.00001", BigDecimal("42.00001"), userMemory.mr())
+        assertEquals("The user memory must be 42.00001",
+                BigDecimal("42.00001"),
+                userMemory.currentMemoryValue())
         assertTrue("The isMemoryInUse must be true", userMemory.isMemoryInUse)
     }
 
@@ -89,9 +97,13 @@ class CalculatorUserMemoryTest {
     fun mSubtract() {
         assertFalse("The isMemoryInUse must be false", userMemory.isMemoryInUse)
         userMemory.mSubtract(BigDecimal("42"))
-        assertEquals("The user memory must be -42", BigDecimal("-42"), userMemory.mr())
+        assertEquals("The user memory must be -42",
+                BigDecimal("-42"),
+                userMemory.currentMemoryValue())
         userMemory.mSubtract(BigDecimal("0.00001"))
-        assertEquals("The user memory must be -42.00001", BigDecimal("-42.00001"), userMemory.mr())
+        assertEquals("The user memory must be -42.00001",
+                BigDecimal("-42.00001"),
+                userMemory.currentMemoryValue())
         assertTrue("The isMemoryInUse must be true", userMemory.isMemoryInUse)
     }
 

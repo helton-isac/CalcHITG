@@ -65,14 +65,29 @@ interface CalculatorContract {
     interface View : BaseView<Presenter> {
         /**
          * Update the display of the Calculator.
+         *
+         * @param value Value to show.
          */
         fun updateDisplay(value: String)
 
-        fun updateOperation(operation: Operations)
+        /**
+         * Show the current Operation.
+         *
+         * @currentOperation Current Operation.
+         */
+        fun updateOperation(currentOperation: Operations)
 
+        /**
+         * Shows whether the memory is in use or not.
+         *
+         * @param isMemoryInUse
+         */
+        fun showMemoryIndicator(isMemoryInUse: Boolean)
+
+        /**
+         * Closes the application.
+         */
         fun finish()
-
-        fun showHideMemory(memoryInUse: Boolean)
     }
 
     /**
@@ -149,7 +164,7 @@ interface CalculatorContract {
         /**
          * Remove the last Typed Character or operation
          */
-        fun backspace()
+        fun removeLast()
 
         /**
          * Quit from the calculator.
@@ -160,6 +175,67 @@ interface CalculatorContract {
          * Clean the temp memory and the display
          */
         fun ce()
+
+        /**
+         * Restores the state of the calculator.
+         *
+         * @param numberOnDisplay Number to show on display
+         * @param currentCalcTotal Total of the calculation in progress
+         * @param currentOperation Current selected operation
+         * @param currentNumberInMemory Current Number in Memory
+         * @param isMemoryInUse Whether Is Memory in Use or not
+         * @param mustCleanDisplayOnNextInteraction Informs if the nex interaction must clean the Display
+         * @param lastOperation Last Operation Executed
+         * @param lastInputValue Input value used on the last operation.
+         */
+        fun restoreCalculatorState(numberOnDisplay: String,
+                                   currentCalcTotal: String,
+                                   currentOperation: Operations,
+                                   currentNumberInMemory: String,
+                                   isMemoryInUse: Boolean,
+                                   mustCleanDisplayOnNextInteraction: Boolean,
+                                   lastOperation: Operations,
+                                   lastInputValue: String)
+
+        /**
+         * Current Value on Display.
+         */
+        val currentDisplayValue: String
+
+        /**
+         * Current internal calculator value.
+         */
+        val currentCalcTotal: String
+
+        /**
+         * Operation in execution.
+         */
+        val currentOperation: Operations
+
+        /**
+         * Current number stored in memory.
+         */
+        val currentNumberInMemory: String
+
+        /**
+         * Is using memory? In case of the current memory is zero.
+         */
+        val isMemoryInUse: Boolean
+
+        /**
+         * Must clean the Display in the next interaction?
+         */
+        val mustcleanDisplayOnNextInteraction: Boolean
+
+        /**
+         * Last executed operation.
+         */
+        val lastOperation: Operations
+
+        /**
+         * Value used in the last operation.
+         */
+        val lastInputValue: String
     }
 
 }
