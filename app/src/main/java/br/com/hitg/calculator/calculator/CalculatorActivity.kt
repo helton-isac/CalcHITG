@@ -62,13 +62,18 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
             val isMemoryInUse = savedInstanceState.getBoolean(CALC_IS_MEMORY_IN_USE)
             val mustcleanDisplayOnNextInteraction = savedInstanceState.getBoolean(
                     CALC_MUST_CLEAN_DISPLAY)
+            val lastOperation: Operations = Operations.valueOf(savedInstanceState.getString(
+                    CALC_LAST_OPERATION))
+            val lastInputValue: String = savedInstanceState.getString(CALC_LAST_INPUT_VALUE)
 
             presenter.restoreCalculatorState(numberOnDisplay,
                     currentCalcTOtal,
                     currentOperation,
                     currentNumberInMemory,
                     isMemoryInUse,
-                    mustcleanDisplayOnNextInteraction)
+                    mustcleanDisplayOnNextInteraction,
+                    lastOperation,
+                    lastInputValue)
         }
         presenter.start()
 
@@ -199,6 +204,8 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
             putString(CALC_NUMBER_IN_MEMORY, presenter.currentNumberInMemory)
             putBoolean(CALC_IS_MEMORY_IN_USE, presenter.isMemoryInUse)
             putBoolean(CALC_MUST_CLEAN_DISPLAY, presenter.mustcleanDisplayOnNextInteraction)
+            putString(CALC_LAST_OPERATION, presenter.lastOperation.name)
+            putString(CALC_LAST_INPUT_VALUE, presenter.lastInputValue)
         })
     }
 
@@ -209,5 +216,7 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
         const val CALC_NUMBER_IN_MEMORY = "CALC_NUMBER_IN_MEMORY"
         const val CALC_IS_MEMORY_IN_USE = "CALC_IS_MEMORY_IN_USE"
         const val CALC_MUST_CLEAN_DISPLAY = "CALC_MUST_CLEAN_DISPLAY"
+        const val CALC_LAST_OPERATION = "CALC_LAST_OPERATION"
+        const val CALC_LAST_INPUT_VALUE = "CALC_LAST_INPUT_VALUE"
     }
 }

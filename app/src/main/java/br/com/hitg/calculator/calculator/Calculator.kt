@@ -257,46 +257,62 @@ class Calculator {
      * @param currentNumberInMemory Current Number in Memory
      * @param isMemoryInUse Whether Is Memory in Use or not
      * @param mustCleanDisplayOnNextInteraction Informs if the nex interaction must clean the Display
+     * @param lastOperation Last Operation Executed
+     * @param lastInputValue Input value used on the last operation.
      */
     fun restoreStatus(numberOnDisplay: String,
                       currentCalcTotal: String,
                       currentOperation: Operations,
                       currentNumberInMemory: String,
                       isMemoryInUse: Boolean,
-                      mustCleanDisplayOnNextInteraction: Boolean) {
+                      mustCleanDisplayOnNextInteraction: Boolean,
+                      lastOperation: Operations,
+                      lastInputValue: String) {
 
         displayNumber.setValue(numberOnDisplay)
-        this.currentTotal = BigDecimal(currentCalcTotal)
+        this.currentTotal = try {
+            BigDecimal(currentCalcTotal)
+        } catch (e: Exception) {
+            BigDecimal("0")
+        }
         this.currentOperation = currentOperation
         this.userMemory.restoreMemoryStatus(currentNumberInMemory, isMemoryInUse)
         this.cleanDisplayOnNextInteraction = mustCleanDisplayOnNextInteraction
+        this.lastOperation = lastOperation
+        this.lastInput = try {
+            BigDecimal(lastInputValue)
+        } catch (e: Exception) {
+            BigDecimal("0")
+        }
     }
 
     /**
      * Gets the information if the memory is in use.
      */
-    fun isMemoryInUse(): Boolean {
-        return userMemory.isMemoryInUse
-    }
+    fun isMemoryInUse(): Boolean = userMemory.isMemoryInUse
 
     /**
      * Gets the current Memory Value.
      */
-    fun getCurrentNumberInMemory(): BigDecimal {
-        return userMemory.currentMemoryValue()
-    }
+    fun getCurrentNumberInMemory(): BigDecimal = userMemory.currentMemoryValue()
 
     /**
      * Information if on the next interaction is necessary to clean the display
      */
-    fun mustcleanDisplayOnNextInteraction(): Boolean {
-        return this.cleanDisplayOnNextInteraction
-    }
+    fun mustcleanDisplayOnNextInteraction(): Boolean = this.cleanDisplayOnNextInteraction
 
     /**
      * Gets the total of the current operation.
      */
-    fun getCurrentTotal(): BigDecimal {
-        return currentTotal
-    }
+    fun getCurrentTotal(): BigDecimal = currentTotal
+
+    /**
+     * Gets the last operation executed
+     */
+    fun getLastOperation(): Operations = lastOperation
+
+    /**
+     * Gets the last value used in the last operation.
+     */
+    fun getLastInputValue(): String = lastInput.toString()
 }

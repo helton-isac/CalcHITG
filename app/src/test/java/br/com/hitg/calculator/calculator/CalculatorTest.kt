@@ -233,6 +233,8 @@ class CalculatorTest {
         val currentNumberInMemory: String = "10.01"
         val isMemoryInUse: Boolean = true
         val mustCleanDisplayOnNextInteraction: Boolean = true
+        val lastOperation: Operations = Operations.NONE
+        val lastInputValue: String = "0"
 
         // When the Calculator is restored
         var calc = Calculator()
@@ -243,7 +245,9 @@ class CalculatorTest {
                 currentOperation,
                 currentNumberInMemory,
                 isMemoryInUse,
-                mustCleanDisplayOnNextInteraction)
+                mustCleanDisplayOnNextInteraction,
+                lastOperation,
+                lastInputValue)
 
         // The calculator is in the same state as before
         assertEquals(numberOnDisplay, calc.displayNumber.toString())
@@ -251,5 +255,7 @@ class CalculatorTest {
         assertEquals(currentNumberInMemory, calc.getCurrentNumberInMemory().toString())
         assertEquals(isMemoryInUse, calc.isMemoryInUse())
         assertEquals(mustCleanDisplayOnNextInteraction, calc.mustcleanDisplayOnNextInteraction())
+        assertEquals(lastOperation, calc.getLastOperation())
+        assertEquals(lastInputValue, calc.getLastInputValue())
     }
 }

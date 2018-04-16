@@ -106,13 +106,17 @@ class CalculatorPresenter(private val calculatorView: CalculatorContract.View) :
                                         currentOperation: Operations,
                                         currentNumberInMemory: String,
                                         isMemoryInUse: Boolean,
-                                        mustcleanDisplayOnNextInteraction: Boolean) {
+                                        mustcleanDisplayOnNextInteraction: Boolean,
+                                        lastOperation: Operations,
+                                        lastInputValue: String) {
         calculator.restoreStatus(displayValue,
                 currentCalcTotal,
                 currentOperation,
                 currentNumberInMemory,
                 isMemoryInUse,
-                mustcleanDisplayOnNextInteraction)
+                mustcleanDisplayOnNextInteraction,
+                lastOperation,
+                lastInputValue)
         updateView()
 
     }
@@ -129,4 +133,8 @@ class CalculatorPresenter(private val calculatorView: CalculatorContract.View) :
         get() = calculator.isMemoryInUse()
     override val mustcleanDisplayOnNextInteraction: Boolean
         get() = calculator.mustcleanDisplayOnNextInteraction()
+    override val lastOperation: Operations
+        get() = calculator.getLastOperation()
+    override val lastInputValue: String
+        get() = calculator.getLastInputValue()
 }
