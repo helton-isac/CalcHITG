@@ -144,10 +144,16 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
                 else               -> return
             }
         } catch (ex: Exception) {
+            showError()
             presenter = CalculatorPresenter(this)
-            txtDisplay.setText(R.string.error)
             Crashlytics.logException(ex);
         }
+    }
+
+    private fun showError() {
+        txtDisplay.setText(R.string.error)
+        updateOperation(Operations.NONE)
+        showMemoryIndicator(false)
     }
 
     /**
