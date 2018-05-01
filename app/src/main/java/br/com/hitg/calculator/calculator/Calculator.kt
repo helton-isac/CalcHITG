@@ -178,6 +178,7 @@ class Calculator {
             currentOperation = Operations.NONE
             lastOperation = Operations.NONE
         }
+        cleanDisplayOnNextInteraction = false
     }
 
     /**
@@ -247,8 +248,7 @@ class Calculator {
      * Performs the squareRoot operation.
      */
     fun squareRoot() {
-        displayNumber.setValue(Math.sqrt(displayNumber.toBigDecimal().toDouble()).toString())
-        applyResult(displayNumber.toBigDecimal())
+        applyResult(BigDecimal(Math.sqrt(displayNumber.toBigDecimal().toDouble()).toString()))
     }
 
     /**
@@ -256,6 +256,13 @@ class Calculator {
      */
     fun percent() {
         applyResult(currentTotal.multiply(displayNumber.toBigDecimal()).divide(BigDecimal("100")))
+    }
+
+    /**
+     * Performs the invert signal operation.
+     */
+    fun invertSignal() {
+        applyResult(displayNumber.toBigDecimal().multiply(BigDecimal("-1")))
     }
 
     /**
@@ -297,6 +304,7 @@ class Calculator {
         }
         this.currentOperation = currentOperation
         this.userMemory.restoreMemoryStatus(currentNumberInMemory, isMemoryInUse)
+        setFormattedValueOnDisplay(userMemorydisplayNumber, this.userMemory.currentMemoryValue())
         this.cleanDisplayOnNextInteraction = mustCleanDisplayOnNextInteraction
         this.lastOperation = lastOperation
         this.lastInput = try {

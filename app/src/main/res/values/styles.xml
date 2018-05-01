@@ -8,7 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="BlackButtonStyle" parent="Widget.AppCompat.Button">
+    <style name="ButtonStyle" parent="Widget.AppCompat.Button">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">0dp</item>
         <item name="android:textSize">24sp</item>
@@ -20,16 +20,14 @@
         <item name="colorControlHighlight">@color/colorBlackLight</item>
     </style>
 
-    <style name="RedButtonStyle" parent="Widget.AppCompat.Button">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">0dp</item>
-        <item name="android:textSize">24sp</item>
-        <item name="android:textColor">@color/colorWhiteText</item>
-    </style>
-
     <style name="RedButtonTheme" parent="Widget.AppCompat.Button">
         <item name="colorButtonNormal">@color/colorRedPrimary</item>
         <item name="colorControlHighlight">@color/colorRedLight</item>
+    </style>
+
+    <style name="BlueButtonTheme" parent="Widget.AppCompat.Button">
+        <item name="colorButtonNormal">@color/colorBluePrimary</item>
+        <item name="colorControlHighlight">@color/colorBlueLight</item>
     </style>
 
 

@@ -81,8 +81,8 @@ class CalculatorPresenter(private val calculatorView: CalculatorContract.View) :
         executeOperationAndUpdateDisplay { calculator.ce() }
     }
 
-    override fun exit() {
-        calculatorView.finish()
+    override fun invertSignal() {
+        executeOperationAndUpdateDisplay { calculator.invertSignal() }
     }
 
 

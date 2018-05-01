@@ -168,9 +168,9 @@ interface CalculatorContract {
         fun removeLast()
 
         /**
-         * Quit from the calculator.
+         * Invert Signal.
          */
-        fun exit()
+        fun invertSignal()
 
         /**
          * Clean the temp memory and the display

@@ -8,4 +8,6 @@
     <color name="colorBlackPrimary">#333333</color>
     <color name="colorBlackLight">#898989</color>
     <color name="colorWhiteText">#FFFFFF</color>
+    <color name="colorBluePrimary">#1822a6</color>
+    <color name="colorBlueLight">#5c67ff</color>
 </resources>

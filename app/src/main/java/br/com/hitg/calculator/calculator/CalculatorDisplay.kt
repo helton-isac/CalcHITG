@@ -12,6 +12,10 @@ class CalculatorDisplay() {
          * Decimal Symbol.
          */
         val DECIMAL_SEPARATOR: Char = '.'
+        /**
+         * Negative Symbol.
+         */
+        val NEGATIVE_SYMBOL: Char = '-'
     }
 
     /**
@@ -115,8 +119,12 @@ class CalculatorDisplay() {
      * Check if can append char
      */
     private fun canAppendChar(): Boolean {
-        val realLength = internalDisplayText.length - if (usingDecimalSymbol) 1 else 0
-        return maxLength == -1 || (maxLength > 0 && realLength < maxLength)
+        if (maxLength > -1) {
+            var realLength = internalDisplayText.length - if (usingDecimalSymbol) 1 else 0
+            realLength -= if (internalDisplayText.indexOf(NEGATIVE_SYMBOL) > -1) 1 else 0
+            return (maxLength > 0 && realLength < maxLength)
+        }
+        return true
     }
 
     /**
@@ -156,8 +164,11 @@ class CalculatorDisplay() {
         if (replaceCurrentDisplay) {
             setValue("0")
         }
+        val isNegative = internalDisplayText.indexOf(NEGATIVE_SYMBOL) > -1
+        val maxLengthAllowed = this.maxLength + if (isNegative) 1 else 0
         if (!usingDecimalSymbol && isValidNumber &&
-                (this.maxLength == -1 || internalDisplayText.length < this.maxLength)) {
+                (this.maxLength == -1 ||
+                        internalDisplayText.length < maxLengthAllowed)) {
             internalDisplayText.append(DECIMAL_SEPARATOR)
             usingDecimalSymbol = true
             return true
@@ -171,24 +182,30 @@ class CalculatorDisplay() {
      * @param value to be set.
      */
     fun setValue(value: String) {
+        // Reset display value
         internalDisplayText.setLength(0)
 
         val indexOfDecimalSeparator = value.indexOf(DECIMAL_SEPARATOR)
-        var maxLengthConsideringDecimalSeparator =
-                this.maxLength + if (indexOfDecimalSeparator > -1) 1 else 0
+        var maxLengthAllowed = this.maxLength
+        if (indexOfDecimalSeparator > -1) {
+            maxLengthAllowed++
+        }
+        if (value.indexOf(NEGATIVE_SYMBOL) > -1) {
+            maxLengthAllowed++
+        }
 
         isValidNumber = isNumber(value)
         if (isValidNumber
                 && this.maxLength > -1
-                && value.length > maxLengthConsideringDecimalSeparator) {
+                && value.length > maxLengthAllowed) {
             if (indexOfDecimalSeparator == -1
                     || indexOfDecimalSeparator > this.maxLength) {
                 throw ArithmeticException("The number has no precision enough")
             }
             if (indexOfDecimalSeparator == this.maxLength) {
-                maxLengthConsideringDecimalSeparator--
+                maxLengthAllowed--
             }
-            internalDisplayText.append(value.substring(0, maxLengthConsideringDecimalSeparator))
+            internalDisplayText.append(value.substring(0, maxLengthAllowed))
         } else {
             internalDisplayText.append(value)
         }
@@ -209,12 +226,11 @@ class CalculatorDisplay() {
      * @return True if it is zero.
      */
     private fun isZero(value: String): Boolean {
-        try {
-            return BigDecimal("0").compareTo(BigDecimal(value)) == 0
+        return try {
+            BigDecimal("0").compareTo(BigDecimal(value)) == 0
         } catch (e: NumberFormatException) {
-            return false
+            false
         }
-        return false
     }
 
     /**

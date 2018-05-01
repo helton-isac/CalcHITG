@@ -23,7 +23,7 @@
     <string name="m_minus" translatable="false">M-</string>
     <string name="m_plus" translatable="false">M+</string>
     <string name="ce" translatable="false">CE</string>
-    <string name="off" translatable="false">OFF</string>
+    <string name="invert_signal" translatable="false">+/-</string>
     <string name="memory_symbol" translatable="false">M</string>
     <string name="error">ERROR</string>
 </resources>
