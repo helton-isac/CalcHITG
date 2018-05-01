@@ -1,0 +1,1453 @@
+[
+  {
+    "eventType": "DELAYED_MESSAGE_POSTED",
+    "timestamp": 1525206561392,
+    "actionCode": -1,
+    "delayTime": 60000,
+    "canScrollTo": false,
+    "elementDescriptors": []
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206586855,
+    "replacementText": ".",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 25,
+        "resourceId": "br.com.hitg.calculator:id/btnDot",
+        "contentDescription": "",
+        "text": "."
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206589628,
+    "replacementText": "1",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 20,
+        "resourceId": "br.com.hitg.calculator:id/btnOne",
+        "contentDescription": "",
+        "text": "1"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206591844,
+    "replacementText": "2",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 21,
+        "resourceId": "br.com.hitg.calculator:id/btnTwo",
+        "contentDescription": "",
+        "text": "2"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206593990,
+    "replacementText": "3",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 22,
+        "resourceId": "br.com.hitg.calculator:id/btnThree",
+        "contentDescription": "",
+        "text": "3"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206596256,
+    "replacementText": "4",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 16,
+        "resourceId": "br.com.hitg.calculator:id/btnFour",
+        "contentDescription": "",
+        "text": "4"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206598390,
+    "replacementText": "5",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 17,
+        "resourceId": "br.com.hitg.calculator:id/btnFive",
+        "contentDescription": "",
+        "text": "5"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206601063,
+    "replacementText": "6",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 18,
+        "resourceId": "br.com.hitg.calculator:id/btnSix",
+        "contentDescription": "",
+        "text": "6"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206606192,
+    "replacementText": "7",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 12,
+        "resourceId": "br.com.hitg.calculator:id/btnSeven",
+        "contentDescription": "",
+        "text": "7"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206610473,
+    "replacementText": "+",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 27,
+        "resourceId": "br.com.hitg.calculator:id/btnPlus",
+        "contentDescription": "",
+        "text": "+"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206613416,
+    "replacementText": "8",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 13,
+        "resourceId": "br.com.hitg.calculator:id/btnEight",
+        "contentDescription": "",
+        "text": "8"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206616898,
+    "replacementText": "-",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 23,
+        "resourceId": "br.com.hitg.calculator:id/btnMinus",
+        "contentDescription": "",
+        "text": "-"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206620017,
+    "replacementText": "9",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 14,
+        "resourceId": "br.com.hitg.calculator:id/btnNine",
+        "contentDescription": "",
+        "text": "9"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206625358,
+    "replacementText": "\u003d",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 26,
+        "resourceId": "br.com.hitg.calculator:id/btnEquals",
+        "contentDescription": "",
+        "text": "\u003d"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206629018,
+    "replacementText": "+/-",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 10,
+        "resourceId": "br.com.hitg.calculator:id/btnInvertSignal",
+        "contentDescription": "",
+        "text": "+/-"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206632442,
+    "replacementText": "M+",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 6,
+        "resourceId": "br.com.hitg.calculator:id/btnMPlus",
+        "contentDescription": "",
+        "text": "M+"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206636812,
+    "replacementText": "?",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 9,
+        "resourceId": "br.com.hitg.calculator:id/btnSquareRoot",
+        "contentDescription": "",
+        "text": "?"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206643470,
+    "replacementText": "×",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 19,
+        "resourceId": "br.com.hitg.calculator:id/btnMultiply",
+        "contentDescription": "",
+        "text": "×"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206647213,
+    "replacementText": "2",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 21,
+        "resourceId": "br.com.hitg.calculator:id/btnTwo",
+        "contentDescription": "",
+        "text": "2"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206649377,
+    "replacementText": "0",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 24,
+        "resourceId": "br.com.hitg.calculator:id/btnZero",
+        "contentDescription": "",
+        "text": "0"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206652768,
+    "replacementText": "\u003d",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 26,
+        "resourceId": "br.com.hitg.calculator:id/btnEquals",
+        "contentDescription": "",
+        "text": "\u003d"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206655381,
+    "replacementText": "DEL",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 11,
+        "resourceId": "br.com.hitg.calculator:id/btnDel",
+        "contentDescription": "",
+        "text": "DEL"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206657119,
+    "replacementText": "DEL",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 11,
+        "resourceId": "br.com.hitg.calculator:id/btnDel",
+        "contentDescription": "",
+        "text": "DEL"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206658807,
+    "replacementText": "DEL",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 11,
+        "resourceId": "br.com.hitg.calculator:id/btnDel",
+        "contentDescription": "",
+        "text": "DEL"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206660566,
+    "replacementText": "DEL",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 11,
+        "resourceId": "br.com.hitg.calculator:id/btnDel",
+        "contentDescription": "",
+        "text": "DEL"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206662456,
+    "replacementText": "DEL",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 11,
+        "resourceId": "br.com.hitg.calculator:id/btnDel",
+        "contentDescription": "",
+        "text": "DEL"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206664215,
+    "replacementText": "DEL",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 11,
+        "resourceId": "br.com.hitg.calculator:id/btnDel",
+        "contentDescription": "",
+        "text": "DEL"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206670041,
+    "replacementText": "×",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 19,
+        "resourceId": "br.com.hitg.calculator:id/btnMultiply",
+        "contentDescription": "",
+        "text": "×"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206673535,
+    "replacementText": "2",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 21,
+        "resourceId": "br.com.hitg.calculator:id/btnTwo",
+        "contentDescription": "",
+        "text": "2"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206675985,
+    "replacementText": "%",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 8,
+        "resourceId": "br.com.hitg.calculator:id/btnPercent",
+        "contentDescription": "",
+        "text": "%"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206679113,
+    "replacementText": "\u003d",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 26,
+        "resourceId": "br.com.hitg.calculator:id/btnEquals",
+        "contentDescription": "",
+        "text": "\u003d"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206693777,
+    "replacementText": "M+",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 6,
+        "resourceId": "br.com.hitg.calculator:id/btnMPlus",
+        "contentDescription": "",
+        "text": "M+"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206696819,
+    "replacementText": "CE",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 7,
+        "resourceId": "br.com.hitg.calculator:id/btnCE",
+        "contentDescription": "",
+        "text": "CE"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206699851,
+    "replacementText": "1",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 20,
+        "resourceId": "br.com.hitg.calculator:id/btnOne",
+        "contentDescription": "",
+        "text": "1"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206702140,
+    "replacementText": "M-",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 5,
+        "resourceId": "br.com.hitg.calculator:id/btnMMinus",
+        "contentDescription": "",
+        "text": "M-"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206705770,
+    "replacementText": "CE",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 7,
+        "resourceId": "br.com.hitg.calculator:id/btnCE",
+        "contentDescription": "",
+        "text": "CE"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206708380,
+    "replacementText": "2",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 21,
+        "resourceId": "br.com.hitg.calculator:id/btnTwo",
+        "contentDescription": "",
+        "text": "2"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206710932,
+    "replacementText": "×",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 19,
+        "resourceId": "br.com.hitg.calculator:id/btnMultiply",
+        "contentDescription": "",
+        "text": "×"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206713404,
+    "replacementText": "MRC",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 4,
+        "resourceId": "br.com.hitg.calculator:id/btnMRC",
+        "contentDescription": "",
+        "text": "MRC"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "eventType": "VIEW_CLICKED",
+    "timestamp": 1525206717084,
+    "replacementText": "M+",
+    "actionCode": -1,
+    "delayTime": 0,
+    "canScrollTo": false,
+    "elementDescriptors": [
+      {
+        "className": "android.support.v7.widget.AppCompatButton",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 6,
+        "resourceId": "br.com.hitg.calculator:id/btnMPlus",
+        "contentDescription": "",
+        "text": "M+"
+      },
+      {
+        "className": "android.support.constraint.ConstraintLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 0,
+        "resourceId": "br.com.hitg.calculator:id/calculatorView",
+        "contentDescription": "",
+        "text": ""
+      },
+      {
+        "className": "android.support.v7.widget.ContentFrameLayout",
+        "recyclerViewChildPosition": -1,
+        "adapterViewChildPosition": -1,
+        "groupViewChildPosition": 1,
+        "resourceId": "android:id/content",
+        "contentDescription": "",
+        "text": ""
+      }
+    ]
+  }
+]
