@@ -25,7 +25,8 @@ class CalculatorPresenter(private val calculatorView: CalculatorContract.View) :
     private fun updateView() {
         calculatorView.updateDisplay(calculator.displayNumber.toString())
         calculatorView.updateOperation(calculator.currentOperation)
-        calculatorView.showMemoryIndicator(calculator.isMemoryInUse())
+        calculatorView.updateMemoryDisplay(calculator.isMemoryInUse(),
+                calculator.userMemorydisplayNumber.toString())
     }
 
     override fun add() {

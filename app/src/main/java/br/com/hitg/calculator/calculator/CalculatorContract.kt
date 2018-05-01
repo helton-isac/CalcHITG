@@ -78,11 +78,12 @@ interface CalculatorContract {
         fun updateOperation(currentOperation: Operations)
 
         /**
-         * Shows whether the memory is in use or not.
+         * Update the display of the User Memory Calculator.
          *
-         * @param isMemoryInUse
+         * @param isMemoryInUse Whether must show memory or not
+         * @param value Value to show.
          */
-        fun showMemoryIndicator(isMemoryInUse: Boolean)
+        fun updateMemoryDisplay(isMemoryInUse: Boolean, value: String)
 
         /**
          * Closes the application.

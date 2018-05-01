@@ -153,7 +153,7 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
     private fun showError() {
         txtDisplay.setText(R.string.error)
         updateOperation(Operations.NONE)
-        showMemoryIndicator(false)
+        updateMemoryDisplay(false, "")
     }
 
     /**
@@ -181,12 +181,19 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
     }
 
     /**
-     * Shows the indicator if there is a number in memory or not.
+     * Update the display of the User Memory Calculator.
      *
-     * @param isMemoryInUse True if must shows the indicator.
+     * @param isMemoryInUse Whether must show memory or not
+     * @param value Value to show.
      */
-    override fun showMemoryIndicator(isMemoryInUse: Boolean) {
-        txtMemory.visibility = if (isMemoryInUse) View.VISIBLE else View.GONE
+    override fun updateMemoryDisplay(isMemoryInUse: Boolean, value: String) {
+        if (isMemoryInUse) {
+            txtMemory.setText(R.string.memory_symbol)
+            txtMemoryDisplay.text = value
+        } else {
+            txtMemory.text = ""
+            txtMemoryDisplay.text = ""
+        }
     }
 
     /**

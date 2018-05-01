@@ -20,6 +20,13 @@ class Calculator {
     var displayNumber: CalculatorDisplay = CalculatorDisplay(8)
 
     /**
+     * Display Number of the memory.
+     *
+     * The typed number and results must be saved in this variable.
+     */
+    var userMemorydisplayNumber: CalculatorDisplay = CalculatorDisplay(8)
+
+    /**
      * When an operation is initialized, must clean the current display number.
      */
     private var cleanDisplayOnNextInteraction: Boolean = false
@@ -66,10 +73,20 @@ class Calculator {
      * @param value Value to apply.
      */
     private fun applyResult(value: BigDecimal) {
+        setFormattedValueOnDisplay(displayNumber, value)
+        cleanDisplayOnNextInteraction = true
+    }
+
+    /**
+     * Sets a value formatted in a given display value.
+     *
+     * @param display Display to set the value.
+     * @param value Value to format and set.
+     */
+    private fun setFormattedValueOnDisplay(display: CalculatorDisplay, value: BigDecimal) {
         val df = DecimalFormat("0", DecimalFormatSymbols.getInstance(Locale.ENGLISH))
         df.maximumFractionDigits = 340
-        displayNumber.setValue(df.format(value))
-        cleanDisplayOnNextInteraction = true
+        display.setValue(df.format(value))
     }
 
     /**
@@ -202,6 +219,7 @@ class Calculator {
             equals()
         }
         userMemory.mPlus(displayNumber.toBigDecimal())
+        setFormattedValueOnDisplay(userMemorydisplayNumber, userMemory.currentMemoryValue())
     }
 
     /**
@@ -212,6 +230,7 @@ class Calculator {
             equals()
         }
         userMemory.mSubtract(displayNumber.toBigDecimal())
+        setFormattedValueOnDisplay(userMemorydisplayNumber, userMemory.currentMemoryValue())
     }
 
     /**
@@ -221,6 +240,7 @@ class Calculator {
         if (userMemory.isMemoryInUse) {
             applyResult(this.userMemory.mrc())
         }
+        setFormattedValueOnDisplay(userMemorydisplayNumber, userMemory.currentMemoryValue())
     }
 
     /**

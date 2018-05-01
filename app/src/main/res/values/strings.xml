@@ -1,30 +1,29 @@
 <resources>
-    <string name="app_name">Calc HITG</string>
-    <string name="digit_0">0</string>
-    <string name="digit_1">1</string>
-    <string name="digit_2">2</string>
-    <string name="digit_3">3</string>
-    <string name="digit_4">4</string>
-    <string name="digit_5">5</string>
-    <string name="digit_6">6</string>
-    <string name="digit_7">7</string>
-    <string name="digit_8">8</string>
-    <string name="digit_9">9</string>
-    <string name="dot_sign">.</string>
-    <string name="plus_sign">+</string>
-    <string name="minus_sign">-</string>
-    <string name="multiplication_sign">×</string>
-    <string name="division_sign">÷</string>
-    <string name="percent_sign">%</string>
-    <string name="square_root_sign">√</string>
-    <string name="equals_sign">=</string>
-    <string name="del">DEL</string>
-    <string name="mrc">MRC</string>
-    <string name="m_minus">M-</string>
-    <string name="m_plus">M+</string>
-    <string name="ce">CE</string>
-    <string name="off">OFF</string>
-    <string name="error_max_digits_allowed">Error: The maximum number of digits allowed is </string>
-    <string name="memory_symbol">M</string>
-    <string name="error">Error</string>
+    <string name="app_name" translatable="false">Calc HITG</string>
+    <string name="digit_0" translatable="false">0</string>
+    <string name="digit_1" translatable="false">1</string>
+    <string name="digit_2" translatable="false">2</string>
+    <string name="digit_3" translatable="false">3</string>
+    <string name="digit_4" translatable="false">4</string>
+    <string name="digit_5" translatable="false">5</string>
+    <string name="digit_6" translatable="false">6</string>
+    <string name="digit_7" translatable="false">7</string>
+    <string name="digit_8" translatable="false">8</string>
+    <string name="digit_9" translatable="false">9</string>
+    <string name="dot_sign" translatable="false">.</string>
+    <string name="plus_sign" translatable="false">+</string>
+    <string name="minus_sign" translatable="false">-</string>
+    <string name="multiplication_sign" translatable="false">×</string>
+    <string name="division_sign" translatable="false">÷</string>
+    <string name="percent_sign" translatable="false">%</string>
+    <string name="square_root_sign" translatable="false">√</string>
+    <string name="equals_sign" translatable="false">=</string>
+    <string name="del" translatable="false">DEL</string>
+    <string name="mrc" translatable="false">MRC</string>
+    <string name="m_minus" translatable="false">M-</string>
+    <string name="m_plus" translatable="false">M+</string>
+    <string name="ce" translatable="false">CE</string>
+    <string name="off" translatable="false">OFF</string>
+    <string name="memory_symbol" translatable="false">M</string>
+    <string name="error">ERROR</string>
 </resources>

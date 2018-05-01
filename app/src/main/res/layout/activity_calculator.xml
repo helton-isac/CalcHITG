@@ -10,6 +10,36 @@
     tools:context="br.com.hitg.calculator.calculator.CalculatorActivity">
 
     <TextView
+        android:id="@+id/txtMemoryDisplay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_light"
+        android:fontFamily="monospace"
+        android:text="@string/digit_0"
+        android:textAlignment="textEnd"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/txtSignals"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtMemory"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/background_light"
+        android:fontFamily="sans-serif"
+        android:text="@string/memory_symbol"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:gravity="center_vertical|center_horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/txtMemoryDisplay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtMemoryDisplay"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/txtDisplay"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -19,10 +49,10 @@
         android:maxLines="1"
         android:text="@string/digit_0"
         android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@id/btnPercent"
         app:layout_constraintEnd_toStartOf="@+id/txtSignals"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/btnPercent" />
+        app:layout_constraintTop_toBottomOf="@+id/txtMemoryDisplay" />
 
     <TextView
         android:id="@+id/txtSignals"
@@ -34,23 +64,10 @@
         android:maxLines="1"
         android:text="@string/plus_sign"
         android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/btnDell"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtDisplay"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/btnDell" />
-
-    <TextView
-        android:id="@+id/txtMemory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:text="@string/memory_symbol"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:typeface="normal"
-        app:layout_constraintEnd_toEndOf="@+id/txtSignals"
-        app:layout_constraintStart_toEndOf="@+id/txtDisplay"
-        app:layout_constraintTop_toTopOf="@+id/txtSignals" />
+        app:layout_constraintTop_toBottomOf="@+id/txtMemory" />
 
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/btnPercent"
