@@ -69,7 +69,7 @@ class CalculatorUserMemory {
         if (isMemoryInUse) {
             try {
                 memory = BigDecimal(currentNumberInMemory)
-                this.isMemoryInUse = isMemoryInUse;
+                this.isMemoryInUse = isMemoryInUse
             } catch (ignored: Exception) {
                 resetMemory()
             }

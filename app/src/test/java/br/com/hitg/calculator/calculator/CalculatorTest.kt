@@ -5,11 +5,13 @@ import org.junit.Test
 
 /**
  * Created by Helton on 20/03/2018.
+ *
+ * Tests for the calculator
  */
 class CalculatorTest {
     @Test
     fun checkEnkoTest() {
-        var calc = Calculator()
+        val calc = Calculator()
 
         /**
          * ON/CE = 0
@@ -190,7 +192,7 @@ class CalculatorTest {
         assertEquals("28915581", calc.displayNumber.toString())
     }
 
-    fun typeNumberKeyByKey(strNumber: String, calc: Calculator) {
+    private fun typeNumberKeyByKey(strNumber: String, calc: Calculator) {
         for (number in strNumber) {
             if (number == '.') {
                 calc.typeDot()
@@ -202,7 +204,7 @@ class CalculatorTest {
 
     @Test
     fun checkMustIgnoreDotAtLeftDuringCalculations() {
-        var calc = Calculator()
+        val calc = Calculator()
         typeNumberKeyByKey("9999999.5", calc)
         assertEquals("9999999.5", calc.displayNumber.toString())
         calc.multiply()
@@ -213,7 +215,7 @@ class CalculatorTest {
 
     @Test
     fun checkMustIgnoreZeroWithScaleDuringCalculations() {
-        var calc = Calculator()
+        val calc = Calculator()
         typeNumberKeyByKey("0.0000002", calc)
         assertEquals("0.0000002", calc.displayNumber.toString())
         calc.divide()
@@ -225,19 +227,19 @@ class CalculatorTest {
     }
 
     @Test
-    fun checkRetoringState() {
+    fun checkRestoringState() {
         //Given the current Status:
-        val numberOnDisplay: String = "22.042"
-        val currentCalcTotal: String = "0"
+        val numberOnDisplay = "22.042"
+        val currentCalcTotal = "0"
         val currentOperation: Operations = Operations.MULTIPLICATION
-        val currentNumberInMemory: String = "10.01"
-        val isMemoryInUse: Boolean = true
-        val mustCleanDisplayOnNextInteraction: Boolean = true
+        val currentNumberInMemory = "10.01"
+        val isMemoryInUse = true
+        val mustCleanDisplayOnNextInteraction = true
         val lastOperation: Operations = Operations.NONE
-        val lastInputValue: String = "0"
+        val lastInputValue = "0"
 
         // When the Calculator is restored
-        var calc = Calculator()
+        val calc = Calculator()
 
         // And the old values are passed again to restore the state
         calc.restoreStatus(numberOnDisplay,
@@ -254,7 +256,7 @@ class CalculatorTest {
         assertEquals(currentOperation, calc.currentOperation)
         assertEquals(currentNumberInMemory, calc.getCurrentNumberInMemory().toString())
         assertEquals(isMemoryInUse, calc.isMemoryInUse())
-        assertEquals(mustCleanDisplayOnNextInteraction, calc.mustcleanDisplayOnNextInteraction())
+        assertEquals(mustCleanDisplayOnNextInteraction, calc.mustCleanDisplayOnNextInteraction())
         assertEquals(lastOperation, calc.getLastOperation())
         assertEquals(lastInputValue, calc.getLastInputValue())
     }

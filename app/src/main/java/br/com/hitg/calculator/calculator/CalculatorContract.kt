@@ -85,10 +85,6 @@ interface CalculatorContract {
          */
         fun updateMemoryDisplay(isMemoryInUse: Boolean, value: String)
 
-        /**
-         * Closes the application.
-         */
-        fun finish()
     }
 
     /**
@@ -226,7 +222,7 @@ interface CalculatorContract {
         /**
          * Must clean the Display in the next interaction?
          */
-        val mustcleanDisplayOnNextInteraction: Boolean
+        val mustCleanDisplayOnNextInteraction: Boolean
 
         /**
          * Last executed operation.

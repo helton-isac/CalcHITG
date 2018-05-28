@@ -26,7 +26,7 @@ class CalculatorPresenter(private val calculatorView: CalculatorContract.View) :
         calculatorView.updateDisplay(calculator.displayNumber.toString())
         calculatorView.updateOperation(calculator.currentOperation)
         calculatorView.updateMemoryDisplay(calculator.isMemoryInUse(),
-                calculator.userMemorydisplayNumber.toString())
+                calculator.userMemoryDisplayNumber.toString())
     }
 
     override fun add() {
@@ -107,7 +107,7 @@ class CalculatorPresenter(private val calculatorView: CalculatorContract.View) :
                                         currentOperation: Operations,
                                         currentNumberInMemory: String,
                                         isMemoryInUse: Boolean,
-                                        mustcleanDisplayOnNextInteraction: Boolean,
+                                        mustCleanDisplayOnNextInteraction: Boolean,
                                         lastOperation: Operations,
                                         lastInputValue: String) {
         calculator.restoreStatus(displayValue,
@@ -115,7 +115,7 @@ class CalculatorPresenter(private val calculatorView: CalculatorContract.View) :
                 currentOperation,
                 currentNumberInMemory,
                 isMemoryInUse,
-                mustcleanDisplayOnNextInteraction,
+                mustCleanDisplayOnNextInteraction,
                 lastOperation,
                 lastInputValue)
         updateView()
@@ -132,8 +132,8 @@ class CalculatorPresenter(private val calculatorView: CalculatorContract.View) :
         get() = calculator.getCurrentNumberInMemory().toString()
     override val isMemoryInUse: Boolean
         get() = calculator.isMemoryInUse()
-    override val mustcleanDisplayOnNextInteraction: Boolean
-        get() = calculator.mustcleanDisplayOnNextInteraction()
+    override val mustCleanDisplayOnNextInteraction: Boolean
+        get() = calculator.mustCleanDisplayOnNextInteraction()
     override val lastOperation: Operations
         get() = calculator.getLastOperation()
     override val lastInputValue: String

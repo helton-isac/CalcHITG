@@ -24,7 +24,7 @@ class Calculator {
      *
      * The typed number and results must be saved in this variable.
      */
-    var userMemorydisplayNumber: CalculatorDisplay = CalculatorDisplay(8)
+    var userMemoryDisplayNumber: CalculatorDisplay = CalculatorDisplay(8)
 
     /**
      * When an operation is initialized, must clean the current display number.
@@ -220,7 +220,7 @@ class Calculator {
             equals()
         }
         userMemory.mPlus(displayNumber.toBigDecimal())
-        setFormattedValueOnDisplay(userMemorydisplayNumber, userMemory.currentMemoryValue())
+        setFormattedValueOnDisplay(userMemoryDisplayNumber, userMemory.currentMemoryValue())
     }
 
     /**
@@ -231,7 +231,7 @@ class Calculator {
             equals()
         }
         userMemory.mSubtract(displayNumber.toBigDecimal())
-        setFormattedValueOnDisplay(userMemorydisplayNumber, userMemory.currentMemoryValue())
+        setFormattedValueOnDisplay(userMemoryDisplayNumber, userMemory.currentMemoryValue())
     }
 
     /**
@@ -241,7 +241,7 @@ class Calculator {
         if (userMemory.isMemoryInUse) {
             applyResult(this.userMemory.mrc())
         }
-        setFormattedValueOnDisplay(userMemorydisplayNumber, userMemory.currentMemoryValue())
+        setFormattedValueOnDisplay(userMemoryDisplayNumber, userMemory.currentMemoryValue())
     }
 
     /**
@@ -304,7 +304,7 @@ class Calculator {
         }
         this.currentOperation = currentOperation
         this.userMemory.restoreMemoryStatus(currentNumberInMemory, isMemoryInUse)
-        setFormattedValueOnDisplay(userMemorydisplayNumber, this.userMemory.currentMemoryValue())
+        setFormattedValueOnDisplay(userMemoryDisplayNumber, this.userMemory.currentMemoryValue())
         this.cleanDisplayOnNextInteraction = mustCleanDisplayOnNextInteraction
         this.lastOperation = lastOperation
         this.lastInput = try {
@@ -327,7 +327,7 @@ class Calculator {
     /**
      * Information if on the next interaction is necessary to clean the display
      */
-    fun mustcleanDisplayOnNextInteraction(): Boolean = this.cleanDisplayOnNextInteraction
+    fun mustCleanDisplayOnNextInteraction(): Boolean = this.cleanDisplayOnNextInteraction
 
     /**
      * Gets the total of the current operation.

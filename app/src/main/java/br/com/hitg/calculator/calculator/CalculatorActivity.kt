@@ -55,23 +55,23 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
         if (savedInstanceState != null) {
 
             val numberOnDisplay = savedInstanceState.getString(CALC_NUMBER_ON_DISPLAY)
-            val currentCalcTOtal = savedInstanceState.getString(CALC_CURRENT_CALC_TOTAL)
+            val currentCalcTotal = savedInstanceState.getString(CALC_CURRENT_CALC_TOTAL)
             val currentOperation: Operations = Operations.valueOf(savedInstanceState.getString(
                     CALC_CURRENT_OPERATION))
             val currentNumberInMemory = savedInstanceState.getString(CALC_NUMBER_IN_MEMORY)
             val isMemoryInUse = savedInstanceState.getBoolean(CALC_IS_MEMORY_IN_USE)
-            val mustcleanDisplayOnNextInteraction = savedInstanceState.getBoolean(
+            val mustCleanDisplayOnNextInteraction = savedInstanceState.getBoolean(
                     CALC_MUST_CLEAN_DISPLAY)
             val lastOperation: Operations = Operations.valueOf(savedInstanceState.getString(
                     CALC_LAST_OPERATION))
             val lastInputValue: String = savedInstanceState.getString(CALC_LAST_INPUT_VALUE)
 
             presenter.restoreCalculatorState(numberOnDisplay,
-                    currentCalcTOtal,
+                    currentCalcTotal,
                     currentOperation,
                     currentNumberInMemory,
                     isMemoryInUse,
-                    mustcleanDisplayOnNextInteraction,
+                    mustCleanDisplayOnNextInteraction,
                     lastOperation,
                     lastInputValue)
         }
@@ -146,7 +146,7 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
         } catch (ex: Exception) {
             showError()
             presenter = CalculatorPresenter(this)
-            Crashlytics.logException(ex);
+            Crashlytics.logException(ex)
         }
     }
 
@@ -216,7 +216,7 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
             putString(CALC_CURRENT_OPERATION, presenter.currentOperation.name)
             putString(CALC_NUMBER_IN_MEMORY, presenter.currentNumberInMemory)
             putBoolean(CALC_IS_MEMORY_IN_USE, presenter.isMemoryInUse)
-            putBoolean(CALC_MUST_CLEAN_DISPLAY, presenter.mustcleanDisplayOnNextInteraction)
+            putBoolean(CALC_MUST_CLEAN_DISPLAY, presenter.mustCleanDisplayOnNextInteraction)
             putString(CALC_LAST_OPERATION, presenter.lastOperation.name)
             putString(CALC_LAST_INPUT_VALUE, presenter.lastInputValue)
         })
