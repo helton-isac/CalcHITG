@@ -1,5 +1,6 @@
 package br.com.hitg.calculator.calculator
 
+import android.content.Context
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
@@ -37,7 +38,7 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
 
         setContentView(R.layout.activity_calculator)
 
-        createPresenter(savedInstanceState)
+        createPresenter()
 
         setOnClickListeners()
     }
@@ -49,32 +50,38 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
      *     previously being shut down then this Bundle contains the data it most
      *     recently supplied in {@link #onSaveInstanceState}.  <b><i>Note: Otherwise it is null.</i></b>
      */
-    private fun createPresenter(savedInstanceState: Bundle?) {
+    private fun createPresenter() {
+        val numberOnDisplay: String
+        val currentCalcTotal: String
+        val currentOperation: Operations
+        val currentNumberInMemory: String
+        val isMemoryInUse: Boolean
+        val mustCleanDisplayOnNextInteraction: Boolean
+        val lastOperation: Operations
+        val lastInputValue: String
+
+        val sharedPref = this.getPreferences(Context.MODE_PRIVATE)
+        numberOnDisplay = sharedPref.getString(CALC_NUMBER_ON_DISPLAY, "0")
+        currentCalcTotal = sharedPref.getString(CALC_CURRENT_CALC_TOTAL, "0")
+        currentOperation = Operations.valueOf(sharedPref.getString(
+                CALC_CURRENT_OPERATION, "NONE"))
+        currentNumberInMemory = sharedPref.getString(CALC_NUMBER_IN_MEMORY, "0")
+        isMemoryInUse = sharedPref.getBoolean(CALC_IS_MEMORY_IN_USE, false)
+        mustCleanDisplayOnNextInteraction = sharedPref.getBoolean(
+                CALC_MUST_CLEAN_DISPLAY, false)
+        lastOperation = Operations.valueOf(sharedPref.getString(
+                CALC_LAST_OPERATION, "NONE"))
+        lastInputValue = sharedPref.getString(CALC_LAST_INPUT_VALUE, "0")
+
         presenter = CalculatorPresenter(this)
-
-        if (savedInstanceState != null) {
-
-            val numberOnDisplay = savedInstanceState.getString(CALC_NUMBER_ON_DISPLAY)
-            val currentCalcTotal = savedInstanceState.getString(CALC_CURRENT_CALC_TOTAL)
-            val currentOperation: Operations = Operations.valueOf(savedInstanceState.getString(
-                    CALC_CURRENT_OPERATION))
-            val currentNumberInMemory = savedInstanceState.getString(CALC_NUMBER_IN_MEMORY)
-            val isMemoryInUse = savedInstanceState.getBoolean(CALC_IS_MEMORY_IN_USE)
-            val mustCleanDisplayOnNextInteraction = savedInstanceState.getBoolean(
-                    CALC_MUST_CLEAN_DISPLAY)
-            val lastOperation: Operations = Operations.valueOf(savedInstanceState.getString(
-                    CALC_LAST_OPERATION))
-            val lastInputValue: String = savedInstanceState.getString(CALC_LAST_INPUT_VALUE)
-
-            presenter.restoreCalculatorState(numberOnDisplay,
-                    currentCalcTotal,
-                    currentOperation,
-                    currentNumberInMemory,
-                    isMemoryInUse,
-                    mustCleanDisplayOnNextInteraction,
-                    lastOperation,
-                    lastInputValue)
-        }
+        presenter.restoreCalculatorState(numberOnDisplay,
+                currentCalcTotal,
+                currentOperation,
+                currentNumberInMemory,
+                isMemoryInUse,
+                mustCleanDisplayOnNextInteraction,
+                lastOperation,
+                lastInputValue)
         presenter.start()
 
     }
@@ -150,10 +157,14 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
         }
     }
 
+    /**
+     * Updates the display with a default message to indicate Error!
+     */
     private fun showError() {
         txtDisplay.setText(R.string.error)
         updateOperation(Operations.NONE)
         updateMemoryDisplay(false, "")
+        persistState()
     }
 
     /**
@@ -163,6 +174,7 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
      */
     override fun updateDisplay(value: String) {
         txtDisplay.text = value
+        persistState()
     }
 
     /**
@@ -178,6 +190,7 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
             Operations.MULTIPLICATION -> txtSignals.setText(R.string.multiplication_sign)
             Operations.DIVISION       -> txtSignals.setText(R.string.division_sign)
         }
+        persistState()
     }
 
     /**
@@ -193,6 +206,23 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
         } else {
             txtMemory.text = ""
             txtMemoryDisplay.text = ""
+        }
+        persistState()
+    }
+
+
+    private fun persistState() {
+        val sharedPref = this.getPreferences(Context.MODE_PRIVATE) ?: return
+        with(sharedPref.edit()) {
+            putString(CALC_NUMBER_ON_DISPLAY, presenter.currentDisplayValue)
+            putString(CALC_CURRENT_CALC_TOTAL, presenter.currentCalcTotal)
+            putString(CALC_CURRENT_OPERATION, presenter.currentOperation.name)
+            putString(CALC_NUMBER_IN_MEMORY, presenter.currentNumberInMemory)
+            putBoolean(CALC_IS_MEMORY_IN_USE, presenter.isMemoryInUse)
+            putBoolean(CALC_MUST_CLEAN_DISPLAY, presenter.mustCleanDisplayOnNextInteraction)
+            putString(CALC_LAST_OPERATION, presenter.lastOperation.name)
+            putString(CALC_LAST_INPUT_VALUE, presenter.lastInputValue)
+            apply()
         }
     }
 
