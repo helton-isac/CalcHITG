@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Calc HITG</string>
+    <string name="app_name">HITG Calculator</string>
     <string name="digit_0" translatable="false">0</string>
     <string name="digit_1" translatable="false">1</string>
     <string name="digit_2" translatable="false">2</string>
@@ -26,4 +26,29 @@
     <string name="invert_signal" translatable="false">+/-</string>
     <string name="memory_symbol" translatable="false">M</string>
     <string name="error">ERROR</string>
+    <string name="cont_desc_0">0</string>
+    <string name="cont_desc_1">1</string>
+    <string name="cont_desc_2">2</string>
+    <string name="cont_desc_3">3</string>
+    <string name="cont_desc_4">4</string>
+    <string name="cont_desc_5">5</string>
+    <string name="cont_desc_6">6</string>
+    <string name="cont_desc_7">7</string>
+    <string name="cont_desc_8">8</string>
+    <string name="cont_desc_9">9</string>
+    <string name="cont_desc_minus">Minus</string>
+    <string name="cont_desc_memory_recall">Memory Recall</string>
+    <string name="cont_desc_memory_minus">Subtract from memory</string>
+    <string name="cont_desc_memory_plus">Add to memory</string>
+    <string name="cont_desc_clear_entry">Clear Entry</string>
+    <string name="cont_desc_percent">Percent</string>
+    <string name="cont_desc_square_root">Square Root</string>
+    <string name="cont_desc_invert_signal">Invert Signal</string>
+    <string name="cont_desc_delete">Delete</string>
+    <string name="cont_desc_divide">Divide</string>
+    <string name="cont_desc_multiplication">Multiply</string>
+    <string name="cont_desc_point">Point</string>
+    <string name="cont_desc_plus">Plus</string>
+    <string name="cont_desc_equals">Equals</string>
+    <string name="cont_desc_memory_value">Memory Value:</string>
 </resources>

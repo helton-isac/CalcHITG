@@ -175,6 +175,11 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
      */
     override fun updateDisplay(value: String) {
         txtDisplay.text = value
+        txtDisplay.announceForAccessibility(txtDisplay.text)
+        if(txtMemory.text == ""){
+            txtMemoryDisplay.announceForAccessibility(resources.getString(R.string.cont_desc_memory_value))
+            txtMemoryDisplay.announceForAccessibility(txtMemoryDisplay.text)
+        }
         persistState()
     }
 
@@ -204,6 +209,8 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
         if (isMemoryInUse) {
             txtMemory.setText(R.string.memory_symbol)
             txtMemoryDisplay.text = value
+            txtMemoryDisplay.announceForAccessibility(resources.getString(R.string.cont_desc_memory_value))
+            txtMemoryDisplay.announceForAccessibility(txtMemoryDisplay.text)
         } else {
             txtMemory.text = ""
             txtMemoryDisplay.text = ""

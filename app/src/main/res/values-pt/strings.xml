@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Calculadora HITG</string>
     <string name="error">ERRO</string>
+    <string name="cont_desc_0">0</string>
+    <string name="cont_desc_1">1</string>
+    <string name="cont_desc_2">2</string>
+    <string name="cont_desc_3">3</string>
+    <string name="cont_desc_4">4</string>
+    <string name="cont_desc_5">5</string>
+    <string name="cont_desc_6">6</string>
+    <string name="cont_desc_7">7</string>
+    <string name="cont_desc_8">8</string>
+    <string name="cont_desc_9">9</string>
+    <string name="cont_desc_minus">Menos</string>
+    <string name="cont_desc_plus">Mais</string>
+    <string name="cont_desc_multiplication">Multiplicar</string>
+    <string name="cont_desc_divide">Dividir</string>
+    <string name="cont_desc_delete">Excluir</string>
+    <string name="cont_desc_equals">Igual</string>
+    <string name="cont_desc_percent">Porcentage</string>
+    <string name="cont_desc_invert_signal">Inverter sinal</string>
+    <string name="cont_desc_clear_entry">Limpar</string>
+    <string name="cont_desc_memory_recall">Recuperar valor em memória</string>
+    <string name="cont_desc_memory_minus">Subtrair valor da memória</string>
+    <string name="cont_desc_memory_plus">Adicionar na memória</string>
+    <string name="cont_desc_square_root">Raiz quadrada</string>
+    <string name="cont_desc_point">Ponto</string>
+    <string name="cont_desc_memory_value">Valor na memória:</string>
 </resources>
