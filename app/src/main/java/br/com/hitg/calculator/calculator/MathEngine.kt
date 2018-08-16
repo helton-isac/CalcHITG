@@ -14,7 +14,7 @@ class MathEngine {
         /**
          * Default digit scale.
          */
-        private val defaultScale: Int = 8
+        private const val defaultScale: Int = 8
 
         /**
          * Default Rounding Mode.

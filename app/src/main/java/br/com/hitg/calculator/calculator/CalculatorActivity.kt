@@ -45,10 +45,6 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
 
     /**
      * Creates the presenter and recover the state if it needs.
-     *
-     * @param savedInstanceState If the activity is being re-initialized after
-     *     previously being shut down then this Bundle contains the data it most
-     *     recently supplied in {@link #onSaveInstanceState}.  <b><i>Note: Otherwise it is null.</i></b>
      */
     private fun createPresenter() {
         val numberOnDisplay: String
@@ -60,18 +56,23 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
         val lastOperation: Operations
         val lastInputValue: String
 
+        // To remove Lint Warning from the sharedPreference getStringMethods. Yes.. I have TOC...
+        val defaultZero = "0"
+        val defaultNONE = "NONE"
+
         val sharedPref = this.getPreferences(Context.MODE_PRIVATE)
-        numberOnDisplay = sharedPref.getString(CALC_NUMBER_ON_DISPLAY, "0")
-        currentCalcTotal = sharedPref.getString(CALC_CURRENT_CALC_TOTAL, "0")
+        numberOnDisplay = sharedPref.getString(CALC_NUMBER_ON_DISPLAY, defaultZero) ?: defaultZero
+        currentCalcTotal = sharedPref.getString(CALC_CURRENT_CALC_TOTAL, defaultZero) ?: defaultZero
         currentOperation = Operations.valueOf(sharedPref.getString(
-                CALC_CURRENT_OPERATION, "NONE"))
-        currentNumberInMemory = sharedPref.getString(CALC_NUMBER_IN_MEMORY, "0")
+                CALC_CURRENT_OPERATION, defaultNONE) ?: defaultNONE)
+        currentNumberInMemory = sharedPref.getString(CALC_NUMBER_IN_MEMORY,
+                defaultZero) ?: defaultZero
         isMemoryInUse = sharedPref.getBoolean(CALC_IS_MEMORY_IN_USE, false)
         mustCleanDisplayOnNextInteraction = sharedPref.getBoolean(
                 CALC_MUST_CLEAN_DISPLAY, false)
         lastOperation = Operations.valueOf(sharedPref.getString(
-                CALC_LAST_OPERATION, "NONE"))
-        lastInputValue = sharedPref.getString(CALC_LAST_INPUT_VALUE, "0")
+                CALC_LAST_OPERATION, defaultNONE) ?: defaultNONE)
+        lastInputValue = sharedPref.getString(CALC_LAST_INPUT_VALUE, defaultZero) ?: defaultZero
 
         presenter = CalculatorPresenter(this)
         presenter.restoreCalculatorState(numberOnDisplay,

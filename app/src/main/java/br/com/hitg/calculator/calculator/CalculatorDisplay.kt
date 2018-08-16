@@ -11,11 +11,11 @@ class CalculatorDisplay() {
         /**
          * Decimal Symbol.
          */
-        val DECIMAL_SEPARATOR: Char = '.'
+        const val DECIMAL_SEPARATOR: Char = '.'
         /**
          * Negative Symbol.
          */
-        val NEGATIVE_SYMBOL: Char = '-'
+        const val NEGATIVE_SYMBOL: Char = '-'
     }
 
     /**
