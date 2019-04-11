@@ -53,4 +53,6 @@ do it:
 12 × 3 M+ 132 ÷ 2 M + MRC
 On-screen result 102
 
+[Privacy policy](privacy_policy.md)
+
 **Available in: [Google Play - Calculator HITG](https://play.google.com/store/apps/details?id=br.com.hitg.calculator "Calculator HITG")**
