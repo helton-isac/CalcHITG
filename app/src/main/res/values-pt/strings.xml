@@ -27,4 +27,5 @@
     <string name="cont_desc_square_root">Raiz quadrada</string>
     <string name="cont_desc_point">Ponto</string>
     <string name="cont_desc_memory_value">Valor na memória:</string>
+    <string name="privacy_policy">Política de privacidade</string>
 </resources>

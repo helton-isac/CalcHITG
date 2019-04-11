@@ -1,13 +1,20 @@
 package br.com.hitg.calculator.calculator
 
 import android.content.Context
+import android.content.Intent
+import android.graphics.drawable.ColorDrawable
+import android.net.Uri
 import android.os.Bundle
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import br.com.hitg.calculator.R
 import br.com.hitg.calculator.calculator.CalculatorContract.CalculatorNumbers
 import com.crashlytics.android.Crashlytics
 import kotlinx.android.synthetic.main.activity_calculator.*
+
 
 class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.OnClickListener {
 
@@ -41,6 +48,32 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
         createPresenter()
 
         setOnClickListeners()
+
+        configureActionBar()
+
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.calc_menu, menu)
+        return true
+    }
+
+    private fun configureActionBar() {
+        title = "";
+        supportActionBar?.setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(this,
+                android.R.color.transparent)));
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.privacy_policy -> {
+                val browserIntent = Intent(Intent.ACTION_VIEW,
+                        Uri.parse("https://helton-isac.github.io/CalcHITG/privacy_policy.html"))
+                startActivity(browserIntent)
+                return true
+            }
+        }
+        return false
     }
 
     /**
@@ -176,7 +209,7 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
     override fun updateDisplay(value: String) {
         txtDisplay.text = value
         txtDisplay.announceForAccessibility(txtDisplay.text)
-        if(txtMemory.text == ""){
+        if (txtMemory.text == "") {
             txtMemoryDisplay.announceForAccessibility(resources.getString(R.string.cont_desc_memory_value))
             txtMemoryDisplay.announceForAccessibility(txtMemoryDisplay.text)
         }

@@ -18,10 +18,22 @@
         android:gravity="center_vertical|end"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/txtSignals"
+        app:layout_constraintEnd_toStartOf="@+id/txtMemory"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/txtDisplay" />
+
+    <TextView
+        android:id="@+id/emptySpace"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@android:color/background_light"
+        android:fontFamily="sans-serif"
+        android:gravity="center_vertical|center_horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/txtSignals"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/txtMemory"
@@ -33,10 +45,10 @@
         android:text="@string/memory_symbol"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/emptySpace"
         app:layout_constraintStart_toEndOf="@+id/txtMemoryDisplay"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/txtSignals" />
+        app:layout_constraintBottom_toTopOf="@+id/txtSignals"/>
 
     <TextView
         android:id="@+id/txtDisplay"
