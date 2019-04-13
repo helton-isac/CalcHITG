@@ -102,7 +102,7 @@ class CalculatorPresenter(private val calculatorView: CalculatorContract.View) :
         updateView()
     }
 
-    override fun restoreCalculatorState(displayValue: String,
+    override fun restoreCalculatorState(numberOnDisplay: String,
                                         currentCalcTotal: String,
                                         currentOperation: Operations,
                                         currentNumberInMemory: String,
@@ -110,7 +110,7 @@ class CalculatorPresenter(private val calculatorView: CalculatorContract.View) :
                                         mustCleanDisplayOnNextInteraction: Boolean,
                                         lastOperation: Operations,
                                         lastInputValue: String) {
-        calculator.restoreStatus(displayValue,
+        calculator.restoreStatus(numberOnDisplay,
                 currentCalcTotal,
                 currentOperation,
                 currentNumberInMemory,

@@ -40,7 +40,11 @@ jobs:
       - run:
           name: Release
           command: ./gradlew assembleRelease
-#      - run:
+      - run:
+          name: Bundle
+          command: ./gradlew :app:bundleRelease
+
+    #      - run:
 #          name: javadoc
 #          command: ./gradlew javadoc
 
