@@ -68,7 +68,7 @@ dependencies {
     androidTestImplementation("com.android.support.test.espresso:espresso-core:${Versions.espressoCore}")
     implementation("com.google.firebase:firebase-core:${Versions.firebaseCore}")
     implementation("com.crashlytics.sdk.android:crashlytics:${Versions.crashlytics}") {
-        isTransitive = true;
+        isTransitive = true
     }
 }
 
