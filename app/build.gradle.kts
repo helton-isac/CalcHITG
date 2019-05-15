@@ -13,8 +13,8 @@ android {
         minSdkVersion(Versions.minSdk)
         targetSdkVersion(Versions.targetSdk)
 
-        versionCode = 16
-        versionName = "3.6"
+        versionCode = 17
+        versionName = "4.0"
         testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
     }
 

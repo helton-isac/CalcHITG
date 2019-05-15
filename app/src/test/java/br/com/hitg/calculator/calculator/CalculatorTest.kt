@@ -216,12 +216,12 @@ class CalculatorTest {
     @Test
     fun checkMustIgnoreZeroWithScaleDuringCalculations() {
         val calc = Calculator()
-        typeNumberKeyByKey("0.0000002", calc)
-        assertEquals("0.0000002", calc.displayNumber.toString())
+        typeNumberKeyByKey("0.0000000002", calc)
+        assertEquals("0.0000000002", calc.displayNumber.toString())
         calc.divide()
         typeNumberKeyByKey("2", calc)
         calc.equals()
-        assertEquals("0.0000001", calc.displayNumber.toString())
+        assertEquals("0.0000000001", calc.displayNumber.toString())
         calc.equals()
         assertEquals("0", calc.displayNumber.toString())
     }

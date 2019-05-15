@@ -13,120 +13,120 @@ class MathEngineTest {
 
     @Test
     fun addSimple() {
-        assertAdd("Must return 10", "10", "4", "6")
-        assertAdd("Must return -10", "-10", "-4", "-6")
-        assertAdd("Must return -2", "-2", "4", "-6")
-        assertAdd("Must return 2", "2", "-4", "6")
-        assertAdd("Must return 99999999", "99999999", "22222222", "77777777")
-        assertAdd("Must return -99999999", "-99999999", "-22222222", "-77777777")
-        assertAdd("Must return 55555555", "55555555", "-22222222", "77777777")
-        assertAdd("Must return -55555555", "-55555555", "22222222", "-77777777")
+        assertAdd("Must return 10.0000000000", "10.0000000000", "4", "6")
+        assertAdd("Must return -10.0000000000", "-10.0000000000", "-4", "-6")
+        assertAdd("Must return -2.0000000000", "-2.0000000000", "4", "-6")
+        assertAdd("Must return 2.0000000000", "2.0000000000", "-4", "6")
+        assertAdd("Must return 99999999.0000000000", "99999999.0000000000", "22222222", "77777777")
+        assertAdd("Must return -99999999.0000000000", "-99999999.0000000000", "-22222222", "-77777777")
+        assertAdd("Must return 55555555.0000000000", "55555555.0000000000", "-22222222", "77777777")
+        assertAdd("Must return -55555555.0000000000", "-55555555.0000000000", "22222222", "-77777777")
     }
 
     @Test
     fun addDecimal() {
-        assertAdd("Must return 5.00000002", "5.00000002", "2.00000001", "3.00000001")
-        assertAdd("Must return 99999999.99999999",
-                "99999999.99999999",
-                "22222222.22222222",
-                "77777777.77777777")
-        assertAdd("Must return -99999999.99999999",
-                "-99999999.99999999",
-                "-22222222.22222222",
-                "-77777777.77777777")
+        assertAdd("Must return 5.0000000002", "5.0000000002", "2.0000000001", "3.0000000001")
+        assertAdd("Must return 9999999999.9999999999",
+                "9999999999.9999999999",
+                "2222222222.2222222222",
+                "7777777777.7777777777")
+        assertAdd("Must return -9999999999.9999999999",
+                "-9999999999.9999999999",
+                "-2222222222.2222222222",
+                "-7777777777.7777777777")
     }
 
 
     @Test
     fun subtractSimple() {
-        assertSubtract("Must return 10", "10", "40", "30")
-        assertSubtract("Must return -70", "-70", "-40", "30")
-        assertSubtract("Must return 10", "10", "4", "-6")
-        assertSubtract("Must return -10", "-10", "-4", "6")
-        assertSubtract("Must return -55555555", "-55555555", "22222222", "77777777")
-        assertSubtract("Must return 55555555", "55555555", "-22222222", "-77777777")
-        assertSubtract("Must return -99999999", "-99999999", "-22222222", "77777777")
-        assertSubtract("Must return 99999999", "99999999", "22222222", "-77777777")
+        assertSubtract("Must return 10.0000000000", "10.0000000000", "40", "30")
+        assertSubtract("Must return -70.0000000000", "-70.0000000000", "-40", "30")
+        assertSubtract("Must return 10.0000000000", "10.0000000000", "4", "-6")
+        assertSubtract("Must return -10.0000000000", "-10.0000000000", "-4", "6")
+        assertSubtract("Must return -55555555.0000000000", "-55555555.0000000000", "22222222", "77777777")
+        assertSubtract("Must return 55555555.0000000000", "55555555.0000000000", "-22222222", "-77777777")
+        assertSubtract("Must return -99999999.0000000000", "-99999999.0000000000", "-22222222", "77777777")
+        assertSubtract("Must return 99999999.0000000000", "99999999.0000000000", "22222222", "-77777777")
     }
 
     @Test
     fun subtractDecimal() {
-        assertSubtract("Must return 5.99999999", "5.99999999", "10", "4.00000001")
-        assertSubtract("Must return 2.77777777", "2.77777777", "5.99999999", "3.22222222")
-        assertSubtract("Must return -55555555.55555555",
-                "-55555555.55555555",
-                "22222222.22222222",
-                "77777777.77777777")
-        assertSubtract("Must return 55555555.55555555",
-                "55555555.55555555",
-                "-22222222.22222222",
-                "-77777777.77777777")
-        assertSubtract("Must return -99999999.99999999",
-                "-99999999.99999999",
-                "-22222222.22222222",
-                "77777777.77777777")
-        assertSubtract("Must return 99999999.99999999",
-                "99999999.99999999",
-                "22222222.22222222",
-                "-77777777.77777777")
+        assertSubtract("Must return 5.9999999999", "5.9999999999", "10", "4.0000000001")
+        assertSubtract("Must return 2.7777777777", "2.7777777777", "5.9999999999", "3.2222222222")
+        assertSubtract("Must return -5555555555.5555555555",
+                "-5555555555.5555555555",
+                "2222222222.2222222222",
+                "7777777777.7777777777")
+        assertSubtract("Must return 5555555555.5555555555",
+                "5555555555.5555555555",
+                "-2222222222.2222222222",
+                "-7777777777.7777777777")
+        assertSubtract("Must return -9999999999.9999999999",
+                "-9999999999.9999999999",
+                "-2222222222.2222222222",
+                "7777777777.7777777777")
+        assertSubtract("Must return 9999999999.9999999999",
+                "9999999999.9999999999",
+                "2222222222.2222222222",
+                "-7777777777.7777777777")
     }
 
 
     @Test
     fun multiplySimple() {
-        assertMultiply("Must return 12.00000000", "12.00000000", "4", "3")
-        assertMultiply("Must return -12.00000000", "-12.00000000", "-4", "3")
-        assertMultiply("Must return -12.00000000", "-12.00000000", "4", "-3")
-        assertMultiply("Must return 1.000000002", "12.00000000", "-4", "-3")
-        assertMultiply("Must return 17280494.00000000", "17280494.00000000", "2222", "7777")
-        assertMultiply("Must return -17280494.00000000", "-17280494.00000000", "-2222", "7777")
-        assertMultiply("Must return -17280494.00000000", "-17280494.00000000", "2222", "-7777")
-        assertMultiply("Must return 17280494.00000000", "17280494.00000000", "-2222", "-7777")
-        assertMultiply("Must return 0.00000000", "0.00000000", "0", "0")
-        assertMultiply("Must return 0.00000000", "0.00000000", "0", "42")
-        assertMultiply("Must return 0.00000000", "0.00000000", "42", "0")
-        assertMultiply("Must return 42.00000000", "42.00000000", "42", "1")
-        assertMultiply("Must return 42.00000000", "42.00000000", "1", "42")
-        assertMultiply("Must return -42.00000000", "-42.00000000", "42", "-1")
-        assertMultiply("Must return -42.00000000", "-42.00000000", "-1", "42")
+        assertMultiply("Must return 12.0000000000", "12.0000000000", "4", "3")
+        assertMultiply("Must return -12.0000000000", "-12.0000000000", "-4", "3")
+        assertMultiply("Must return -12.0000000000", "-12.0000000000", "4", "-3")
+        assertMultiply("Must return 1.00000000002", "12.0000000000", "-4", "-3")
+        assertMultiply("Must return 17280494.0000000000", "17280494.0000000000", "2222", "7777")
+        assertMultiply("Must return -17280494.0000000000", "-17280494.0000000000", "-2222", "7777")
+        assertMultiply("Must return -17280494.0000000000", "-17280494.0000000000", "2222", "-7777")
+        assertMultiply("Must return 17280494.0000000000", "17280494.0000000000", "-2222", "-7777")
+        assertMultiply("Must return 0.0000000000", "0.0000000000", "0", "0")
+        assertMultiply("Must return 0.0000000000", "0.0000000000", "0", "42")
+        assertMultiply("Must return 0.0000000000", "0.0000000000", "42", "0")
+        assertMultiply("Must return 42.0000000000", "42.0000000000", "42", "1")
+        assertMultiply("Must return 42.0000000000", "42.0000000000", "1", "42")
+        assertMultiply("Must return -42.0000000000", "-42.0000000000", "42", "-1")
+        assertMultiply("Must return -42.0000000000", "-42.0000000000", "-1", "42")
     }
 
     @Test
     fun multiplyDecimal() {
-        assertMultiply("Must return 11.99999992", "11.99999992", "1.99999999", "5.99999999")
-        assertMultiply("Must return -11.99999992", "-11.99999992", "1.99999999", "-5.99999999")
-        assertMultiply("Must return -11.99999992", "-11.99999992", "-1.99999999", "5.99999999")
-        assertMultiply("Must return 11.99999992", "11.99999992", "-1.99999999", "-5.99999999")
-        assertMultiply("Must return 56200.23208800", "56200.23208800", "123.123", "456.456")
-        assertMultiply("Must return -56200.23208800", "-56200.23208800", "-123.123", "456.456")
-        assertMultiply("Must return -56200.23208800", "-56200.23208800", "123.123", "-456.456")
-        assertMultiply("Must return 56200.23208800", "56200.23208800", "-123.123", "-456.456")
-        assertMultiply("Must return 0.00000000", "0.00000000", "123.123", "0")
-        assertMultiply("Must return 0.00000000", "0.00000000", "-123.123", "0")
-        assertMultiply("Must return 0.00000000", "0.00000000", "0", "123.123")
-        assertMultiply("Must return 0.00000000", "0.00000000", "0", "-123.123")
-        assertMultiply("Must return 124.33100000", "124.33100000", "1.01", "123.1")
+        assertMultiply("Must return 11.9999999992", "11.9999999992", "1.9999999999", "5.9999999999")
+        assertMultiply("Must return -11.9999999993", "-11.9999999993", "1.9999999999", "-5.9999999999")
+        assertMultiply("Must return -11.9999999993", "-11.9999999993", "-1.9999999999", "5.9999999999")
+        assertMultiply("Must return 11.9999999992", "11.9999999992", "-1.9999999999", "-5.9999999999")
+        assertMultiply("Must return 56200.2320880000", "56200.2320880000", "123.123", "456.456")
+        assertMultiply("Must return -56200.2320880000", "-56200.2320880000", "-123.123", "456.456")
+        assertMultiply("Must return -56200.2320880000", "-56200.2320880000", "123.123", "-456.456")
+        assertMultiply("Must return 56200.2320880000", "56200.2320880000", "-123.123", "-456.456")
+        assertMultiply("Must return 0.0000000000", "0.0000000000", "123.123", "0")
+        assertMultiply("Must return 0.0000000000", "0.0000000000", "-123.123", "0")
+        assertMultiply("Must return 0.0000000000", "0.0000000000", "0", "123.123")
+        assertMultiply("Must return 0.0000000000", "0.0000000000", "0", "-123.123")
+        assertMultiply("Must return 124.3310000000", "124.3310000000", "1.01", "123.1")
     }
 
     @Test
     fun divideSimple() {
-        assertDivide("Must return 2.00000000", "2.00000000", "10", "5")
-        assertDivide("Must return -2.00000000", "-2.00000000", "10", "-5")
-        assertDivide("Must return -2.00000000", "-2.00000000", "-10", "5")
-        assertDivide("Must return 2.00000000", "2.00000000", "-10", "-5")
-        assertDivide("Must return 0.00000000", "0.00000000", "0", "42")
-        assertDivide("Must return 42.00000000", "42.00000000", "42", "1")
-        assertDivide("Must return 0.02380952", "0.02380952", "1", "42")
-        assertDivide("Must return -42.00000000", "-42.00000000", "42", "-1")
-        assertDivide("Must return -0.02380952", "-0.02380952", "-1", "42")
+        assertDivide("Must return 2.0000000000", "2.0000000000", "10", "5")
+        assertDivide("Must return -2.0000000000", "-2.0000000000", "10", "-5")
+        assertDivide("Must return -2.0000000000", "-2.0000000000", "-10", "5")
+        assertDivide("Must return 2.0000000000", "2.0000000000", "-10", "-5")
+        assertDivide("Must return 0.0000000000", "0.0000000000", "0", "42")
+        assertDivide("Must return 42.0000000000", "42.0000000000", "42", "1")
+        assertDivide("Must return 0.0238095238", "0.0238095238", "1", "42")
+        assertDivide("Must return -42.0000000000", "-42.0000000000", "42", "-1")
+        assertDivide("Must return -0.0238095239", "-0.0238095239", "-1", "42")
     }
 
     @Test
     fun divideDecimal() {
-        assertDivide("Must return 3.70731707", "3.70731707", "456.456", "123.123")
-        assertDivide("Must return -3.70731707", "-3.70731707", "456.456", "-123.123")
-        assertDivide("Must return -3.70731707", "-3.70731707", "-456.456", "123.123")
-        assertDivide("Must return 3.70731707", "3.70731707", "-456.456", "-123.123")
+        assertDivide("Must return 3.7073170731", "3.7073170731", "456.456", "123.123")
+        assertDivide("Must return -3.7073170732", "-3.7073170732", "456.456", "-123.123")
+        assertDivide("Must return -3.7073170732", "-3.7073170732", "-456.456", "123.123")
+        assertDivide("Must return 3.7073170731", "3.7073170731", "-456.456", "-123.123")
 
     }
 

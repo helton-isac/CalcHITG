@@ -17,14 +17,14 @@ class Calculator {
      *
      * The typed number and results must be saved in this variable.
      */
-    var displayNumber: CalculatorDisplay = CalculatorDisplay(8)
+    var displayNumber: CalculatorDisplay = CalculatorDisplay(200)
 
     /**
      * Display Number of the memory.
      *
      * The typed number and results must be saved in this variable.
      */
-    var userMemoryDisplayNumber: CalculatorDisplay = CalculatorDisplay(8)
+    var userMemoryDisplayNumber: CalculatorDisplay = CalculatorDisplay(200)
 
     /**
      * When an operation is initialized, must clean the current display number.

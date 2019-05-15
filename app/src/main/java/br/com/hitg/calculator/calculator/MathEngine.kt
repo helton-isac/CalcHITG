@@ -14,12 +14,12 @@ class MathEngine {
         /**
          * Default digit scale.
          */
-        private const val defaultScale: Int = 8
+        private const val defaultScale: Int = 10
 
         /**
          * Default Rounding Mode.
          */
-        private val defaultRoundingMode: RoundingMode = RoundingMode.HALF_UP
+        private val defaultRoundingMode: RoundingMode = RoundingMode.FLOOR
 
         /**
          * Returns a BigDecimal whose value is (v1 + v2), and whose scale is
@@ -30,7 +30,7 @@ class MathEngine {
          * @return a BigDecimal whose value is (v1 + v2).
          */
         fun add(v1: BigDecimal, v2: BigDecimal): BigDecimal =
-                v1.add(v2)
+                v1.add(v2).setScale(defaultScale, defaultRoundingMode)
 
         /**
          * Returns a BigDecimal whose value is (v1 - v2), and whose scale is
@@ -41,7 +41,7 @@ class MathEngine {
          * @return a BigDecimal whose value is (v1 - v2).
          */
         fun subtract(v1: BigDecimal, v2: BigDecimal): BigDecimal =
-                v1.subtract(v2)
+                v1.subtract(v2).setScale(defaultScale, defaultRoundingMode)
 
         /**
          * Returns a BigDecimal whose value is (v1 × v2), and whose scale is

@@ -68,7 +68,7 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
         when (item.itemId) {
             R.id.privacy_policy -> {
                 val browserIntent = Intent(Intent.ACTION_VIEW,
-                        Uri.parse("https://helton-isac.github.io/CalcHITG/privacy_policy.html"))
+                        Uri.parse(getString(R.string.link_privacy_policy)))
                 startActivity(browserIntent)
                 return true
             }

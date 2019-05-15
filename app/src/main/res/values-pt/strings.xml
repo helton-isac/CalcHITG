@@ -2,16 +2,16 @@
 <resources>
     <string name="app_name">Calculadora HITG</string>
     <string name="error">ERRO</string>
-    <string name="cont_desc_0">0</string>
-    <string name="cont_desc_1">1</string>
-    <string name="cont_desc_2">2</string>
-    <string name="cont_desc_3">3</string>
-    <string name="cont_desc_4">4</string>
-    <string name="cont_desc_5">5</string>
-    <string name="cont_desc_6">6</string>
-    <string name="cont_desc_7">7</string>
-    <string name="cont_desc_8">8</string>
-    <string name="cont_desc_9">9</string>
+    <string name="cont_desc_0">Zero</string>
+    <string name="cont_desc_1">Um</string>
+    <string name="cont_desc_2">Dois</string>
+    <string name="cont_desc_3">Três</string>
+    <string name="cont_desc_4">Quatro</string>
+    <string name="cont_desc_5">Cinco</string>
+    <string name="cont_desc_6">Seis</string>
+    <string name="cont_desc_7">Sete</string>
+    <string name="cont_desc_8">Oito</string>
+    <string name="cont_desc_9">Nove</string>
     <string name="cont_desc_minus">Menos</string>
     <string name="cont_desc_plus">Mais</string>
     <string name="cont_desc_multiplication">Multiplicar</string>

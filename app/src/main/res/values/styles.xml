@@ -9,6 +9,7 @@
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowBackground">@null</item>
         <item name="windowActionBarOverlay">true</item>
+        <item name="android:textColorSecondary">@android:color/darker_gray</item>
     </style>
 
     <style name="ButtonStyle" parent="Widget.AppCompat.Button">
