@@ -1,0 +1,30 @@
+buildscript {
+    apply from: 'dependencies.gradle'
+
+    repositories {
+        google()
+
+        jcenter()
+
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath "com.android.tools.build:gradle:$rootProject.ext.gradleVersion"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$rootProject.ext.kotlinVersion"
+        classpath "com.google.gms:google-services:$rootProject.ext.googleServicesVersion"
+        classpath "io.fabric.tools:gradle:$rootProject.ext.fabricToolsGradleVersion"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://maven.fabric.io/public' }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

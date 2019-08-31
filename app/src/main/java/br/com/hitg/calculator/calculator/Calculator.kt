@@ -4,6 +4,7 @@ import java.math.BigDecimal
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
 import java.util.*
+import kotlin.math.sqrt
 
 /**
  * Created by Helton on 20/02/2018.
@@ -248,7 +249,7 @@ class Calculator {
      * Performs the squareRoot operation.
      */
     fun squareRoot() {
-        applyResult(BigDecimal(Math.sqrt(displayNumber.toBigDecimal().toDouble()).toString()))
+        applyResult(BigDecimal(sqrt(displayNumber.toBigDecimal().toDouble()).toString()))
     }
 
     /**

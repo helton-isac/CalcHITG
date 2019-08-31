@@ -5,8 +5,8 @@ import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
-import android.support.v7.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -59,9 +59,9 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
     }
 
     private fun configureActionBar() {
-        title = "";
+        title = ""
         supportActionBar?.setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(this,
-                android.R.color.transparent)));
+                android.R.color.transparent)))
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

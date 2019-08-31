@@ -62,9 +62,7 @@ class CalculatorDisplay() {
      * @param initialValue An initialValue to display
      */
     constructor(maxLength: Int, initialValue: String) : this() {
-        if (maxLength < -1 || maxLength == 0) {
-            throw IllegalArgumentException("The argument must be any number greater than zero or -1")
-        }
+        require(!(maxLength < -1 || maxLength == 0)) { "The argument must be any number greater than zero or -1" }
         this.maxLength = maxLength
 
         setValue(initialValue)
@@ -93,9 +91,7 @@ class CalculatorDisplay() {
      * @returns True if the number was appended
      */
     fun appendNumber(charNumber: Char, replaceCurrentDisplay: Boolean): Boolean {
-        if (!Character.isDigit(charNumber)) {
-            throw IllegalArgumentException("Invalid value, must be a number")
-        }
+        require(Character.isDigit(charNumber)) { "Invalid value, must be a number" }
 
         val isZero: Boolean = internalDisplayText.length == 1
                 && internalDisplayText.toString() == "0"

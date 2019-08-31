@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -87,7 +87,7 @@
         app:layout_constraintStart_toEndOf="@+id/txtDisplay"
         app:layout_constraintTop_toBottomOf="@+id/txtMemory" />
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnMRC"
         style="@style/ButtonStyle"
         android:theme="@style/BlueButtonTheme"
@@ -98,7 +98,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtDisplay" />
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnMMinus"
         style="@style/ButtonStyle"
         android:theme="@style/BlueButtonTheme"
@@ -109,7 +109,7 @@
         app:layout_constraintStart_toEndOf="@id/btnMRC"
         app:layout_constraintTop_toBottomOf="@+id/txtDisplay" />
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnMPlus"
         style="@style/ButtonStyle"
         android:theme="@style/BlueButtonTheme"
@@ -120,7 +120,7 @@
         app:layout_constraintStart_toEndOf="@id/btnMMinus"
         app:layout_constraintTop_toBottomOf="@+id/txtDisplay" />
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnCE"
         style="@style/ButtonStyle"
         android:theme="@style/RedButtonTheme"
@@ -131,7 +131,7 @@
         app:layout_constraintStart_toEndOf="@id/btnMPlus"
         app:layout_constraintTop_toBottomOf="@+id/txtDisplay" />
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnPercent"
         style="@style/ButtonStyle"
         android:theme="@style/BlackButtonTheme"
@@ -142,7 +142,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnMRC" />
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnSquareRoot"
         style="@style/ButtonStyle"
         android:theme="@style/BlackButtonTheme"
@@ -153,7 +153,7 @@
         app:layout_constraintStart_toEndOf="@id/btnPercent"
         app:layout_constraintTop_toBottomOf="@+id/btnMMinus" />
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnInvertSignal"
         style="@style/ButtonStyle"
         android:theme="@style/BlackButtonTheme"
@@ -164,7 +164,7 @@
         app:layout_constraintStart_toEndOf="@+id/btnSquareRoot"
         app:layout_constraintTop_toBottomOf="@+id/btnMPlus" />
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnDel"
         style="@style/ButtonStyle"
         android:theme="@style/RedButtonTheme"
@@ -175,7 +175,7 @@
         app:layout_constraintStart_toEndOf="@id/btnInvertSignal"
         app:layout_constraintTop_toBottomOf="@+id/btnCE" />
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnSeven"
         style="@style/ButtonStyle"
         android:theme="@style/BlackButtonTheme"
@@ -186,7 +186,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnPercent" />
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnEight"
         style="@style/ButtonStyle"
         android:theme="@style/BlackButtonTheme"
@@ -197,7 +197,7 @@
         app:layout_constraintStart_toEndOf="@id/btnSeven"
         app:layout_constraintTop_toBottomOf="@+id/btnSquareRoot" />
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnNine"
         style="@style/ButtonStyle"
         android:theme="@style/BlackButtonTheme"
@@ -208,7 +208,7 @@
         app:layout_constraintStart_toEndOf="@id/btnEight"
         app:layout_constraintTop_toBottomOf="@+id/btnInvertSignal" />
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnDivide"
         style="@style/ButtonStyle"
         android:theme="@style/BlackButtonTheme"
@@ -219,7 +219,7 @@
         app:layout_constraintStart_toEndOf="@id/btnNine"
         app:layout_constraintTop_toBottomOf="@+id/btnDel" />
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnFour"
         style="@style/ButtonStyle"
         android:theme="@style/BlackButtonTheme"
@@ -230,7 +230,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnSeven" />
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnFive"
         style="@style/ButtonStyle"
         android:theme="@style/BlackButtonTheme"
@@ -241,7 +241,7 @@
         app:layout_constraintStart_toEndOf="@id/btnFour"
         app:layout_constraintTop_toBottomOf="@+id/btnEight" />
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnSix"
         style="@style/ButtonStyle"
         android:theme="@style/BlackButtonTheme"
@@ -252,7 +252,7 @@
         app:layout_constraintStart_toEndOf="@id/btnFive"
         app:layout_constraintTop_toBottomOf="@+id/btnNine" />
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnMultiply"
         style="@style/ButtonStyle"
         android:theme="@style/BlackButtonTheme"
@@ -263,7 +263,7 @@
         app:layout_constraintStart_toEndOf="@id/btnSix"
         app:layout_constraintTop_toBottomOf="@+id/btnDivide" />
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnOne"
         style="@style/ButtonStyle"
         android:theme="@style/BlackButtonTheme"
@@ -274,7 +274,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnFour" />
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnTwo"
         style="@style/ButtonStyle"
         android:theme="@style/BlackButtonTheme"
@@ -285,7 +285,7 @@
         app:layout_constraintStart_toEndOf="@id/btnOne"
         app:layout_constraintTop_toBottomOf="@+id/btnFive" />
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnThree"
         style="@style/ButtonStyle"
         android:theme="@style/BlackButtonTheme"
@@ -296,7 +296,7 @@
         app:layout_constraintStart_toEndOf="@id/btnTwo"
         app:layout_constraintTop_toBottomOf="@+id/btnSix" />
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnMinus"
         style="@style/ButtonStyle"
         android:theme="@style/BlackButtonTheme"
@@ -307,7 +307,7 @@
         app:layout_constraintStart_toEndOf="@id/btnThree"
         app:layout_constraintTop_toBottomOf="@+id/btnMultiply" />
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnZero"
         style="@style/ButtonStyle"
         android:theme="@style/BlackButtonTheme"
@@ -318,7 +318,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnOne" />
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnDot"
         style="@style/ButtonStyle"
         android:theme="@style/BlackButtonTheme"
@@ -329,7 +329,7 @@
         app:layout_constraintStart_toEndOf="@id/btnZero"
         app:layout_constraintTop_toBottomOf="@+id/btnTwo" />
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnEquals"
         style="@style/ButtonStyle"
         android:theme="@style/BlackButtonTheme"
@@ -341,7 +341,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnThree" />
 
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnPlus"
         style="@style/ButtonStyle"
         android:theme="@style/BlackButtonTheme"
@@ -352,4 +352,4 @@
         app:layout_constraintStart_toEndOf="@id/btnEquals"
         app:layout_constraintTop_toBottomOf="@+id/btnMinus" />
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

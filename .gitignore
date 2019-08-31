@@ -56,3 +56,6 @@ google-services.json
 .project
 .settings
 .classpath
+
+# Mac OS
+.DS_Store

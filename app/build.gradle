@@ -1,0 +1,88 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+// Fabric (Crashlytics)
+apply plugin: 'io.fabric'
+
+android {
+    compileSdkVersion androidCompileSdkVersion
+
+    defaultConfig {
+        applicationId "br.com.hitg.calculator"
+        minSdkVersion androidMinSdkVersion
+        targetSdkVersion androidTargetSdkVersion
+        versionCode 18
+        versionName "4.1"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary = true
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("$System.env.KEYSTORE" ?: "KeyStore.jks")
+            storePassword "$System.env.KEYSTORE_PASSWORD"
+            keyAlias "$System.env.KEY_ALIAS"
+            keyPassword "$System.env.KEY_PASSWORD"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            debuggable = true
+        }
+    }
+
+    lintOptions {
+        // Turns off checks for the issue IDs you specify.
+        disable("TypographyFractions", "TypographyQuotes")
+        // Turns on checks for the issue IDs you specify. These checks are in
+        // addition to the default lint checks.
+        enable("RtlHardcoded", "RtlCompat", "RtlEnabled")
+        // To enable checks for only a subset of issue IDs and ignore all others,
+        // list the issue IDs with the 'check' property instead. This property overrides
+        // any issue IDs you enable or disable using the properties above.
+        check("NewApi", "InlinedApi")
+        // If set to true, turns off analysis progress reporting by lint.
+        quiet = true
+        // if set to true (default), stops the build if errors are found.
+        abortOnError = false
+        // if true, only report errors.
+        ignoreWarnings = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$rootProject.ext.kotlinStdlibJdk7Version"
+
+    implementation "androidx.appcompat:appcompat:$rootProject.ext.androidxAppCompatVersion"
+    implementation "androidx.media:media:$rootProject.ext.androidxMediaVersion"
+    implementation "androidx.legacy:legacy-support-v4:$rootProject.ext.androidxLegacySupportV4Version"
+    implementation "androidx.recyclerview:recyclerview:$rootProject.ext.androidxRecyclerviewVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.ext.androidxConstraintlayoutVersion"
+    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.ext.androidxLifeCycleExtensionsVersion"
+
+    implementation "com.google.android.material:material:$rootProject.ext.materialVersion"
+
+    implementation "com.google.firebase:firebase-core:$rootProject.ext.firebaseCoreVersion"
+    implementation "com.crashlytics.sdk.android:crashlytics:$rootProject.ext.crashlyticsVersion", {
+        transitive = true
+    }
+
+    testImplementation "junit:junit:$rootProject.ext.jUnitVersion"
+
+    androidTestImplementation "androidx.test:runner:$rootProject.ext.androidxRunnerVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.ext.androidxEspressoCore"
+}
+
+apply plugin: "com.google.gms.google-services"
