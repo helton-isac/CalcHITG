@@ -56,3 +56,5 @@ On-screen result 102
 [Privacy policy](privacy_policy.md)
 
 **Available in: [Google Play - Calculator HITG](https://play.google.com/store/apps/details?id=br.com.hitg.calculator "Calculator HITG")**
+
+<img src="./demo/app_demo.gif" width="250">

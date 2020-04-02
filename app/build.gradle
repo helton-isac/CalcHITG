@@ -14,8 +14,8 @@ android {
         applicationId "br.com.hitg.calculator"
         minSdkVersion androidMinSdkVersion
         targetSdkVersion androidTargetSdkVersion
-        versionCode 20
-        versionName "4.3"
+        versionCode 21
+        versionName "4.4"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
