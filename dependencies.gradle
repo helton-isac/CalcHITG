@@ -9,7 +9,7 @@ ext {
     kotlinStdlibJdk7Version = '1.3.71'
 
     // Gradle
-    gradleVersion = "3.5.0"
+    gradleVersion = '3.6.3'
 
     // Google
     googleServicesVersion = "4.3.1"
