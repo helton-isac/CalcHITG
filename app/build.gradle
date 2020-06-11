@@ -4,8 +4,7 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
-// Fabric (Crashlytics)
-apply plugin: 'io.fabric'
+apply plugin: 'com.google.firebase.crashlytics'
 
 android {
     compileSdkVersion androidCompileSdkVersion
@@ -39,6 +38,9 @@ android {
         }
         debug {
             debuggable = true
+            firebaseCrashlytics {
+                mappingFileUploadEnabled false
+            }
         }
     }
 
@@ -75,9 +77,8 @@ dependencies {
     implementation "com.google.android.material:material:$rootProject.ext.materialVersion"
 
     implementation "com.google.firebase:firebase-core:$rootProject.ext.firebaseCoreVersion"
-    implementation "com.crashlytics.sdk.android:crashlytics:$rootProject.ext.crashlyticsVersion", {
-        transitive = true
-    }
+    implementation "com.google.firebase:firebase-crashlytics:$rootProject.ext.firebaseCrashlyticsVersion"
+    implementation "com.google.firebase:firebase-analytics:$rootProject.ext.firebaseAnalyticsVersion"
 
     testImplementation "junit:junit:$rootProject.ext.jUnitVersion"
 

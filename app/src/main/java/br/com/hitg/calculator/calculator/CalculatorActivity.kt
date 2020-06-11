@@ -5,16 +5,15 @@ import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
-import androidx.core.content.ContextCompat
-import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import br.com.hitg.calculator.R
 import br.com.hitg.calculator.calculator.CalculatorContract.CalculatorNumbers
-import com.crashlytics.android.Crashlytics
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import kotlinx.android.synthetic.main.activity_calculator.*
-
 
 class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.OnClickListener {
 
@@ -185,9 +184,13 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
                 else                 -> return
             }
         } catch (ex: Exception) {
+            val crashlytics = FirebaseCrashlytics.getInstance()
+            val message = ex.message
+            if (message != null) {
+                crashlytics.log(message)
+            }
             showError()
             presenter = CalculatorPresenter(this)
-            Crashlytics.logException(ex)
         }
     }
 

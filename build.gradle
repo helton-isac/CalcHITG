@@ -5,15 +5,13 @@ buildscript {
         google()
 
         jcenter()
-
-        maven { url 'https://maven.fabric.io/public' }
     }
 
     dependencies {
         classpath "com.android.tools.build:gradle:$rootProject.ext.gradleVersion"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$rootProject.ext.kotlinVersion"
         classpath "com.google.gms:google-services:$rootProject.ext.googleServicesVersion"
-        classpath "io.fabric.tools:gradle:$rootProject.ext.fabricToolsGradleVersion"
+        classpath "com.google.firebase:firebase-crashlytics-gradle:$rootProject.ext.firebaseCrashlyticsGradle"
     }
 }
 
@@ -21,7 +19,6 @@ allprojects {
     repositories {
         google()
         jcenter()
-        maven { url 'https://maven.fabric.io/public' }
     }
 }
 
