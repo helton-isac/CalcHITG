@@ -1,15 +1,15 @@
 ext {
     // Android
     androidMinSdkVersion = 19
-    androidCompileSdkVersion = "android-R"
-    androidTargetSdkVersion = "R"
+    androidCompileSdkVersion = 29
+    androidTargetSdkVersion = 29
 
     // Kotlin
     kotlinVersion = "1.3.71"
     kotlinStdlibJdk7Version = '1.3.71'
 
     // Gradle
-    gradleVersion = '3.6.3'
+    gradleVersion = '4.0.0'
 
     // Google
     googleServicesVersion = "4.3.1"
