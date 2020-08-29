@@ -16,23 +16,23 @@ ext {
 
     // Firebase
     firebaseCrashlyticsGradle = "2.1.1"
-    firebaseCoreVersion = "17.4.3"
-    firebaseCrashlyticsVersion = "17.0.1"
-    firebaseAnalyticsVersion = "17.4.3"
+    firebaseCoreVersion = "17.5.0"
+    firebaseCrashlyticsVersion = "17.2.1"
+    firebaseAnalyticsVersion = "17.5.0"
 
     // Android X
-    androidxAppCompatVersion = "1.1.0"
+    androidxAppCompatVersion = "1.2.0"
     androidxMediaVersion = "1.1.0"
     androidxLegacySupportV4Version = "1.0.0"
     androidxRecyclerviewVersion = "1.1.0"
-    androidxConstraintlayoutVersion = "1.1.3"
+    androidxConstraintlayoutVersion = "2.0.1"
     androidxLifeCycleExtensionsVersion = "2.2.0"
 
     // Material
-    materialVersion = "1.1.0"
+    materialVersion = "1.2.0"
 
     // Tests
     jUnitVersion = "4.12"
-    androidxRunnerVersion = "1.2.0"
-    androidxEspressoCore = "3.2.0"
+    androidxRunnerVersion = "1.3.0"
+    androidxEspressoCore = "3.3.0"
 }
