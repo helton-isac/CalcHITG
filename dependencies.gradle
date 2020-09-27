@@ -5,11 +5,11 @@ ext {
     androidTargetSdkVersion = 30
 
     // Kotlin
-    kotlinVersion = "1.3.72"
-    kotlinStdlibJdk7Version = '1.3.72'
+    kotlinVersion = "1.4.10"
+    kotlinStdlibJdk7Version = '1.4.0'
 
     // Gradle
-    gradleVersion = '4.0.0'
+    gradleVersion = '4.0.1'
 
     // Google
     googleServicesVersion = "4.3.3"
@@ -22,14 +22,14 @@ ext {
 
     // Android X
     androidxAppCompatVersion = "1.2.0"
-    androidxMediaVersion = "1.1.0"
+    androidxMediaVersion = "1.2.0"
     androidxLegacySupportV4Version = "1.0.0"
     androidxRecyclerviewVersion = "1.1.0"
     androidxConstraintlayoutVersion = "2.0.1"
     androidxLifeCycleExtensionsVersion = "2.2.0"
 
     // Material
-    materialVersion = "1.2.0"
+    materialVersion = "1.2.1"
 
     // Tests
     jUnitVersion = "4.12"
