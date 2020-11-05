@@ -15,7 +15,7 @@
         <meta-data android:name="google_analytics_adid_collection_enabled" android:value="false" />
 
         <activity
-            android:name="br.com.hitg.calculator.calculator.CalculatorActivity"
+            android:name="br.com.hitg.calculator.calculator.ui.calculator.CalculatorActivity"
             android:screenOrientation="portrait"
             android:resizeableActivity="false"
             android:launchMode="singleInstance"

@@ -1,4 +1,4 @@
-package br.com.hitg.calculator.calculator
+package br.com.hitg.calculator.calculator.ui.calculator
 
 import android.content.Context
 import android.content.Intent
@@ -11,7 +11,8 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import br.com.hitg.calculator.R
-import br.com.hitg.calculator.calculator.CalculatorContract.CalculatorNumbers
+import br.com.hitg.calculator.calculator.ui.calculator.CalculatorContract.CalculatorNumbers
+import br.com.hitg.calculator.calculator.model.Operations
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import kotlinx.android.synthetic.main.activity_calculator.*
 
@@ -226,11 +227,11 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
      */
     override fun updateOperation(currentOperation: Operations) {
         when (currentOperation) {
-            Operations.NONE           -> txtSignals.text = ""
-            Operations.ADDITION       -> txtSignals.setText(R.string.plus_sign)
-            Operations.SUBTRACTION    -> txtSignals.setText(R.string.minus_sign)
+            Operations.NONE -> txtSignals.text = ""
+            Operations.ADDITION -> txtSignals.setText(R.string.plus_sign)
+            Operations.SUBTRACTION -> txtSignals.setText(R.string.minus_sign)
             Operations.MULTIPLICATION -> txtSignals.setText(R.string.multiplication_sign)
-            Operations.DIVISION       -> txtSignals.setText(R.string.division_sign)
+            Operations.DIVISION -> txtSignals.setText(R.string.division_sign)
         }
         persistState()
     }

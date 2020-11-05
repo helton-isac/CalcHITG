@@ -1,5 +1,7 @@
 package br.com.hitg.calculator.calculator
 
+import br.com.hitg.calculator.calculator.model.Calculator
+import br.com.hitg.calculator.calculator.model.Operations
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

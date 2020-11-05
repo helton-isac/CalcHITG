@@ -1,5 +1,6 @@
 package br.com.hitg.calculator.calculator
 
+import br.com.hitg.calculator.calculator.model.MathEngine
 import org.junit.Assert.*
 import org.junit.Test
 import java.math.BigDecimal

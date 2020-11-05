@@ -1,4 +1,4 @@
-package br.com.hitg.calculator.calculator
+package br.com.hitg.calculator.calculator.model
 
 import java.math.BigDecimal
 import java.text.DecimalFormat
@@ -163,11 +163,11 @@ class Calculator {
                           value1: BigDecimal,
                           value2: BigDecimal): BigDecimal {
         return when (operation) {
-            Operations.ADDITION       -> MathEngine.add(value1, value2)
-            Operations.SUBTRACTION    -> MathEngine.subtract(value1, value2)
-            Operations.DIVISION       -> MathEngine.divide(value1, value2)
+            Operations.ADDITION -> MathEngine.add(value1, value2)
+            Operations.SUBTRACTION -> MathEngine.subtract(value1, value2)
+            Operations.DIVISION -> MathEngine.divide(value1, value2)
             Operations.MULTIPLICATION -> MathEngine.multiply(value1, value2)
-            Operations.NONE           -> value2
+            Operations.NONE -> value2
         }
     }
 

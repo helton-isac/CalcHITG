@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/darker_gray"
     android:padding="4dp"
-    tools:context="br.com.hitg.calculator.calculator.CalculatorActivity">
+    tools:context="br.com.hitg.calculator.calculator.ui.calculator.CalculatorActivity">
 
     <TextView
         android:id="@+id/txtMemoryDisplay"

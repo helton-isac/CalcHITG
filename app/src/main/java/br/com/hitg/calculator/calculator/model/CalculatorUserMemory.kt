@@ -1,4 +1,4 @@
-package br.com.hitg.calculator.calculator
+package br.com.hitg.calculator.calculator.model
 
 import java.math.BigDecimal
 

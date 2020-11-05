@@ -1,5 +1,6 @@
 package br.com.hitg.calculator.calculator
 
+import br.com.hitg.calculator.calculator.model.CalculatorUserMemory
 import org.junit.After
 import org.junit.Assert.*
 import org.junit.Before
