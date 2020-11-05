@@ -1,16 +1,29 @@
-package br.com.hitg.calculator.calculator
+package br.com.hitg.domain.mathEngine
 
-import br.com.hitg.calculator.calculator.model.MathEngine
+import org.junit.After
 import org.junit.Assert.*
+import org.junit.Before
 import org.junit.Test
 import java.math.BigDecimal
 
-/**
- * Created by Helton on 14/03/2018.
- *
- * Class Used to test the MathEngine
- */
-class MathEngineTest {
+class SimpleMathEngineTest {
+
+    private var sut: SimpleMathEngine? = null
+
+    @Before
+    fun before() {
+        sut = SimpleMathEngine()
+    }
+
+    @After
+    fun after() {
+        sut = null
+    }
+
+    private fun getSut(): SimpleMathEngine {
+        // It must stop test if null.
+        return sut!!
+    }
 
     @Test
     fun addSimple() {
@@ -36,7 +49,6 @@ class MathEngineTest {
                 "-2222222222.2222222222",
                 "-7777777777.7777777777")
     }
-
 
     @Test
     fun subtractSimple() {
@@ -71,7 +83,6 @@ class MathEngineTest {
                 "2222222222.2222222222",
                 "-7777777777.7777777777")
     }
-
 
     @Test
     fun multiplySimple() {
@@ -128,7 +139,6 @@ class MathEngineTest {
         assertDivide("Must return -3.7073170732", "-3.7073170732", "456.456", "-123.123")
         assertDivide("Must return -3.7073170732", "-3.7073170732", "-456.456", "123.123")
         assertDivide("Must return 3.7073170731", "3.7073170731", "-456.456", "-123.123")
-
     }
 
     @Test
@@ -143,27 +153,27 @@ class MathEngineTest {
 
     private fun assertAdd(message: String, expected: String, v1: String, v2: String) {
         assertEquals(message,
-                BigDecimal(expected), MathEngine.add(BigDecimal(v1), BigDecimal(v2)))
+                BigDecimal(expected), getSut().add(BigDecimal(v1), BigDecimal(v2)))
     }
 
     private fun assertSubtract(message: String, expected: String, v1: String, v2: String) {
         assertEquals(message,
-                BigDecimal(expected), MathEngine.subtract(BigDecimal(v1), BigDecimal(v2)))
+                BigDecimal(expected), getSut().subtract(BigDecimal(v1), BigDecimal(v2)))
     }
 
     private fun assertMultiply(message: String, expected: String, v1: String, v2: String) {
         assertEquals(message,
-                BigDecimal(expected), MathEngine.multiply(BigDecimal(v1), BigDecimal(v2)))
+                BigDecimal(expected), getSut().multiply(BigDecimal(v1), BigDecimal(v2)))
     }
 
     private fun assertDivide(message: String, expected: String, v1: String, v2: String) {
         assertEquals(message,
-                BigDecimal(expected), MathEngine.divide(BigDecimal(v1), BigDecimal(v2)))
+                BigDecimal(expected), getSut().divide(BigDecimal(v1), BigDecimal(v2)))
     }
 
     private fun assertDivideThrowErrors(message: String, v1: String, v2: String) {
         try {
-            MathEngine.divide(BigDecimal(v1), BigDecimal(v2))
+            getSut().divide(BigDecimal(v1), BigDecimal(v2))
             fail(message)
         } catch (e: Exception) {
             assertTrue(message, e is ArithmeticException)
