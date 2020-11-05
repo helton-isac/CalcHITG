@@ -1,6 +1,8 @@
 package br.com.hitg.calculator.calculator.ui.calculator
 
 import br.com.hitg.calculator.calculator.model.Operations
+import br.com.hitg.calculator.calculator.ui.BasePresenter
+import br.com.hitg.calculator.calculator.ui.BaseView
 
 /**
  * Created by Helton on 20/02/2018.
