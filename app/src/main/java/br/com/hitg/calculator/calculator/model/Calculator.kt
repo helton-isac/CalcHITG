@@ -1,5 +1,11 @@
 package br.com.hitg.calculator.calculator.model
 
+import br.com.hitg.domain.mathEngine.MathEngine
+import br.com.hitg.domain.mathEngine.SimpleMathEngine
+import br.com.hitg.domain.usecases.AdditionUseCase
+import br.com.hitg.domain.usecases.DivisionUseCase
+import br.com.hitg.domain.usecases.MultiplicationUseCase
+import br.com.hitg.domain.usecases.SubtractionUseCase
 import java.math.BigDecimal
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
@@ -12,6 +18,13 @@ import kotlin.math.sqrt
  * Class responsible by managing the memory and calculations.
  */
 class Calculator {
+
+    // TODO: Use DI
+    private val mathEngine: MathEngine = SimpleMathEngine()
+    private val additionUseCase = AdditionUseCase(mathEngine)
+    private val subtractionUseCase = SubtractionUseCase(mathEngine)
+    private val multiplicationUseCase = MultiplicationUseCase(mathEngine)
+    private val divisionUseCase = DivisionUseCase(mathEngine)
 
     /**
      * Display Number.
@@ -163,10 +176,10 @@ class Calculator {
                           value1: BigDecimal,
                           value2: BigDecimal): BigDecimal {
         return when (operation) {
-            Operations.ADDITION -> MathEngine.add(value1, value2)
-            Operations.SUBTRACTION -> MathEngine.subtract(value1, value2)
-            Operations.DIVISION -> MathEngine.divide(value1, value2)
-            Operations.MULTIPLICATION -> MathEngine.multiply(value1, value2)
+            Operations.ADDITION -> additionUseCase.execute(value1, value2)
+            Operations.SUBTRACTION -> subtractionUseCase.execute(value1, value2)
+            Operations.DIVISION -> divisionUseCase.execute(value1, value2)
+            Operations.MULTIPLICATION -> multiplicationUseCase.execute(value1, value2)
             Operations.NONE -> value2
         }
     }
@@ -210,7 +223,6 @@ class Calculator {
         if (displayNumber.appendDecimalSeparator(cleanDisplayOnNextInteraction)) {
             cleanDisplayOnNextInteraction = false
         }
-
     }
 
     /**

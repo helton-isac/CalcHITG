@@ -10,5 +10,11 @@ java {
 
 dependencies {
     def dependencies = rootProject.ext.dependencies
+    def testDependencies = rootProject.ext.testDependecies
+
     implementation dependencies.kotlinStdlib
+
+    testImplementation testDependencies.junit
+    testImplementation testDependencies.junitjupiter
+    testImplementation testDependencies.mockitoKotlin
 }

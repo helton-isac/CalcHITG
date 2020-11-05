@@ -37,8 +37,10 @@ ext {
 
     // Tests
     jUnitVersion = "4.12"
+    jUnitJupiterVersion = "5.7.0"
     androidxRunnerVersion = "1.3.0"
     androidxEspressoCore = "3.3.0"
+    mockitoKotlinVersion = "2.2.0"
 
     dependencies = [
             kotlinStdlib       : "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
@@ -52,12 +54,14 @@ ext {
             material           : "com.google.android.material:material:$materialVersion",
             firebaseCore       : "com.google.firebase:firebase-core:$firebaseCoreVersion",
             firebaseCrashlytics: "com.google.firebase:firebase-crashlytics:$firebaseCrashlyticsVersion",
-            firebaseAnalytics  : "com.google.firebase:firebase-analytics:$firebaseAnalyticsVersion"
+            firebaseAnalytics  : "com.google.firebase:firebase-analytics:$firebaseAnalyticsVersion",
     ]
 
     testDependecies = [
-            junit   : "junit:junit:$jUnitVersion",
-            espresso: "androidx.test.espresso:espresso-core:$androidxEspressoCore",
-            runner  : "androidx.test:runner:$androidxRunnerVersion"
+            junit        : "junit:junit:$jUnitVersion",
+            espresso     : "androidx.test.espresso:espresso-core:$androidxEspressoCore",
+            runner       : "androidx.test:runner:$androidxRunnerVersion",
+            junitjupiter : "org.junit.jupiter:junit-jupiter:$jUnitJupiterVersion",
+            mockitoKotlin: "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion",
     ]
 }
