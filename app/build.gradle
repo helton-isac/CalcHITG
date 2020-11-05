@@ -1,8 +1,8 @@
-apply plugin: 'com.android.application'
-
-apply plugin: 'kotlin-android'
-
-apply plugin: 'kotlin-android-extensions'
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+}
 
 apply plugin: 'com.google.firebase.crashlytics'
 
@@ -13,8 +13,8 @@ android {
         applicationId "br.com.hitg.calculator"
         minSdkVersion androidMinSdkVersion
         targetSdkVersion androidTargetSdkVersion
-        versionCode 24
-        versionName "5.2"
+        versionCode 25
+        versionName "5.3"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
@@ -64,26 +64,29 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$rootProject.ext.kotlinStdlibJdk7Version"
+    implementation project(path: ':domain')
 
-    implementation "androidx.appcompat:appcompat:$rootProject.ext.androidxAppCompatVersion"
-    implementation "androidx.media:media:$rootProject.ext.androidxMediaVersion"
-    implementation "androidx.legacy:legacy-support-v4:$rootProject.ext.androidxLegacySupportV4Version"
-    implementation "androidx.recyclerview:recyclerview:$rootProject.ext.androidxRecyclerviewVersion"
-    implementation "androidx.constraintlayout:constraintlayout:$rootProject.ext.androidxConstraintlayoutVersion"
-    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.ext.androidxLifeCycleExtensionsVersion"
+    def dependencies = rootProject.ext.dependencies
+    def testDependencies = rootProject.ext.testDependecies
 
-    implementation "com.google.android.material:material:$rootProject.ext.materialVersion"
+    implementation dependencies.kotlinJdk7
+    implementation dependencies.appCompact
+    implementation dependencies.media
+    implementation dependencies.legacyv4
 
-    implementation "com.google.firebase:firebase-core:$rootProject.ext.firebaseCoreVersion"
-    implementation "com.google.firebase:firebase-crashlytics:$rootProject.ext.firebaseCrashlyticsVersion"
-    implementation "com.google.firebase:firebase-analytics:$rootProject.ext.firebaseAnalyticsVersion"
+    implementation dependencies.recyclerview
+    implementation dependencies.constraintlayout
+    implementation dependencies.lifecycle
 
-    testImplementation "junit:junit:$rootProject.ext.jUnitVersion"
+    implementation dependencies.material
 
-    androidTestImplementation "androidx.test:runner:$rootProject.ext.androidxRunnerVersion"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.ext.androidxEspressoCore"
+    implementation dependencies.firebaseCore
+    implementation dependencies.firebaseCrashlytics
+    implementation dependencies.firebaseAnalytics
+
+    testImplementation testDependencies.junit
+    testImplementation testDependencies.espresso
+    testImplementation testDependencies.runner
 }
 
 apply plugin: "com.google.gms.google-services"

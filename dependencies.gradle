@@ -8,7 +8,6 @@ ext {
 
     // Kotlin
     kotlinVersion = "1.4.10"
-    kotlinStdlibJdk7Version = '1.4.0'
 
     // Gradle
     gradleVersion = '4.0.1'
@@ -33,49 +32,32 @@ ext {
     // Material
     materialVersion = "1.2.1"
 
+    // Gradle Lint
+    nebulaGradleLint = "16.9.1"
+
     // Tests
     jUnitVersion = "4.12"
     androidxRunnerVersion = "1.3.0"
     androidxEspressoCore = "3.3.0"
 
-//    dependencies = [
-//            kotlin               : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
-//
-//            appCompact           : "androidx.appcompat:appcompat:$appCompactVersion",
-//            constraintlayout     : "androidx.constraintlayout:constraintlayout:$constrainVersion",
-//            cardView             : "androidx.cardview:cardview:$cardViewVersion",
-//            recyclerView         : "androidx.recyclerview:recyclerview:$recyclerViewVersion",
-//
-//            viewModel            : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifeCycleVersion",
-//            lifeCycle            : "android.arch.lifecycle:extensions:$AndroidArchVersion",
-//
-//            dataBinding          : "com.android.databinding:compiler:$databindingVersion",
-//
-//            ktx                  : "androidx.core:core-ktx:$ktxVersion",
-//            koin                 : "org.koin:koin-android:$koinVersion",
-//            koinViewModel        : "org.koin:koin-androidx-viewmodel:$koinVersion",
-//
-//            rxJava               : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
-//            rxKotlin             : "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion",
-//            rxAndroid            : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
-//
-//            retrofit             : "com.squareup.retrofit2:retrofit:$retrofitVersion",
-//            retrofitRxAdapter    : "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
-//            retrofitGsonConverter: "com.squareup.retrofit2:converter-gson:$retrofitVersion",
-//            gson                 : "com.google.code.gson:gson:$gsonVersion",
-//
-//            room                 : "androidx.room:room-runtime:$roomVersion",
-//            roomRxJava           : "androidx.room:room-rxjava2:$roomVersion",
-//            roomCompiler         : "androidx.room:room-compiler:$roomVersion",
-//
-//            okhttp3              : "com.squareup.okhttp3:okhttp:$okhttpVersion",
-//
-//            picasso              : "com.squareup.picasso:picasso:$picassoVersion",
-//    ]
-//
-//    testDependecies = [
-//            junit   : "junit:junit:$junitVersion",
-//            espresso: "androidx.test.espresso:espresso-core:$espressoVersion",
-//            runner  : "androidx.test:runner:$runnerVersion"
-//    ]
+    dependencies = [
+            kotlinStdlib       : "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
+            kotlinJdk7         : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
+            appCompact         : "androidx.appcompat:appcompat:$androidxAppCompatVersion",
+            media              : "androidx.media:media:$androidxMediaVersion",
+            legacyv4           : "androidx.legacy:legacy-support-v4:$androidxLegacySupportV4Version",
+            recyclerview       : "androidx.recyclerview:recyclerview:$androidxRecyclerviewVersion",
+            constraintlayout   : "androidx.constraintlayout:constraintlayout:$androidxConstraintlayoutVersion",
+            lifecycle          : "androidx.lifecycle:lifecycle-extensions:$androidxLifeCycleExtensionsVersion",
+            material           : "com.google.android.material:material:$materialVersion",
+            firebaseCore       : "com.google.firebase:firebase-core:$firebaseCoreVersion",
+            firebaseCrashlytics: "com.google.firebase:firebase-crashlytics:$firebaseCrashlyticsVersion",
+            firebaseAnalytics  : "com.google.firebase:firebase-analytics:$firebaseAnalyticsVersion"
+    ]
+
+    testDependecies = [
+            junit   : "junit:junit:$jUnitVersion",
+            espresso: "androidx.test.espresso:espresso-core:$androidxEspressoCore",
+            runner  : "androidx.test:runner:$androidxRunnerVersion"
+    ]
 }
