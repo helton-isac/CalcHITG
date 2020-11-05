@@ -21,7 +21,6 @@ allprojects {
 
     gradleLint {
         rules  = ['all-dependency']
-        criticalRules = ['unused-dependency']
     }
 
     repositories {
