@@ -3,15 +3,14 @@ buildscript {
 
     repositories {
         google()
-
         jcenter()
     }
 
     dependencies {
-        classpath "com.android.tools.build:gradle:$rootProject.ext.gradleVersion"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$rootProject.ext.kotlinVersion"
-        classpath "com.google.gms:google-services:$rootProject.ext.googleServicesVersion"
-        classpath "com.google.firebase:firebase-crashlytics-gradle:$rootProject.ext.firebaseCrashlyticsGradle"
+        classpath "com.android.tools.build:gradle:$buildTools"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "com.google.gms:google-services:$googleServicesVersion"
+        classpath "com.google.firebase:firebase-crashlytics-gradle:$firebaseCrashlyticsGradle"
     }
 }
 
