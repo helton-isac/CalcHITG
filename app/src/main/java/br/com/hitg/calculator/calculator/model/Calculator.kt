@@ -6,6 +6,7 @@ import br.com.hitg.domain.usecases.AdditionUseCase
 import br.com.hitg.domain.usecases.DivisionUseCase
 import br.com.hitg.domain.usecases.MultiplicationUseCase
 import br.com.hitg.domain.usecases.SubtractionUseCase
+import com.hitg.data.local.model.CalculatorState
 import java.math.BigDecimal
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
@@ -162,28 +163,22 @@ class Calculator {
         cleanDisplayOnNextInteraction = false
     }
 
-    fun restoreStatus(numberOnDisplay: String,
-                      currentCalcTotal: String,
-                      currentOperation: Operations,
-                      currentNumberInMemory: String,
-                      isMemoryInUse: Boolean,
-                      mustCleanDisplayOnNextInteraction: Boolean,
-                      lastOperation: Operations,
-                      lastInputValue: String) {
-
-        displayNumber.setValue(numberOnDisplay)
+    fun restoreStatus(calculatorState: CalculatorState) {
+        displayNumber.setValue(calculatorState.displayValue)
         this.currentTotal = try {
-            BigDecimal(currentCalcTotal)
+            BigDecimal(calculatorState.calcTotal)
         } catch (e: Exception) {
             BigDecimal("0")
         }
-        this.currentOperation = currentOperation
-        this.userMemory.restoreMemoryStatus(currentNumberInMemory, isMemoryInUse)
+        this.currentOperation = Operations.valueOf(calculatorState.currentOperation)
+        this.userMemory.restoreMemoryStatus(
+                calculatorState.numberInMemory,
+                calculatorState.isMemoryInUse)
         setFormattedValueOnDisplay(userMemoryDisplayNumber, this.userMemory.currentMemoryValue())
-        this.cleanDisplayOnNextInteraction = mustCleanDisplayOnNextInteraction
-        this.lastOperation = lastOperation
+        this.cleanDisplayOnNextInteraction = calculatorState.mustCleanDisplayOnNextInteraction
+        this.lastOperation = Operations.valueOf(calculatorState.lastOperation)
         this.lastInput = try {
-            BigDecimal(lastInputValue)
+            BigDecimal(calculatorState.lastInputValue)
         } catch (e: Exception) {
             BigDecimal("0")
         }

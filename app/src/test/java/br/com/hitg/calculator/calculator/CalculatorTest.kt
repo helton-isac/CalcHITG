@@ -2,6 +2,7 @@ package br.com.hitg.calculator.calculator
 
 import br.com.hitg.calculator.calculator.model.Calculator
 import br.com.hitg.calculator.calculator.model.Operations
+import com.hitg.data.local.model.CalculatorState
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
@@ -11,6 +12,7 @@ import org.junit.Test
  * Tests for the calculator
  */
 class CalculatorTest {
+
     @Test
     fun checkEnkoTest() {
         val calc = Calculator()
@@ -46,7 +48,6 @@ class CalculatorTest {
         calc.equals()
         assertEquals("1340", calc.displayNumber.toString())
 
-
         // Math: 597 - [184] = 413
         // Operations: 597 - 184 =
         typeNumberKeyByKey("597", calc)
@@ -54,7 +55,6 @@ class CalculatorTest {
         typeNumberKeyByKey("184", calc)
         calc.equals()
         assertEquals("413", calc.displayNumber.toString())
-
 
         // Math: 323 - [184] = 139
         // Operations: 323 =
@@ -230,36 +230,37 @@ class CalculatorTest {
 
     @Test
     fun checkRestoringState() {
-        //Given the current Status:
-        val numberOnDisplay = "22.042"
-        val currentCalcTotal = "0"
-        val currentOperation: Operations = Operations.MULTIPLICATION
-        val currentNumberInMemory = "10.01"
-        val isMemoryInUse = true
-        val mustCleanDisplayOnNextInteraction = true
-        val lastOperation: Operations = Operations.NONE
-        val lastInputValue = "0"
+        //Given the current CalculatorState:
+        val calculatorState = CalculatorState(
+                displayValue = "22.042",
+                calcTotal = "0",
+                currentOperation = Operations.MULTIPLICATION.name,
+                numberInMemory = "10.01",
+                isMemoryInUse = true,
+                mustCleanDisplayOnNextInteraction = true,
+                lastOperation = Operations.NONE.name,
+                lastInputValue = "0"
+        )
 
         // When the Calculator is restored
         val calc = Calculator()
-
         // And the old values are passed again to restore the state
-        calc.restoreStatus(numberOnDisplay,
-                currentCalcTotal,
-                currentOperation,
-                currentNumberInMemory,
-                isMemoryInUse,
-                mustCleanDisplayOnNextInteraction,
-                lastOperation,
-                lastInputValue)
+        calc.restoreStatus(calculatorState)
 
         // The calculator is in the same state as before
-        assertEquals(numberOnDisplay, calc.displayNumber.toString())
-        assertEquals(currentOperation, calc.currentOperation)
-        assertEquals(currentNumberInMemory, calc.getCurrentNumberInMemory().toString())
-        assertEquals(isMemoryInUse, calc.isMemoryInUse())
-        assertEquals(mustCleanDisplayOnNextInteraction, calc.mustCleanDisplayOnNextInteraction())
-        assertEquals(lastOperation, calc.getLastOperation())
-        assertEquals(lastInputValue, calc.getLastInputValue())
+        assertEquals(calculatorState.displayValue,
+                calc.displayNumber.toString())
+        assertEquals(calculatorState.currentOperation,
+                calc.currentOperation.name)
+        assertEquals(calculatorState.numberInMemory,
+                calc.getCurrentNumberInMemory().toString())
+        assertEquals(calculatorState.isMemoryInUse,
+                calc.isMemoryInUse())
+        assertEquals(calculatorState.mustCleanDisplayOnNextInteraction,
+                calc.mustCleanDisplayOnNextInteraction())
+        assertEquals(calculatorState.lastOperation,
+                calc.getLastOperation().name)
+        assertEquals(calculatorState.lastInputValue,
+                calc.getLastInputValue())
     }
 }

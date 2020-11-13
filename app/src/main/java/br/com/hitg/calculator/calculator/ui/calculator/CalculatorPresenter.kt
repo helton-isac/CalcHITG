@@ -1,19 +1,33 @@
 package br.com.hitg.calculator.calculator.ui.calculator
 
+import android.app.Activity
+import android.content.Context
 import br.com.hitg.calculator.calculator.model.Calculator
-import br.com.hitg.calculator.calculator.model.Operations
+import com.hitg.data.local.database.CalculatorStateSharedPrefImpl
+import com.hitg.data.local.datasource.CalculatorStateDataSource
+import com.hitg.data.local.datasource.CalculatorStateDataSourceImpl
+import com.hitg.data.local.model.CalculatorState
 
-class CalculatorPresenter(private val calculatorView: CalculatorContract.View) :
+class CalculatorPresenter(
+        private val calculatorView: CalculatorContract.View,
+        context: Activity
+) :
         CalculatorContract.Presenter {
 
     private val calculator: Calculator
+    private val calculatorStateDataSource: CalculatorStateDataSource
 
     init {
         calculatorView.presenter = this
         calculator = Calculator()
+        calculatorStateDataSource =
+                CalculatorStateDataSourceImpl(
+                        CalculatorStateSharedPrefImpl(
+                                context.getPreferences(Context.MODE_PRIVATE)))
     }
 
     override fun start() {
+        calculator.restoreStatus(calculatorStateDataSource.getCalculatorState())
         updateView()
     }
 
@@ -123,7 +137,7 @@ class CalculatorPresenter(private val calculatorView: CalculatorContract.View) :
         executeOperationAndUpdateDisplay { calculator.percent() }
     }
 
-    override fun removeLast() {
+    override fun buttonDelClicked() {
         executeOperationAndUpdateDisplay { calculator.removeLast() }
     }
 
@@ -135,41 +149,17 @@ class CalculatorPresenter(private val calculatorView: CalculatorContract.View) :
         executeOperationAndUpdateDisplay { calculator.invertSignal() }
     }
 
-
-    override fun restoreCalculatorState(numberOnDisplay: String,
-                                        currentCalcTotal: String,
-                                        currentOperation: Operations,
-                                        currentNumberInMemory: String,
-                                        isMemoryInUse: Boolean,
-                                        mustCleanDisplayOnNextInteraction: Boolean,
-                                        lastOperation: Operations,
-                                        lastInputValue: String) {
-        calculator.restoreStatus(numberOnDisplay,
-                currentCalcTotal,
-                currentOperation,
-                currentNumberInMemory,
-                isMemoryInUse,
-                mustCleanDisplayOnNextInteraction,
-                lastOperation,
-                lastInputValue)
-        updateView()
-
+    override fun persistCalculatorState() {
+        val calculatorState = CalculatorState(
+                calculator.displayNumber.toString(),
+                calculator.getCurrentTotal().toString(),
+                calculator.currentOperation.name,
+                calculator.getCurrentNumberInMemory().toString(),
+                calculator.isMemoryInUse(),
+                calculator.mustCleanDisplayOnNextInteraction(),
+                calculator.getLastOperation().name,
+                calculator.getLastInputValue(),
+        )
+        calculatorStateDataSource.persistCalculatorState(calculatorState)
     }
-
-    override val currentOperation: Operations
-        get() = calculator.currentOperation
-    override val currentCalcTotal: String
-        get() = calculator.getCurrentTotal().toString()
-    override val currentDisplayValue: String
-        get() = calculator.displayNumber.toString()
-    override val currentNumberInMemory: String
-        get() = calculator.getCurrentNumberInMemory().toString()
-    override val isMemoryInUse: Boolean
-        get() = calculator.isMemoryInUse()
-    override val mustCleanDisplayOnNextInteraction: Boolean
-        get() = calculator.mustCleanDisplayOnNextInteraction()
-    override val lastOperation: Operations
-        get() = calculator.getLastOperation()
-    override val lastInputValue: String
-        get() = calculator.getLastInputValue()
 }

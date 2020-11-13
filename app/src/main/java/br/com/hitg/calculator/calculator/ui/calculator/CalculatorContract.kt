@@ -42,24 +42,9 @@ interface CalculatorContract {
         fun buttonPercentClicked()
         fun buttonCeClicked()
         fun buttonInvertSignalClicked()
+        fun buttonDelClicked()
 
-        fun removeLast()
-        fun restoreCalculatorState(numberOnDisplay: String,
-                                   currentCalcTotal: String,
-                                   currentOperation: Operations,
-                                   currentNumberInMemory: String,
-                                   isMemoryInUse: Boolean,
-                                   mustCleanDisplayOnNextInteraction: Boolean,
-                                   lastOperation: Operations,
-                                   lastInputValue: String)
-        val currentDisplayValue: String
-        val currentCalcTotal: String
-        val currentOperation: Operations
-        val currentNumberInMemory: String
-        val isMemoryInUse: Boolean
-        val mustCleanDisplayOnNextInteraction: Boolean
-        val lastOperation: Operations
-        val lastInputValue: String
+        fun persistCalculatorState()
     }
 
 }

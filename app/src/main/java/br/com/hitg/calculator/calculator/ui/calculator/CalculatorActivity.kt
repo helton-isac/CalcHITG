@@ -1,6 +1,5 @@
 package br.com.hitg.calculator.calculator.ui.calculator
 
-import android.content.Context
 import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
@@ -55,44 +54,8 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
     }
 
     private fun createPresenter() {
-        val numberOnDisplay: String
-        val currentCalcTotal: String
-        val currentOperation: Operations
-        val currentNumberInMemory: String
-        val isMemoryInUse: Boolean
-        val mustCleanDisplayOnNextInteraction: Boolean
-        val lastOperation: Operations
-        val lastInputValue: String
-
-        // To remove Lint Warning from the sharedPreference getStringMethods. Yes.. I have TOC...
-        val defaultZero = "0"
-        val defaultNONE = "NONE"
-
-        val sharedPref = this.getPreferences(Context.MODE_PRIVATE)
-        numberOnDisplay = sharedPref.getString(CALC_NUMBER_ON_DISPLAY, defaultZero) ?: defaultZero
-        currentCalcTotal = sharedPref.getString(CALC_CURRENT_CALC_TOTAL, defaultZero) ?: defaultZero
-        currentOperation = Operations.valueOf(sharedPref.getString(
-                CALC_CURRENT_OPERATION, defaultNONE) ?: defaultNONE)
-        currentNumberInMemory = sharedPref.getString(CALC_NUMBER_IN_MEMORY,
-                defaultZero) ?: defaultZero
-        isMemoryInUse = sharedPref.getBoolean(CALC_IS_MEMORY_IN_USE, false)
-        mustCleanDisplayOnNextInteraction = sharedPref.getBoolean(
-                CALC_MUST_CLEAN_DISPLAY, false)
-        lastOperation = Operations.valueOf(sharedPref.getString(
-                CALC_LAST_OPERATION, defaultNONE) ?: defaultNONE)
-        lastInputValue = sharedPref.getString(CALC_LAST_INPUT_VALUE, defaultZero) ?: defaultZero
-
-        presenter = CalculatorPresenter(this)
-        presenter.restoreCalculatorState(numberOnDisplay,
-                currentCalcTotal,
-                currentOperation,
-                currentNumberInMemory,
-                isMemoryInUse,
-                mustCleanDisplayOnNextInteraction,
-                lastOperation,
-                lastInputValue)
+        presenter = CalculatorPresenter(this, this)
         presenter.start()
-
     }
 
     private fun setOnClickListeners() {
@@ -138,7 +101,7 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
                 R.id.btnDot -> presenter.buttonDotClicked()
                 R.id.btnCE -> presenter.buttonCeClicked()
                 R.id.btnInvertSignal -> presenter.buttonInvertSignalClicked()
-                R.id.btnDel -> presenter.removeLast()
+                R.id.btnDel -> presenter.buttonDelClicked()
                 R.id.btnEquals -> presenter.buttonEqualsClicked()
                 R.id.btnPlus -> presenter.buttonAddClicked()
                 R.id.btnMinus -> presenter.buttonMinusClicked()
@@ -158,7 +121,7 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
                 crashlytics.log(message)
             }
             showError()
-            presenter = CalculatorPresenter(this)
+            presenter = CalculatorPresenter(this, this)
         }
     }
 
@@ -166,7 +129,7 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
         txtDisplay.setText(R.string.error)
         updateOperation(Operations.NONE)
         updateMemoryDisplay(false, "")
-        persistState()
+        presenter.persistCalculatorState()
     }
 
     override fun updateDisplay(value: String) {
@@ -176,7 +139,7 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
             txtMemoryDisplay.announceForAccessibility(resources.getString(R.string.cont_desc_memory_value))
             txtMemoryDisplay.announceForAccessibility(txtMemoryDisplay.text)
         }
-        persistState()
+        presenter.persistCalculatorState()
     }
 
     override fun updateOperation(currentOperation: Operations) {
@@ -187,7 +150,7 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
             Operations.MULTIPLICATION -> txtSignals.setText(R.string.multiplication_sign)
             Operations.DIVISION -> txtSignals.setText(R.string.division_sign)
         }
-        persistState()
+        presenter.persistCalculatorState()
     }
 
     override fun updateMemoryDisplay(isMemoryInUse: Boolean, value: String) {
@@ -200,47 +163,6 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
             txtMemory.text = ""
             txtMemoryDisplay.text = ""
         }
-        persistState()
-    }
-
-
-    private fun persistState() {
-        val sharedPref = this.getPreferences(Context.MODE_PRIVATE) ?: return
-        with(sharedPref.edit()) {
-            putString(CALC_NUMBER_ON_DISPLAY, presenter.currentDisplayValue)
-            putString(CALC_CURRENT_CALC_TOTAL, presenter.currentCalcTotal)
-            putString(CALC_CURRENT_OPERATION, presenter.currentOperation.name)
-            putString(CALC_NUMBER_IN_MEMORY, presenter.currentNumberInMemory)
-            putBoolean(CALC_IS_MEMORY_IN_USE, presenter.isMemoryInUse)
-            putBoolean(CALC_MUST_CLEAN_DISPLAY, presenter.mustCleanDisplayOnNextInteraction)
-            putString(CALC_LAST_OPERATION, presenter.lastOperation.name)
-            putString(CALC_LAST_INPUT_VALUE, presenter.lastInputValue)
-            apply()
-        }
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        // Save the state so that next time we know if we need to refresh data.
-        super.onSaveInstanceState(outState.apply {
-            putString(CALC_NUMBER_ON_DISPLAY, presenter.currentDisplayValue)
-            putString(CALC_CURRENT_CALC_TOTAL, presenter.currentCalcTotal)
-            putString(CALC_CURRENT_OPERATION, presenter.currentOperation.name)
-            putString(CALC_NUMBER_IN_MEMORY, presenter.currentNumberInMemory)
-            putBoolean(CALC_IS_MEMORY_IN_USE, presenter.isMemoryInUse)
-            putBoolean(CALC_MUST_CLEAN_DISPLAY, presenter.mustCleanDisplayOnNextInteraction)
-            putString(CALC_LAST_OPERATION, presenter.lastOperation.name)
-            putString(CALC_LAST_INPUT_VALUE, presenter.lastInputValue)
-        })
-    }
-
-    companion object {
-        const val CALC_NUMBER_ON_DISPLAY = "CALC_NUMBER_ON_DISPLAY"
-        const val CALC_CURRENT_CALC_TOTAL = "CALC_CURRENT_CALC_TOTAL"
-        const val CALC_CURRENT_OPERATION = "CALC_CURRENT_OPERATION"
-        const val CALC_NUMBER_IN_MEMORY = "CALC_NUMBER_IN_MEMORY"
-        const val CALC_IS_MEMORY_IN_USE = "CALC_IS_MEMORY_IN_USE"
-        const val CALC_MUST_CLEAN_DISPLAY = "CALC_MUST_CLEAN_DISPLAY"
-        const val CALC_LAST_OPERATION = "CALC_LAST_OPERATION"
-        const val CALC_LAST_INPUT_VALUE = "CALC_LAST_INPUT_VALUE"
+        presenter.persistCalculatorState()
     }
 }
