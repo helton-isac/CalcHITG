@@ -11,35 +11,15 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import br.com.hitg.calculator.R
-import br.com.hitg.calculator.calculator.ui.calculator.CalculatorContract.CalculatorNumbers
 import br.com.hitg.calculator.calculator.model.Operations
+import br.com.hitg.calculator.calculator.ui.calculator.CalculatorContract.CalculatorNumbers
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import kotlinx.android.synthetic.main.activity_calculator.*
 
 class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.OnClickListener {
 
-    /**
-     * Presenter
-     */
     override lateinit var presenter: CalculatorContract.Presenter
 
-    /**
-     * Called when the activity is starting.  This is where most initialization
-     * should go: calling {@link #setContentView(int)} to inflate the
-     * activity's UI, using {@link #findViewById} to programmatically interact
-     * with widgets in the UI, calling
-     * {@link #managedQuery(android.net.Uri , String[], String, String[], String)} to retrieve
-     * cursors for data being displayed, etc.
-     *
-     * @param savedInstanceState If the activity is being re-initialized after
-     *     previously being shut down then this Bundle contains the data it most
-     *     recently supplied in {@link #onSaveInstanceState}.  <b><i>Note: Otherwise it is null.</i></b>
-     *
-     * @see #onStart
-     * @see #onSaveInstanceState
-     * @see #onRestoreInstanceState
-     * @see #onPostCreate
-     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -50,7 +30,6 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
         setOnClickListeners()
 
         configureActionBar()
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -76,9 +55,6 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
         return false
     }
 
-    /**
-     * Creates the presenter and recover the state if it needs.
-     */
     private fun createPresenter() {
         val numberOnDisplay: String
         val currentCalcTotal: String
@@ -120,9 +96,6 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
 
     }
 
-    /**
-     * Set onClickListeners for all controls.
-     */
     private fun setOnClickListeners() {
         btnZero.setOnClickListener(this)
         btnOne.setOnClickListener(this)
@@ -150,11 +123,6 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
         btnMPlus.setOnClickListener(this)
     }
 
-    /**
-     * Called when a view has been clicked.
-     *
-     * @param view The view that was clicked.
-     */
     override fun onClick(view: View) {
         try {
             when (view.id) {
@@ -195,9 +163,6 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
         }
     }
 
-    /**
-     * Updates the display with a default message to indicate Error!
-     */
     private fun showError() {
         txtDisplay.setText(R.string.error)
         updateOperation(Operations.NONE)
@@ -205,11 +170,6 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
         persistState()
     }
 
-    /**
-     * Updates the display.
-     *
-     * @param value Value to display.
-     */
     override fun updateDisplay(value: String) {
         txtDisplay.text = value
         txtDisplay.announceForAccessibility(txtDisplay.text)
@@ -220,11 +180,6 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
         persistState()
     }
 
-    /**
-     * Updates the operation.
-     *
-     * @param currentOperation Operation to display.
-     */
     override fun updateOperation(currentOperation: Operations) {
         when (currentOperation) {
             Operations.NONE -> txtSignals.text = ""
@@ -236,12 +191,6 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
         persistState()
     }
 
-    /**
-     * Update the display of the User Memory Calculator.
-     *
-     * @param isMemoryInUse Whether must show memory or not
-     * @param value Value to show.
-     */
     override fun updateMemoryDisplay(isMemoryInUse: Boolean, value: String) {
         if (isMemoryInUse) {
             txtMemory.setText(R.string.memory_symbol)
@@ -271,18 +220,6 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
         }
     }
 
-    /**
-     * Called to retrieve per-instance state from an activity before being killed
-     * so that the state can be restored in {@link #onCreate} or
-     * {@link #onRestoreInstanceState} (the {@link Bundle} populated by this method
-     * will be passed to both).
-     *
-     * @param outState Bundle in which to place your saved state.
-     *
-     * @see #onCreate
-     * @see #onRestoreInstanceState
-     * @see #onPause
-     */
     override fun onSaveInstanceState(outState: Bundle) {
         // Save the state so that next time we know if we need to refresh data.
         super.onSaveInstanceState(outState.apply {
