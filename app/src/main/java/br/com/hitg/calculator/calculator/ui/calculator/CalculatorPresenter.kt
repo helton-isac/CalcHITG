@@ -2,8 +2,6 @@ package br.com.hitg.calculator.calculator.ui.calculator
 
 import br.com.hitg.calculator.calculator.model.Calculator
 import br.com.hitg.calculator.calculator.model.Operations
-import br.com.hitg.calculator.calculator.ui.calculator.CalculatorContract.CalculatorNumbers
-
 
 class CalculatorPresenter(private val calculatorView: CalculatorContract.View) :
         CalculatorContract.Presenter {
@@ -31,47 +29,97 @@ class CalculatorPresenter(private val calculatorView: CalculatorContract.View) :
                 calculator.userMemoryDisplayNumber.toString())
     }
 
-    override fun add() {
+    override fun buttonOneClicked() {
+        calculator.typeNumber('1')
+        updateView()
+    }
+
+    override fun buttonTwoClicked() {
+        calculator.typeNumber('2')
+        updateView()
+    }
+
+    override fun buttonThreeClicked() {
+        calculator.typeNumber('3')
+        updateView()
+    }
+
+    override fun buttonFourClicked() {
+        calculator.typeNumber('4')
+        updateView()
+    }
+
+    override fun buttonFiveClicked() {
+        calculator.typeNumber('5')
+        updateView()
+    }
+
+    override fun buttonSixClicked() {
+        calculator.typeNumber('6')
+        updateView()
+    }
+
+    override fun buttonSevenClicked() {
+        calculator.typeNumber('7')
+        updateView()
+    }
+
+    override fun buttonEightClicked() {
+        calculator.typeNumber('8')
+        updateView()
+    }
+
+    override fun buttonNineClicked() {
+        calculator.typeNumber('9')
+        updateView()
+    }
+
+    override fun buttonZeroClicked() {
+        calculator.typeNumber('0')
+        updateView()
+    }
+
+    override fun buttonAddClicked() {
         executeOperationAndUpdateDisplay { calculator.add() }
     }
 
-    override fun minus() {
+    override fun buttonMinusClicked() {
         executeOperationAndUpdateDisplay { calculator.subtract() }
     }
 
-    override fun divide() {
+    override fun buttonDivideClicked() {
         executeOperationAndUpdateDisplay { calculator.divide() }
     }
 
-    override fun multiply() {
+    override fun buttonMultiplyClicked() {
         executeOperationAndUpdateDisplay { calculator.multiply() }
     }
 
-    override fun typeDot() {
+    override fun buttonDotClicked() {
         executeOperationAndUpdateDisplay { calculator.typeDot() }
     }
 
-    override fun typeEquals() {
+    override fun buttonEqualsClicked() {
         executeOperationAndUpdateDisplay { calculator.equals() }
     }
 
-    override fun memoryAdd() {
+    override fun buttonMPlusClicked() {
         executeOperationAndUpdateDisplay { calculator.memoryAdd() }
     }
 
-    override fun memorySubtract() {
+    override fun buttonMMinusClicked() {
         executeOperationAndUpdateDisplay { calculator.memorySubtract() }
     }
 
-    override fun memoryResultAndClean() {
+    override fun buttonMrcClicked() {
         executeOperationAndUpdateDisplay { calculator.memoryResultAndClean() }
     }
 
-    override fun squareRoot() {
+    override fun buttonSquareRootClicked() {
         executeOperationAndUpdateDisplay { calculator.squareRoot() }
     }
 
-    override fun percent() {
+    override fun buttonPercentClicked() {
         executeOperationAndUpdateDisplay { calculator.percent() }
     }
 
@@ -79,30 +127,14 @@ class CalculatorPresenter(private val calculatorView: CalculatorContract.View) :
         executeOperationAndUpdateDisplay { calculator.removeLast() }
     }
 
-    override fun ce() {
+    override fun buttonCeClicked() {
         executeOperationAndUpdateDisplay { calculator.ce() }
     }
 
-    override fun invertSignal() {
+    override fun buttonInvertSignalClicked() {
         executeOperationAndUpdateDisplay { calculator.invertSignal() }
     }
 
-
-    override fun typeNumber(key: CalculatorNumbers) {
-        when (key) {
-            CalculatorNumbers.ZERO  -> calculator.typeNumber('0')
-            CalculatorNumbers.ONE   -> calculator.typeNumber('1')
-            CalculatorNumbers.TWO   -> calculator.typeNumber('2')
-            CalculatorNumbers.THREE -> calculator.typeNumber('3')
-            CalculatorNumbers.FOUR  -> calculator.typeNumber('4')
-            CalculatorNumbers.FIVE  -> calculator.typeNumber('5')
-            CalculatorNumbers.SIX   -> calculator.typeNumber('6')
-            CalculatorNumbers.SEVEN -> calculator.typeNumber('7')
-            CalculatorNumbers.EIGHT -> calculator.typeNumber('8')
-            CalculatorNumbers.NINE  -> calculator.typeNumber('9')
-        }
-        updateView()
-    }
 
     override fun restoreCalculatorState(numberOnDisplay: String,
                                         currentCalcTotal: String,

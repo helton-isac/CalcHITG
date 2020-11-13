@@ -11,20 +11,6 @@ import br.com.hitg.calculator.calculator.ui.BaseView
  */
 interface CalculatorContract {
 
-    enum class CalculatorNumbers {
-
-        ONE,
-        TWO,
-        THREE,
-        FOUR,
-        FIVE,
-        SIX,
-        SEVEN,
-        EIGHT,
-        NINE,
-        ZERO,
-    }
-
     interface View : BaseView<Presenter> {
         fun updateDisplay(value: String)
         fun updateOperation(currentOperation: Operations)
@@ -32,21 +18,32 @@ interface CalculatorContract {
     }
 
     interface Presenter : BasePresenter {
-        fun typeNumber(key: CalculatorNumbers)
-        fun add()
-        fun minus()
-        fun divide()
-        fun multiply()
-        fun typeDot()
-        fun typeEquals()
-        fun memoryAdd()
-        fun memorySubtract()
-        fun memoryResultAndClean()
-        fun squareRoot()
-        fun percent()
+
+        fun buttonOneClicked()
+        fun buttonTwoClicked()
+        fun buttonThreeClicked()
+        fun buttonFourClicked()
+        fun buttonFiveClicked()
+        fun buttonSixClicked()
+        fun buttonSevenClicked()
+        fun buttonEightClicked()
+        fun buttonNineClicked()
+        fun buttonZeroClicked()
+        fun buttonAddClicked()
+        fun buttonMinusClicked()
+        fun buttonDivideClicked()
+        fun buttonMultiplyClicked()
+        fun buttonDotClicked()
+        fun buttonEqualsClicked()
+        fun buttonMPlusClicked()
+        fun buttonMMinusClicked()
+        fun buttonMrcClicked()
+        fun buttonSquareRootClicked()
+        fun buttonPercentClicked()
+        fun buttonCeClicked()
+        fun buttonInvertSignalClicked()
+
         fun removeLast()
-        fun invertSignal()
-        fun ce()
         fun restoreCalculatorState(numberOnDisplay: String,
                                    currentCalcTotal: String,
                                    currentOperation: Operations,

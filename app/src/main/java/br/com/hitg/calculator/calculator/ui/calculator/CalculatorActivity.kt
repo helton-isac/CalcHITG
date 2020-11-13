@@ -12,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import br.com.hitg.calculator.R
 import br.com.hitg.calculator.calculator.model.Operations
-import br.com.hitg.calculator.calculator.ui.calculator.CalculatorContract.CalculatorNumbers
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import kotlinx.android.synthetic.main.activity_calculator.*
 
@@ -126,31 +125,31 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
     override fun onClick(view: View) {
         try {
             when (view.id) {
-                R.id.btnZero         -> presenter.typeNumber(CalculatorNumbers.ZERO)
-                R.id.btnOne          -> presenter.typeNumber(CalculatorNumbers.ONE)
-                R.id.btnTwo          -> presenter.typeNumber(CalculatorNumbers.TWO)
-                R.id.btnThree        -> presenter.typeNumber(CalculatorNumbers.THREE)
-                R.id.btnFour         -> presenter.typeNumber(CalculatorNumbers.FOUR)
-                R.id.btnFive         -> presenter.typeNumber(CalculatorNumbers.FIVE)
-                R.id.btnSix          -> presenter.typeNumber(CalculatorNumbers.SIX)
-                R.id.btnSeven        -> presenter.typeNumber(CalculatorNumbers.SEVEN)
-                R.id.btnEight        -> presenter.typeNumber(CalculatorNumbers.EIGHT)
-                R.id.btnNine         -> presenter.typeNumber(CalculatorNumbers.NINE)
-                R.id.btnDot          -> presenter.typeDot()
-                R.id.btnCE           -> presenter.ce()
-                R.id.btnInvertSignal -> presenter.invertSignal()
-                R.id.btnDel          -> presenter.removeLast()
-                R.id.btnEquals       -> presenter.typeEquals()
-                R.id.btnPlus         -> presenter.add()
-                R.id.btnMinus        -> presenter.minus()
-                R.id.btnDivide       -> presenter.divide()
-                R.id.btnMultiply     -> presenter.multiply()
-                R.id.btnPercent      -> presenter.percent()
-                R.id.btnSquareRoot   -> presenter.squareRoot()
-                R.id.btnMRC          -> presenter.memoryResultAndClean()
-                R.id.btnMMinus       -> presenter.memorySubtract()
-                R.id.btnMPlus        -> presenter.memoryAdd()
-                else                 -> return
+                R.id.btnZero -> presenter.buttonZeroClicked()
+                R.id.btnOne -> presenter.buttonOneClicked()
+                R.id.btnTwo -> presenter.buttonTwoClicked()
+                R.id.btnThree -> presenter.buttonThreeClicked()
+                R.id.btnFour -> presenter.buttonFourClicked()
+                R.id.btnFive -> presenter.buttonFiveClicked()
+                R.id.btnSix -> presenter.buttonSixClicked()
+                R.id.btnSeven -> presenter.buttonSevenClicked()
+                R.id.btnEight -> presenter.buttonEightClicked()
+                R.id.btnNine -> presenter.buttonNineClicked()
+                R.id.btnDot -> presenter.buttonDotClicked()
+                R.id.btnCE -> presenter.buttonCeClicked()
+                R.id.btnInvertSignal -> presenter.buttonInvertSignalClicked()
+                R.id.btnDel -> presenter.removeLast()
+                R.id.btnEquals -> presenter.buttonEqualsClicked()
+                R.id.btnPlus -> presenter.buttonAddClicked()
+                R.id.btnMinus -> presenter.buttonMinusClicked()
+                R.id.btnDivide -> presenter.buttonDivideClicked()
+                R.id.btnMultiply -> presenter.buttonMultiplyClicked()
+                R.id.btnPercent -> presenter.buttonPercentClicked()
+                R.id.btnSquareRoot -> presenter.buttonSquareRootClicked()
+                R.id.btnMRC -> presenter.buttonMrcClicked()
+                R.id.btnMMinus -> presenter.buttonMMinusClicked()
+                R.id.btnMPlus -> presenter.buttonMPlusClicked()
+                else -> return
             }
         } catch (ex: Exception) {
             val crashlytics = FirebaseCrashlytics.getInstance()
