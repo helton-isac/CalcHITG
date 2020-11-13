@@ -149,17 +149,11 @@ class Calculator {
         setFormattedValueOnDisplay(userMemoryDisplayNumber, userMemory.currentMemoryValue())
     }
 
-    fun squareRoot() {
-        applyResult(BigDecimal(sqrt(displayNumber.toBigDecimal().toDouble()).toString()))
-    }
+    fun squareRoot() = applyResult(BigDecimal(sqrt(displayNumber.toBigDecimal().toDouble()).toString()))
 
-    fun percent() {
-        applyResult(currentTotal.multiply(displayNumber.toBigDecimal()).divide(BigDecimal("100")))
-    }
+    fun percent() = applyResult(currentTotal.multiply(displayNumber.toBigDecimal()).divide(BigDecimal("100")))
 
-    fun invertSignal() {
-        applyResult(displayNumber.toBigDecimal().multiply(BigDecimal("-1")))
-    }
+    fun invertSignal() = applyResult(displayNumber.toBigDecimal().multiply(BigDecimal("-1")))
 
     fun ce() {
         currentTotal = BigDecimal(0)
