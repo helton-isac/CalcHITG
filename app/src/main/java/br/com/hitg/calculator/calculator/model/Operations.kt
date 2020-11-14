@@ -6,25 +6,9 @@ package br.com.hitg.calculator.calculator.model
  * All supported operations for this Calculator.
  */
 enum class Operations {
-    /**
-     * Operation Plus (+)
-     */
     ADDITION,
-    /**
-     * Operation Minus (-)
-     */
     SUBTRACTION,
-    /**
-     * Operation Division (÷)
-     */
     DIVISION,
-    /**
-     * Operation Times (×)
-     */
     MULTIPLICATION,
-
-    /**
-     * No Operations
-     */
     NONE
 }

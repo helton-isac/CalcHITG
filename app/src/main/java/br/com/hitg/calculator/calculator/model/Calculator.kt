@@ -145,7 +145,7 @@ class Calculator {
 
     fun memoryResultAndClean() {
         if (userMemory.isMemoryInUse) {
-            applyResult(this.userMemory.mrc())
+            applyResult(userMemory.mrc())
         }
         setFormattedValueOnDisplay(userMemoryDisplayNumber, userMemory.currentMemoryValue())
     }
@@ -163,7 +163,7 @@ class Calculator {
         cleanDisplayOnNextInteraction = false
     }
 
-    fun applyStatus(calculatorState: CalculatorState) {
+    fun applyState(calculatorState: CalculatorState) {
         displayNumber.setValue(calculatorState.displayValue)
         this.currentTotal = try {
             BigDecimal(calculatorState.calcTotal)

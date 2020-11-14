@@ -27,13 +27,14 @@ class CalculatorPresenter(
     }
 
     override fun start() {
-        calculator.applyStatus(calculatorStateDataSource.getCalculatorState())
+        calculator.applyState(calculatorStateDataSource.getCalculatorState())
         updateView()
     }
 
     private fun executeOperationAndUpdateDisplay(operationMethod: () -> Unit) {
         operationMethod()
         updateView()
+        persistCalculatorState()
     }
 
     private fun updateView() {
@@ -41,7 +42,6 @@ class CalculatorPresenter(
         calculatorView.updateOperation(calculator.currentOperation)
         calculatorView.updateMemoryDisplay(calculator.isMemoryInUse(),
                 calculator.userMemoryDisplayNumber.toString())
-        persistCalculatorState()
     }
 
     override fun buttonOneClicked() = executeOperationAndUpdateDisplay { calculator.typeNumber('1') }
