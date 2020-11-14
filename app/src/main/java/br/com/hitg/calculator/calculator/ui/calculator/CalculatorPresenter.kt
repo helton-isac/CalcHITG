@@ -27,7 +27,7 @@ class CalculatorPresenter(
     }
 
     override fun start() {
-        calculator.restoreStatus(calculatorStateDataSource.getCalculatorState())
+        calculator.applyStatus(calculatorStateDataSource.getCalculatorState())
         updateView()
     }
 
@@ -44,113 +44,55 @@ class CalculatorPresenter(
         persistCalculatorState()
     }
 
-    override fun buttonOneClicked() {
-        calculator.typeNumber('1')
-        updateView()
-    }
+    override fun buttonOneClicked() = executeOperationAndUpdateDisplay { calculator.typeNumber('1') }
 
-    override fun buttonTwoClicked() {
-        calculator.typeNumber('2')
-        updateView()
-    }
+    override fun buttonTwoClicked() = executeOperationAndUpdateDisplay { calculator.typeNumber('2') }
 
-    override fun buttonThreeClicked() {
-        calculator.typeNumber('3')
-        updateView()
-    }
+    override fun buttonThreeClicked() = executeOperationAndUpdateDisplay { calculator.typeNumber('3') }
 
-    override fun buttonFourClicked() {
-        calculator.typeNumber('4')
-        updateView()
-    }
+    override fun buttonFourClicked() = executeOperationAndUpdateDisplay { calculator.typeNumber('4') }
 
-    override fun buttonFiveClicked() {
-        calculator.typeNumber('5')
-        updateView()
-    }
+    override fun buttonFiveClicked() = executeOperationAndUpdateDisplay { calculator.typeNumber('5') }
 
-    override fun buttonSixClicked() {
-        calculator.typeNumber('6')
-        updateView()
-    }
+    override fun buttonSixClicked() = executeOperationAndUpdateDisplay { calculator.typeNumber('6') }
 
-    override fun buttonSevenClicked() {
-        calculator.typeNumber('7')
-        updateView()
-    }
+    override fun buttonSevenClicked() = executeOperationAndUpdateDisplay { calculator.typeNumber('7') }
 
-    override fun buttonEightClicked() {
-        calculator.typeNumber('8')
-        updateView()
-    }
+    override fun buttonEightClicked() = executeOperationAndUpdateDisplay { calculator.typeNumber('8') }
 
-    override fun buttonNineClicked() {
-        calculator.typeNumber('9')
-        updateView()
-    }
+    override fun buttonNineClicked() = executeOperationAndUpdateDisplay { calculator.typeNumber('9') }
 
-    override fun buttonZeroClicked() {
-        calculator.typeNumber('0')
-        updateView()
-    }
+    override fun buttonZeroClicked() = executeOperationAndUpdateDisplay { calculator.typeNumber('0') }
 
-    override fun buttonAddClicked() {
-        executeOperationAndUpdateDisplay { calculator.add() }
-    }
+    override fun buttonAddClicked() = executeOperationAndUpdateDisplay { calculator.add() }
 
-    override fun buttonMinusClicked() {
-        executeOperationAndUpdateDisplay { calculator.subtract() }
-    }
+    override fun buttonMinusClicked() = executeOperationAndUpdateDisplay { calculator.subtract() }
 
-    override fun buttonDivideClicked() {
-        executeOperationAndUpdateDisplay { calculator.divide() }
-    }
+    override fun buttonDivideClicked() = executeOperationAndUpdateDisplay { calculator.divide() }
 
-    override fun buttonMultiplyClicked() {
-        executeOperationAndUpdateDisplay { calculator.multiply() }
-    }
+    override fun buttonMultiplyClicked() = executeOperationAndUpdateDisplay { calculator.multiply() }
 
-    override fun buttonDotClicked() {
-        executeOperationAndUpdateDisplay { calculator.typeDot() }
-    }
+    override fun buttonDotClicked() = executeOperationAndUpdateDisplay { calculator.typeDot() }
 
-    override fun buttonEqualsClicked() {
-        executeOperationAndUpdateDisplay { calculator.equals() }
-    }
+    override fun buttonEqualsClicked() = executeOperationAndUpdateDisplay { calculator.equals() }
 
-    override fun buttonMPlusClicked() {
-        executeOperationAndUpdateDisplay { calculator.memoryAdd() }
-    }
+    override fun buttonMPlusClicked() = executeOperationAndUpdateDisplay { calculator.memoryAdd() }
 
-    override fun buttonMMinusClicked() {
-        executeOperationAndUpdateDisplay { calculator.memorySubtract() }
-    }
+    override fun buttonMMinusClicked() = executeOperationAndUpdateDisplay { calculator.memorySubtract() }
 
-    override fun buttonMrcClicked() {
-        executeOperationAndUpdateDisplay { calculator.memoryResultAndClean() }
-    }
+    override fun buttonMrcClicked() = executeOperationAndUpdateDisplay { calculator.memoryResultAndClean() }
 
-    override fun buttonSquareRootClicked() {
-        executeOperationAndUpdateDisplay { calculator.squareRoot() }
-    }
+    override fun buttonSquareRootClicked() = executeOperationAndUpdateDisplay { calculator.squareRoot() }
 
-    override fun buttonPercentClicked() {
-        executeOperationAndUpdateDisplay { calculator.percent() }
-    }
+    override fun buttonPercentClicked() = executeOperationAndUpdateDisplay { calculator.percent() }
 
-    override fun buttonDelClicked() {
-        executeOperationAndUpdateDisplay { calculator.removeLast() }
-    }
+    override fun buttonDelClicked() = executeOperationAndUpdateDisplay { calculator.removeLast() }
 
-    override fun buttonCeClicked() {
-        executeOperationAndUpdateDisplay { calculator.ce() }
-    }
+    override fun buttonCeClicked() = executeOperationAndUpdateDisplay { calculator.ce() }
 
-    override fun buttonInvertSignalClicked() {
-        executeOperationAndUpdateDisplay { calculator.invertSignal() }
-    }
+    override fun buttonInvertSignalClicked() = executeOperationAndUpdateDisplay { calculator.invertSignal() }
 
-    fun persistCalculatorState() {
+    private fun persistCalculatorState() {
         val calculatorState = CalculatorState(
                 calculator.displayNumber.toString(),
                 calculator.getCurrentTotal().toString(),

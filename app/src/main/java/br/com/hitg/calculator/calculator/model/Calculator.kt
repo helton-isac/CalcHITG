@@ -163,7 +163,7 @@ class Calculator {
         cleanDisplayOnNextInteraction = false
     }
 
-    fun restoreStatus(calculatorState: CalculatorState) {
+    fun applyStatus(calculatorState: CalculatorState) {
         displayNumber.setValue(calculatorState.displayValue)
         this.currentTotal = try {
             BigDecimal(calculatorState.calcTotal)

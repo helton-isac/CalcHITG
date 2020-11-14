@@ -245,7 +245,7 @@ class CalculatorTest {
         // When the Calculator is restored
         val calc = Calculator()
         // And the old values are passed again to restore the state
-        calc.restoreStatus(calculatorState)
+        calc.applyStatus(calculatorState)
 
         // The calculator is in the same state as before
         assertEquals(calculatorState.displayValue,
