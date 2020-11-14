@@ -6,7 +6,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import br.com.hitg.calculator.R
@@ -14,7 +13,7 @@ import br.com.hitg.calculator.calculator.model.Operations
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import kotlinx.android.synthetic.main.activity_calculator.*
 
-class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.OnClickListener {
+class CalculatorActivity : AppCompatActivity(), CalculatorContract.View {
 
     override lateinit var presenter: CalculatorContract.Presenter
 
@@ -59,61 +58,35 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
     }
 
     private fun setOnClickListeners() {
-        btnZero.setOnClickListener(this)
-        btnOne.setOnClickListener(this)
-        btnTwo.setOnClickListener(this)
-        btnThree.setOnClickListener(this)
-        btnFour.setOnClickListener(this)
-        btnFive.setOnClickListener(this)
-        btnSix.setOnClickListener(this)
-        btnSeven.setOnClickListener(this)
-        btnEight.setOnClickListener(this)
-        btnNine.setOnClickListener(this)
-        btnDot.setOnClickListener(this)
-        btnCE.setOnClickListener(this)
-        btnInvertSignal.setOnClickListener(this)
-        btnDel.setOnClickListener(this)
-        btnEquals.setOnClickListener(this)
-        btnPlus.setOnClickListener(this)
-        btnMinus.setOnClickListener(this)
-        btnDivide.setOnClickListener(this)
-        btnMultiply.setOnClickListener(this)
-        btnPercent.setOnClickListener(this)
-        btnSquareRoot.setOnClickListener(this)
-        btnMRC.setOnClickListener(this)
-        btnMMinus.setOnClickListener(this)
-        btnMPlus.setOnClickListener(this)
+        btnZero.setOnClickListener { execMethod(presenter::buttonZeroClicked) }
+        btnOne.setOnClickListener { execMethod(presenter::buttonOneClicked) }
+        btnTwo.setOnClickListener { execMethod(presenter::buttonTwoClicked) }
+        btnThree.setOnClickListener { execMethod(presenter::buttonThreeClicked) }
+        btnFour.setOnClickListener { execMethod(presenter::buttonFourClicked) }
+        btnFive.setOnClickListener { execMethod(presenter::buttonFiveClicked) }
+        btnSix.setOnClickListener { execMethod(presenter::buttonSixClicked) }
+        btnSeven.setOnClickListener { execMethod(presenter::buttonSevenClicked) }
+        btnEight.setOnClickListener { execMethod(presenter::buttonEightClicked) }
+        btnNine.setOnClickListener { execMethod(presenter::buttonNineClicked) }
+        btnDot.setOnClickListener { execMethod(presenter::buttonDotClicked) }
+        btnCE.setOnClickListener { execMethod(presenter::buttonCeClicked) }
+        btnInvertSignal.setOnClickListener { execMethod(presenter::buttonInvertSignalClicked) }
+        btnDel.setOnClickListener { execMethod(presenter::buttonDelClicked) }
+        btnEquals.setOnClickListener { execMethod(presenter::buttonEqualsClicked) }
+        btnPlus.setOnClickListener { execMethod(presenter::buttonAddClicked) }
+        btnMinus.setOnClickListener { execMethod(presenter::buttonMinusClicked) }
+        btnDivide.setOnClickListener { execMethod(presenter::buttonDivideClicked) }
+        btnMultiply.setOnClickListener { execMethod(presenter::buttonMultiplyClicked) }
+        btnPercent.setOnClickListener { execMethod(presenter::buttonPercentClicked) }
+        btnSquareRoot.setOnClickListener { execMethod(presenter::buttonSquareRootClicked) }
+        btnMRC.setOnClickListener { execMethod(presenter::buttonMrcClicked) }
+        btnMMinus.setOnClickListener { execMethod(presenter::buttonMMinusClicked) }
+        btnMPlus.setOnClickListener { execMethod(presenter::buttonMPlusClicked) }
     }
 
-    override fun onClick(view: View) {
+    private fun execMethod(method: () -> Unit) {
         try {
-            when (view.id) {
-                R.id.btnZero -> presenter.buttonZeroClicked()
-                R.id.btnOne -> presenter.buttonOneClicked()
-                R.id.btnTwo -> presenter.buttonTwoClicked()
-                R.id.btnThree -> presenter.buttonThreeClicked()
-                R.id.btnFour -> presenter.buttonFourClicked()
-                R.id.btnFive -> presenter.buttonFiveClicked()
-                R.id.btnSix -> presenter.buttonSixClicked()
-                R.id.btnSeven -> presenter.buttonSevenClicked()
-                R.id.btnEight -> presenter.buttonEightClicked()
-                R.id.btnNine -> presenter.buttonNineClicked()
-                R.id.btnDot -> presenter.buttonDotClicked()
-                R.id.btnCE -> presenter.buttonCeClicked()
-                R.id.btnInvertSignal -> presenter.buttonInvertSignalClicked()
-                R.id.btnDel -> presenter.buttonDelClicked()
-                R.id.btnEquals -> presenter.buttonEqualsClicked()
-                R.id.btnPlus -> presenter.buttonAddClicked()
-                R.id.btnMinus -> presenter.buttonMinusClicked()
-                R.id.btnDivide -> presenter.buttonDivideClicked()
-                R.id.btnMultiply -> presenter.buttonMultiplyClicked()
-                R.id.btnPercent -> presenter.buttonPercentClicked()
-                R.id.btnSquareRoot -> presenter.buttonSquareRootClicked()
-                R.id.btnMRC -> presenter.buttonMrcClicked()
-                R.id.btnMMinus -> presenter.buttonMMinusClicked()
-                R.id.btnMPlus -> presenter.buttonMPlusClicked()
-                else -> return
-            }
+            method()
         } catch (ex: Exception) {
             val crashlytics = FirebaseCrashlytics.getInstance()
             val message = ex.message
@@ -121,7 +94,7 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
                 crashlytics.log(message)
             }
             showError()
-            presenter = CalculatorPresenter(this, this)
+            createPresenter()
         }
     }
 
@@ -129,7 +102,6 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
         txtDisplay.setText(R.string.error)
         updateOperation(Operations.NONE)
         updateMemoryDisplay(false, "")
-        presenter.persistCalculatorState()
     }
 
     override fun updateDisplay(value: String) {
@@ -139,7 +111,6 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
             txtMemoryDisplay.announceForAccessibility(resources.getString(R.string.cont_desc_memory_value))
             txtMemoryDisplay.announceForAccessibility(txtMemoryDisplay.text)
         }
-        presenter.persistCalculatorState()
     }
 
     override fun updateOperation(currentOperation: Operations) {
@@ -150,7 +121,6 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
             Operations.MULTIPLICATION -> txtSignals.setText(R.string.multiplication_sign)
             Operations.DIVISION -> txtSignals.setText(R.string.division_sign)
         }
-        presenter.persistCalculatorState()
     }
 
     override fun updateMemoryDisplay(isMemoryInUse: Boolean, value: String) {
@@ -163,6 +133,5 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View, View.On
             txtMemory.text = ""
             txtMemoryDisplay.text = ""
         }
-        presenter.persistCalculatorState()
     }
 }

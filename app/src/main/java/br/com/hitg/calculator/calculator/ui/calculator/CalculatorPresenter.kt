@@ -41,6 +41,7 @@ class CalculatorPresenter(
         calculatorView.updateOperation(calculator.currentOperation)
         calculatorView.updateMemoryDisplay(calculator.isMemoryInUse(),
                 calculator.userMemoryDisplayNumber.toString())
+        persistCalculatorState()
     }
 
     override fun buttonOneClicked() {
@@ -149,7 +150,7 @@ class CalculatorPresenter(
         executeOperationAndUpdateDisplay { calculator.invertSignal() }
     }
 
-    override fun persistCalculatorState() {
+    fun persistCalculatorState() {
         val calculatorState = CalculatorState(
                 calculator.displayNumber.toString(),
                 calculator.getCurrentTotal().toString(),

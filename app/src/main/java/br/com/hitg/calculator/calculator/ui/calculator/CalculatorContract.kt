@@ -18,7 +18,6 @@ interface CalculatorContract {
     }
 
     interface Presenter : BasePresenter {
-
         fun buttonOneClicked()
         fun buttonTwoClicked()
         fun buttonThreeClicked()
@@ -43,8 +42,5 @@ interface CalculatorContract {
         fun buttonCeClicked()
         fun buttonInvertSignalClicked()
         fun buttonDelClicked()
-
-        fun persistCalculatorState()
     }
-
 }
