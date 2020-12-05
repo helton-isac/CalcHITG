@@ -8,19 +8,17 @@ ext {
     buildTools = '4.1.0'
 
     // Kotlin
-    kotlinVersion = "1.4.10"
+    kotlinVersion = "1.4.20"
 
     // Gradle
     gradleVersion = '4.0.1'
 
     // Google
-    googleServicesVersion = "4.3.3"
+    googleServicesVersion = "4.3.4"
 
     // Firebase
-    firebaseCrashlyticsGradle = "2.1.1"
-    firebaseCoreVersion = "17.5.0"
-    firebaseCrashlyticsVersion = "17.2.1"
-    firebaseAnalyticsVersion = "17.5.0"
+    firebaseBom = "26.1.1"
+    firebaseCrashlyticsGradle = "2.4.1"
 
     // Android X
     androidxAppCompatVersion = "1.2.0"
@@ -56,9 +54,10 @@ ext {
             lifecycle          : "androidx.lifecycle:lifecycle-extensions:$androidxLifeCycleExtensionsVersion",
             ktx                : "androidx.core:core-ktx:$androidxCoreKtx",
             material           : "com.google.android.material:material:$materialVersion",
-            firebaseCore       : "com.google.firebase:firebase-core:$firebaseCoreVersion",
-            firebaseCrashlytics: "com.google.firebase:firebase-crashlytics:$firebaseCrashlyticsVersion",
-            firebaseAnalytics  : "com.google.firebase:firebase-analytics:$firebaseAnalyticsVersion",
+            firebaseBom        : "com.google.firebase:firebase-bom:$firebaseBom",
+            firebaseCore       : "com.google.firebase:firebase-core",
+            firebaseCrashlytics: "com.google.firebase:firebase-crashlytics",
+            firebaseAnalytics  : "com.google.firebase:firebase-analytics",
     ]
 
     testDependecies = [
