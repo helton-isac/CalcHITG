@@ -91,6 +91,8 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View {
     private fun execMethod(method: () -> Unit) {
         try {
             method()
+        } catch (ex: ArithmeticException) {
+            showError()
         } catch (ex: Exception) {
             showError()
             FirebaseCrashlytics.getInstance().recordException(ex)
