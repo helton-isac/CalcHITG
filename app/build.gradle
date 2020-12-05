@@ -47,7 +47,7 @@ android {
     lintOptions {
         disable("TypographyFractions", "TypographyQuotes")
         enable("RtlHardcoded", "RtlCompat", "RtlEnabled")
-        check("NewApi", "InlinedApi")
+        checkOnly("NewApi", "InlinedApi")
         quiet = true
         abortOnError = false
         ignoreWarnings = true
