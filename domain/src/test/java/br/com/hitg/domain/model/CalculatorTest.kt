@@ -1,10 +1,9 @@
-package br.com.hitg.calculator.calculator
+package br.com.hitg.domain.model
 
-import br.com.hitg.calculator.calculator.model.Calculator
-import br.com.hitg.calculator.calculator.model.Operations
-import com.hitg.data.local.model.CalculatorState
+import com.nhaarman.mockitokotlin2.whenever
 import org.junit.Assert.assertEquals
 import org.junit.Test
+import org.mockito.Mockito
 
 /**
  * Created by Helton on 20/03/2018.
@@ -230,37 +229,37 @@ class CalculatorTest {
 
     @Test
     fun checkRestoringState() {
-        //Given the current CalculatorState:
-        val calculatorState = CalculatorState(
-                displayValue = "22.042",
-                calcTotal = "0",
-                currentOperation = Operations.MULTIPLICATION.name,
-                numberInMemory = "10.01",
-                isMemoryInUse = true,
-                mustCleanDisplayOnNextInteraction = true,
-                lastOperation = Operations.NONE.name,
-                lastInputValue = "0"
-        )
+
+        var calculatorStateMock = Mockito.mock(ICalculatorState::class.java)
+
+        whenever(calculatorStateMock.displayValue).thenReturn("22.042")
+        whenever(calculatorStateMock.calcTotal).thenReturn("0")
+        whenever(calculatorStateMock.currentOperation).thenReturn(Operations.MULTIPLICATION.name)
+        whenever(calculatorStateMock.numberInMemory).thenReturn("10.01")
+        whenever(calculatorStateMock.isMemoryInUse).thenReturn(true)
+        whenever(calculatorStateMock.mustCleanDisplayOnNextInteraction).thenReturn(true)
+        whenever(calculatorStateMock.lastOperation).thenReturn(Operations.NONE.name)
+        whenever(calculatorStateMock.lastInputValue).thenReturn("0")
 
         // When the Calculator is restored
         val calc = Calculator()
         // And the old values are passed again to restore the state
-        calc.applyState(calculatorState)
+        calc.applyState(calculatorStateMock)
 
         // The calculator is in the same state as before
-        assertEquals(calculatorState.displayValue,
+        assertEquals(calculatorStateMock.displayValue,
                 calc.displayNumber.toString())
-        assertEquals(calculatorState.currentOperation,
+        assertEquals(calculatorStateMock.currentOperation,
                 calc.currentOperation.name)
-        assertEquals(calculatorState.numberInMemory,
+        assertEquals(calculatorStateMock.numberInMemory,
                 calc.getCurrentNumberInMemory().toString())
-        assertEquals(calculatorState.isMemoryInUse,
+        assertEquals(calculatorStateMock.isMemoryInUse,
                 calc.isMemoryInUse())
-        assertEquals(calculatorState.mustCleanDisplayOnNextInteraction,
+        assertEquals(calculatorStateMock.mustCleanDisplayOnNextInteraction,
                 calc.mustCleanDisplayOnNextInteraction())
-        assertEquals(calculatorState.lastOperation,
+        assertEquals(calculatorStateMock.lastOperation,
                 calc.getLastOperation().name)
-        assertEquals(calculatorState.lastInputValue,
+        assertEquals(calculatorStateMock.lastInputValue,
                 calc.getLastInputValue())
     }
 }

@@ -1,12 +1,10 @@
-package br.com.hitg.calculator.calculator
+package br.com.hitg.domain.model
 
-import br.com.hitg.calculator.calculator.model.CalculatorUserMemory
 import org.junit.After
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
 import java.math.BigDecimal
-
 
 class CalculatorUserMemoryTest {
 
