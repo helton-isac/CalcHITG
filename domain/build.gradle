@@ -13,8 +13,11 @@ dependencies {
     def testDependencies = rootProject.ext.testDependecies
 
     implementation dependencies.kotlinStdlib
+    implementation dependencies.jetbrainsAnnotations
 
     testImplementation testDependencies.junit
     testImplementation testDependencies.junitjupiter
+    testImplementation testDependencies.junitjupiterApi
+    testImplementation testDependencies.mockitoCore
     testImplementation testDependencies.mockitoKotlin
 }

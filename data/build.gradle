@@ -42,6 +42,9 @@ dependencies {
     implementation dependencies.material
 
     testImplementation testDependencies.junit
+    testImplementation testDependencies.junitjupiter
+    testImplementation testDependencies.runner
+    testImplementation testDependencies.mockitoKotlin
     androidTestImplementation testDependencies.androidxJunit
     androidTestImplementation testDependencies.espresso
 }

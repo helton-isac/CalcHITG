@@ -7,11 +7,11 @@ buildscript {
     }
 
     dependencies {
-        classpath "com.android.tools.build:gradle:$buildTools"
+        classpath "com.android.tools.build:gradle:$buildToolsGradleVersion"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
         classpath "com.google.gms:google-services:$googleServicesVersion"
-        classpath "com.google.firebase:firebase-crashlytics-gradle:$firebaseCrashlyticsGradle"
-        classpath "com.netflix.nebula:gradle-lint-plugin:$nebulaGradleLint"
+        classpath "com.google.firebase:firebase-crashlytics-gradle:$firebaseCrashlyticsGradleVersion"
+        classpath "com.netflix.nebula:gradle-lint-plugin:$nebulaGradleLintVersion"
     }
 }
 

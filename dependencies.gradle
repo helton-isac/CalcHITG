@@ -5,10 +5,9 @@ ext {
     androidTargetSdkVersion = 30
     androidBuildToolsVersion = "30.0.2"
 
-    buildTools = '4.1.0'
-
     // Kotlin
     kotlinVersion = "1.4.20"
+    buildToolsGradleVersion = '4.1.0'
 
     // Gradle
     gradleVersion = '4.0.1'
@@ -17,8 +16,8 @@ ext {
     googleServicesVersion = "4.3.4"
 
     // Firebase
-    firebaseBom = "26.1.1"
-    firebaseCrashlyticsGradle = "2.4.1"
+    firebaseBomVersion = "26.1.1"
+    firebaseCrashlyticsGradleVersion = "2.4.1"
 
     // Android X
     androidxAppCompatVersion = "1.2.0"
@@ -27,45 +26,54 @@ ext {
     androidxRecyclerviewVersion = "1.1.0"
     androidxConstraintlayoutVersion = "2.0.1"
     androidxLifeCycleExtensionsVersion = "2.2.0"
-    androidxCoreKtx = "1.3.2"
+    androidxCoreKtxVersion = "1.3.2"
 
     // Material
     materialVersion = "1.2.1"
 
     // Gradle Lint
-    nebulaGradleLint = "16.9.1"
+    nebulaGradleLintVersion = "16.9.1"
+
+    // Others
+    jetbrainsAnnotations = "13.0"
 
     // Tests
     jUnitVersion = "4.12"
     androidxJunitVersion = "1.1.2"
     jUnitJupiterVersion = "5.7.0"
+    junitjupiterApiVersion = "5.7.0"
     androidxRunnerVersion = "1.3.0"
-    androidxEspressoCore = "3.3.0"
+    androidxEspressoCoreVersion = "3.3.0"
+    mockitoCoreVersion = "3.6.0"
     mockitoKotlinVersion = "2.2.0"
 
+
     dependencies = [
-            kotlinStdlib       : "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
-            kotlinJdk7         : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
-            appCompat          : "androidx.appcompat:appcompat:$androidxAppCompatVersion",
-            media              : "androidx.media:media:$androidxMediaVersion",
-            legacyv4           : "androidx.legacy:legacy-support-v4:$androidxLegacySupportV4Version",
-            recyclerview       : "androidx.recyclerview:recyclerview:$androidxRecyclerviewVersion",
-            constraintlayout   : "androidx.constraintlayout:constraintlayout:$androidxConstraintlayoutVersion",
-            lifecycle          : "androidx.lifecycle:lifecycle-extensions:$androidxLifeCycleExtensionsVersion",
-            ktx                : "androidx.core:core-ktx:$androidxCoreKtx",
-            material           : "com.google.android.material:material:$materialVersion",
-            firebaseBom        : "com.google.firebase:firebase-bom:$firebaseBom",
-            firebaseCore       : "com.google.firebase:firebase-core",
-            firebaseCrashlytics: "com.google.firebase:firebase-crashlytics",
-            firebaseAnalytics  : "com.google.firebase:firebase-analytics",
+            jetbrainsAnnotations: "org.jetbrains:annotations:$jetbrainsAnnotations",
+            kotlinStdlib        : "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
+            kotlinJdk7          : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
+            appCompat           : "androidx.appcompat:appcompat:$androidxAppCompatVersion",
+            media               : "androidx.media:media:$androidxMediaVersion",
+            legacyv4            : "androidx.legacy:legacy-support-v4:$androidxLegacySupportV4Version",
+            recyclerview        : "androidx.recyclerview:recyclerview:$androidxRecyclerviewVersion",
+            constraintlayout    : "androidx.constraintlayout:constraintlayout:$androidxConstraintlayoutVersion",
+            lifecycle           : "androidx.lifecycle:lifecycle-extensions:$androidxLifeCycleExtensionsVersion",
+            ktx                 : "androidx.core:core-ktx:$androidxCoreKtxVersion",
+            material            : "com.google.android.material:material:$materialVersion",
+            firebaseBom         : "com.google.firebase:firebase-bom:$firebaseBomVersion",
+            firebaseCore        : "com.google.firebase:firebase-core",
+            firebaseCrashlytics : "com.google.firebase:firebase-crashlytics",
+            firebaseAnalytics   : "com.google.firebase:firebase-analytics",
     ]
 
     testDependecies = [
-            junit        : "junit:junit:$jUnitVersion",
-            androidxJunit: "androidx.test.ext:junit:$androidxJunitVersion",
-            espresso     : "androidx.test.espresso:espresso-core:$androidxEspressoCore",
-            runner       : "androidx.test:runner:$androidxRunnerVersion",
-            junitjupiter : "org.junit.jupiter:junit-jupiter:$jUnitJupiterVersion",
-            mockitoKotlin: "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion",
+            junit          : "junit:junit:$jUnitVersion",
+            androidxJunit  : "androidx.test.ext:junit:$androidxJunitVersion",
+            espresso       : "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion",
+            runner         : "androidx.test:runner:$androidxRunnerVersion",
+            junitjupiter   : "org.junit.jupiter:junit-jupiter:$jUnitJupiterVersion",
+            junitjupiterApi: "org.junit.jupiter:junit-jupiter-api:$junitjupiterApiVersion",
+            mockitoCore    : "org.mockito:mockito-core:$mockitoCoreVersion",
+            mockitoKotlin  : "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion",
     ]
 }
