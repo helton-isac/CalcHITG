@@ -1,4 +1,4 @@
-package br.com.hitg.calculator.calculator.model
+package br.com.hitg.domain.model
 
 /**
  * Created by Helton on 20/02/2018.

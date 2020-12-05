@@ -1,17 +1,17 @@
-package br.com.hitg.calculator.calculator.model
+package br.com.hitg.domain.model
 
 import java.math.BigDecimal
 
 class CalculatorUserMemory {
 
-    private var memory: BigDecimal = BigDecimal("0")
+    private var valueInMemory: BigDecimal = BigDecimal("0")
 
     var isMemoryInUse: Boolean = false
         private set
 
     fun mrc(): BigDecimal {
         return try {
-            memory
+            valueInMemory
         } finally {
             resetMemory()
         }
@@ -19,27 +19,27 @@ class CalculatorUserMemory {
 
     private fun resetMemory() {
         isMemoryInUse = false
-        memory = BigDecimal("0")
+        valueInMemory = BigDecimal("0")
     }
 
     fun currentMemoryValue(): BigDecimal {
-        return memory
+        return valueInMemory
     }
 
     fun mPlus(value: BigDecimal) {
         isMemoryInUse = true
-        memory = memory.add(value)
+        valueInMemory = valueInMemory.add(value)
     }
 
     fun mSubtract(value: BigDecimal) {
         isMemoryInUse = true
-        memory = memory.subtract(value)
+        valueInMemory = valueInMemory.subtract(value)
     }
 
     fun restoreMemoryStatus(currentNumberInMemory: String, isMemoryInUse: Boolean) {
         if (isMemoryInUse) {
             try {
-                memory = BigDecimal(currentNumberInMemory)
+                valueInMemory = BigDecimal(currentNumberInMemory)
                 this.isMemoryInUse = isMemoryInUse
             } catch (ignored: Exception) {
                 resetMemory()

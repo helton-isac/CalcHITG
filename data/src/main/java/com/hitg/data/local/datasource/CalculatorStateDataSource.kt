@@ -1,9 +1,9 @@
 package com.hitg.data.local.datasource
 
-import com.hitg.data.local.model.CalculatorState
+import br.com.hitg.domain.model.ICalculatorState
 
 interface CalculatorStateDataSource {
 
-    fun getCalculatorState(): CalculatorState
-    fun persistCalculatorState(calculatorState: CalculatorState)
+    fun getCalculatorState(): ICalculatorState
+    fun persistCalculatorState(calculatorState: ICalculatorState)
 }

@@ -1,4 +1,4 @@
-package br.com.hitg.calculator.calculator.model
+package br.com.hitg.domain.model
 
 import br.com.hitg.domain.mathEngine.MathEngine
 import br.com.hitg.domain.mathEngine.SimpleMathEngine
@@ -6,7 +6,6 @@ import br.com.hitg.domain.usecases.AdditionUseCase
 import br.com.hitg.domain.usecases.DivisionUseCase
 import br.com.hitg.domain.usecases.MultiplicationUseCase
 import br.com.hitg.domain.usecases.SubtractionUseCase
-import com.hitg.data.local.model.CalculatorState
 import java.math.BigDecimal
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
@@ -27,8 +26,8 @@ class Calculator {
     private val multiplicationUseCase = MultiplicationUseCase(mathEngine)
     private val divisionUseCase = DivisionUseCase(mathEngine)
 
-    var displayNumber: CalculatorDisplay = CalculatorDisplay(200)
-    var userMemoryDisplayNumber: CalculatorDisplay = CalculatorDisplay(200)
+    var displayNumber: CalculatorDisplayManager = CalculatorDisplayManager(200)
+    var userMemoryDisplayNumber: CalculatorDisplayManager = CalculatorDisplayManager(200)
     private var cleanDisplayOnNextInteraction: Boolean = false
     private var currentTotal: BigDecimal = BigDecimal("0")
     var currentOperation: Operations = Operations.NONE
@@ -48,7 +47,7 @@ class Calculator {
         cleanDisplayOnNextInteraction = true
     }
 
-    private fun setFormattedValueOnDisplay(display: CalculatorDisplay, value: BigDecimal) {
+    private fun setFormattedValueOnDisplay(display: CalculatorDisplayManager, value: BigDecimal) {
         val df = DecimalFormat("0", DecimalFormatSymbols.getInstance(Locale.ENGLISH))
         df.maximumFractionDigits = 340
         display.setValue(df.format(value))
@@ -163,7 +162,7 @@ class Calculator {
         cleanDisplayOnNextInteraction = false
     }
 
-    fun applyState(calculatorState: CalculatorState) {
+    fun applyState(calculatorState: ICalculatorState) {
         displayNumber.setValue(calculatorState.displayValue)
         this.currentTotal = try {
             BigDecimal(calculatorState.calcTotal)

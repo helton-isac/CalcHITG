@@ -1,8 +1,8 @@
-package br.com.hitg.calculator.calculator.model
+package br.com.hitg.domain.model
 
 import java.math.BigDecimal
 
-class CalculatorDisplay() {
+class CalculatorDisplayManager() {
 
     companion object {
 

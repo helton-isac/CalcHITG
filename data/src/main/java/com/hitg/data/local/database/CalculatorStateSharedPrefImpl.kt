@@ -1,6 +1,7 @@
 package com.hitg.data.local.database
 
 import android.content.SharedPreferences
+import br.com.hitg.domain.model.ICalculatorState
 import com.hitg.data.local.model.CalculatorState
 
 class CalculatorStateSharedPrefImpl(
@@ -19,7 +20,7 @@ class CalculatorStateSharedPrefImpl(
         const val CALC_LAST_INPUT_VALUE = "CALC_LAST_INPUT_VALUE"
     }
 
-    override fun getCalculatorState(): CalculatorState {
+    override fun getCalculatorState(): ICalculatorState {
         val defaultZero = "0"
         val defaultNONE = "NONE"
 
@@ -51,7 +52,7 @@ class CalculatorStateSharedPrefImpl(
                 lastInputValue = lastInputValue)
     }
 
-    override fun persistCalculatorState(calculatorState: CalculatorState) {
+    override fun persistCalculatorState(calculatorState: ICalculatorState) {
         with(sharedPref.edit()) {
             putString(CALC_NUMBER_ON_DISPLAY, calculatorState.displayValue)
             putString(CALC_CURRENT_CALC_TOTAL, calculatorState.calcTotal)

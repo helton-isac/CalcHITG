@@ -1,8 +1,8 @@
 package br.com.hitg.calculator.calculator.ui.calculator
 
-import br.com.hitg.calculator.calculator.model.Operations
 import br.com.hitg.calculator.calculator.ui.BasePresenter
 import br.com.hitg.calculator.calculator.ui.BaseView
+import br.com.hitg.domain.model.Operations
 
 /**
  * Created by Helton on 20/02/2018.
@@ -12,8 +12,9 @@ import br.com.hitg.calculator.calculator.ui.BaseView
 interface CalculatorContract {
 
     interface View : BaseView<Presenter> {
+
         fun updateDisplay(value: String)
-        fun updateOperation(currentOperation: Operations)
+        fun showOperation(currentOperation: Operations)
         fun updateMemoryDisplay(isMemoryInUse: Boolean, value: String)
     }
 

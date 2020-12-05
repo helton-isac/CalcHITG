@@ -9,7 +9,7 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import br.com.hitg.calculator.R
-import br.com.hitg.calculator.calculator.model.Operations
+import br.com.hitg.domain.model.Operations
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import kotlinx.android.synthetic.main.activity_calculator.*
 
@@ -26,7 +26,7 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View {
 
         setOnClickListeners()
 
-        configureActionBar()
+        hideActionBar()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -34,7 +34,7 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View {
         return true
     }
 
-    private fun configureActionBar() {
+    private fun hideActionBar() {
         title = ""
         supportActionBar?.setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(this,
                 android.R.color.transparent)))
@@ -43,13 +43,17 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.privacy_policy -> {
-                val browserIntent = Intent(Intent.ACTION_VIEW,
-                        Uri.parse(getString(R.string.link_privacy_policy)))
-                startActivity(browserIntent)
+                showPrivacyPolicy()
                 return true
             }
         }
         return false
+    }
+
+    private fun showPrivacyPolicy() {
+        val browserIntent = Intent(Intent.ACTION_VIEW,
+                Uri.parse(getString(R.string.link_privacy_policy)))
+        startActivity(browserIntent)
     }
 
     private fun createPresenter() {
@@ -88,20 +92,14 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View {
         try {
             method()
         } catch (ex: Exception) {
-            val crashlytics = FirebaseCrashlytics.getInstance()
-            val message = ex.message
-            if (message != null) {
-                crashlytics.log(message)
-            }
             showError()
-            createPresenter()
+            FirebaseCrashlytics.getInstance().recordException(ex)
         }
     }
 
     private fun showError() {
         txtDisplay.setText(R.string.error)
-        updateOperation(Operations.NONE)
-        updateMemoryDisplay(false, "")
+        showOperation(Operations.NONE)
     }
 
     override fun updateDisplay(value: String) {
@@ -113,7 +111,7 @@ class CalculatorActivity : AppCompatActivity(), CalculatorContract.View {
         }
     }
 
-    override fun updateOperation(currentOperation: Operations) {
+    override fun showOperation(currentOperation: Operations) {
         when (currentOperation) {
             Operations.NONE -> txtSignals.text = ""
             Operations.ADDITION -> txtSignals.setText(R.string.plus_sign)

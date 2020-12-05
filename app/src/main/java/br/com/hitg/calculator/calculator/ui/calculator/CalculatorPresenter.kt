@@ -2,7 +2,7 @@ package br.com.hitg.calculator.calculator.ui.calculator
 
 import android.app.Activity
 import android.content.Context
-import br.com.hitg.calculator.calculator.model.Calculator
+import br.com.hitg.domain.model.Calculator
 import com.hitg.data.local.database.CalculatorStateSharedPrefImpl
 import com.hitg.data.local.datasource.CalculatorStateDataSource
 import com.hitg.data.local.datasource.CalculatorStateDataSourceImpl
@@ -31,66 +31,66 @@ class CalculatorPresenter(
         updateView()
     }
 
-    private fun executeOperationAndUpdateDisplay(operationMethod: () -> Unit) {
-        operationMethod()
+    private fun processInteractionAndUpdateDisplay(interaction: () -> Unit) {
+        interaction()
         updateView()
         persistCalculatorState()
     }
 
     private fun updateView() {
         calculatorView.updateDisplay(calculator.displayNumber.toString())
-        calculatorView.updateOperation(calculator.currentOperation)
+        calculatorView.showOperation(calculator.currentOperation)
         calculatorView.updateMemoryDisplay(calculator.isMemoryInUse(),
                 calculator.userMemoryDisplayNumber.toString())
     }
 
-    override fun buttonOneClicked() = executeOperationAndUpdateDisplay { calculator.typeNumber('1') }
+    override fun buttonOneClicked() = processInteractionAndUpdateDisplay { calculator.typeNumber('1') }
 
-    override fun buttonTwoClicked() = executeOperationAndUpdateDisplay { calculator.typeNumber('2') }
+    override fun buttonTwoClicked() = processInteractionAndUpdateDisplay { calculator.typeNumber('2') }
 
-    override fun buttonThreeClicked() = executeOperationAndUpdateDisplay { calculator.typeNumber('3') }
+    override fun buttonThreeClicked() = processInteractionAndUpdateDisplay { calculator.typeNumber('3') }
 
-    override fun buttonFourClicked() = executeOperationAndUpdateDisplay { calculator.typeNumber('4') }
+    override fun buttonFourClicked() = processInteractionAndUpdateDisplay { calculator.typeNumber('4') }
 
-    override fun buttonFiveClicked() = executeOperationAndUpdateDisplay { calculator.typeNumber('5') }
+    override fun buttonFiveClicked() = processInteractionAndUpdateDisplay { calculator.typeNumber('5') }
 
-    override fun buttonSixClicked() = executeOperationAndUpdateDisplay { calculator.typeNumber('6') }
+    override fun buttonSixClicked() = processInteractionAndUpdateDisplay { calculator.typeNumber('6') }
 
-    override fun buttonSevenClicked() = executeOperationAndUpdateDisplay { calculator.typeNumber('7') }
+    override fun buttonSevenClicked() = processInteractionAndUpdateDisplay { calculator.typeNumber('7') }
 
-    override fun buttonEightClicked() = executeOperationAndUpdateDisplay { calculator.typeNumber('8') }
+    override fun buttonEightClicked() = processInteractionAndUpdateDisplay { calculator.typeNumber('8') }
 
-    override fun buttonNineClicked() = executeOperationAndUpdateDisplay { calculator.typeNumber('9') }
+    override fun buttonNineClicked() = processInteractionAndUpdateDisplay { calculator.typeNumber('9') }
 
-    override fun buttonZeroClicked() = executeOperationAndUpdateDisplay { calculator.typeNumber('0') }
+    override fun buttonZeroClicked() = processInteractionAndUpdateDisplay { calculator.typeNumber('0') }
 
-    override fun buttonAddClicked() = executeOperationAndUpdateDisplay { calculator.add() }
+    override fun buttonAddClicked() = processInteractionAndUpdateDisplay { calculator.add() }
 
-    override fun buttonMinusClicked() = executeOperationAndUpdateDisplay { calculator.subtract() }
+    override fun buttonMinusClicked() = processInteractionAndUpdateDisplay { calculator.subtract() }
 
-    override fun buttonDivideClicked() = executeOperationAndUpdateDisplay { calculator.divide() }
+    override fun buttonDivideClicked() = processInteractionAndUpdateDisplay { calculator.divide() }
 
-    override fun buttonMultiplyClicked() = executeOperationAndUpdateDisplay { calculator.multiply() }
+    override fun buttonMultiplyClicked() = processInteractionAndUpdateDisplay { calculator.multiply() }
 
-    override fun buttonDotClicked() = executeOperationAndUpdateDisplay { calculator.typeDot() }
+    override fun buttonDotClicked() = processInteractionAndUpdateDisplay { calculator.typeDot() }
 
-    override fun buttonEqualsClicked() = executeOperationAndUpdateDisplay { calculator.equals() }
+    override fun buttonEqualsClicked() = processInteractionAndUpdateDisplay { calculator.equals() }
 
-    override fun buttonMPlusClicked() = executeOperationAndUpdateDisplay { calculator.memoryAdd() }
+    override fun buttonMPlusClicked() = processInteractionAndUpdateDisplay { calculator.memoryAdd() }
 
-    override fun buttonMMinusClicked() = executeOperationAndUpdateDisplay { calculator.memorySubtract() }
+    override fun buttonMMinusClicked() = processInteractionAndUpdateDisplay { calculator.memorySubtract() }
 
-    override fun buttonMrcClicked() = executeOperationAndUpdateDisplay { calculator.memoryResultAndClean() }
+    override fun buttonMrcClicked() = processInteractionAndUpdateDisplay { calculator.memoryResultAndClean() }
 
-    override fun buttonSquareRootClicked() = executeOperationAndUpdateDisplay { calculator.squareRoot() }
+    override fun buttonSquareRootClicked() = processInteractionAndUpdateDisplay { calculator.squareRoot() }
 
-    override fun buttonPercentClicked() = executeOperationAndUpdateDisplay { calculator.percent() }
+    override fun buttonPercentClicked() = processInteractionAndUpdateDisplay { calculator.percent() }
 
-    override fun buttonDelClicked() = executeOperationAndUpdateDisplay { calculator.removeLast() }
+    override fun buttonDelClicked() = processInteractionAndUpdateDisplay { calculator.removeLast() }
 
-    override fun buttonCeClicked() = executeOperationAndUpdateDisplay { calculator.ce() }
+    override fun buttonCeClicked() = processInteractionAndUpdateDisplay { calculator.ce() }
 
-    override fun buttonInvertSignalClicked() = executeOperationAndUpdateDisplay { calculator.invertSignal() }
+    override fun buttonInvertSignalClicked() = processInteractionAndUpdateDisplay { calculator.invertSignal() }
 
     private fun persistCalculatorState() {
         val calculatorState = CalculatorState(
