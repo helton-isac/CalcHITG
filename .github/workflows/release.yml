@@ -1,8 +1,8 @@
 name: Release CI
 
-# on:
-#   push:
-#     branches: [ release/** ]
+on:
+  push:
+    branches: [ feat/** ]
 
 jobs:
   build:
