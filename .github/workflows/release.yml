@@ -1,0 +1,25 @@
+name: Release CI
+
+on:
+  push:
+    branches: [ feat/** ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: PWD
+      run: pwd
+    - name: set up JDK
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11'
+        distribution: 'adopt'
+    - name: Prepare KeyStore
+      run: echo ${{ secrets.KEY_STORE_BASE_64 }} | base64 --d > app/KeyStore.jks
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+    - name: Build with Gradle
+      run: ./gradlew bundle
