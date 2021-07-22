@@ -20,7 +20,7 @@ jobs:
         java-version: '1.8'
 
     - name: Prepare KeyStore
-    - echo ${{ secrets.KEY_STORE_BASE_64 }} | base64 --d > app/KeyStore.jks
+    - run: echo ${{ secrets.KEY_STORE_BASE_64 }} | base64 --d > app/KeyStore.jks
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
