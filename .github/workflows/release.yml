@@ -10,13 +10,13 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: PWD
-      run: pwd
     - name: set up JDK
       uses: actions/setup-java@v2
       with:
         java-version: '11'
         distribution: 'adopt'
+    - name: Grant execute permission for base64
+      run: chmod +x base64        
     - name: Prepare KeyStore
       run: echo ${{ secrets.KEY_STORE_BASE_64 }} | base64 --d > app/KeyStore.jks
     - name: Grant execute permission for gradlew
