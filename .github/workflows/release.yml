@@ -15,6 +15,8 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
+    - name: test
+      run: echo 'SGVsdG9uCg==' | base64 --d > app/test.txt      
     - name: Prepare KeyStore
       run: echo ${{ secrets.KEY_STORE_BASE_64 }} | base64 --d > app/KeyStore.jks
     - name: Grant execute permission for gradlew
