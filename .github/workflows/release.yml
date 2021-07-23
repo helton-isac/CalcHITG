@@ -22,8 +22,13 @@ jobs:
     - name: Decode google-services.json
       env:
           FIREBASE_SECRET: ${{ secrets.FIREBASE_SECRET }}
-      run: echo $FIREBASE_SECRET > app/google-services.json      
+      run: echo $FIREBASE_SECRET > app/google-services.json
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew bundle
+    - name: Upload AAB
+      uses: actions/upload-artifact@v1
+      with:
+        name: app
+        path: app/build/outputs/bundle/release/app-release.aab
