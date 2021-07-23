@@ -15,20 +15,21 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
-    - name: Prepare Envs
+    - name: Prepare KeyStore
       env:
           KEYSTORE: ${{ secrets.KEY_STORE_BASE_64 }}
-          FIREBASE_SECRET: ${{ secrets.FIREBASE_SECRET }}
-          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
-          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
-          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
-    - name: Prepare KeyStore
       run: echo $KEYSTORE | base64 --d > app/KeyStore.jks
     - name: Decode google-services.json
+      env:
+          FIREBASE_SECRET: ${{ secrets.FIREBASE_SECRET }}
       run: echo $FIREBASE_SECRET > app/google-services.json
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
+      env:
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
       run: ./gradlew bundle
     - name: Upload AAB
       uses: actions/upload-artifact@v1
