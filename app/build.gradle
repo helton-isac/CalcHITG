@@ -23,7 +23,10 @@ android {
 
     signingConfigs {
         release {
-            storeFile file("$System.env.KEYSTORE" ?: "KeyStore.jks")
+            storeFile file("$System.env.KEYSTORE" == "null"
+                    || "$System.env.KEYSTORE" == ""
+                    ? "KeyStore.jks"
+                    : "$System.env.KEYSTORE")
             storePassword "$System.env.KEYSTORE_PASSWORD"
             keyAlias "$System.env.KEY_ALIAS"
             keyPassword "$System.env.KEY_PASSWORD"
